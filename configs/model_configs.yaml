@@ -13,3 +13,10 @@ models:
     default_headers: {}
     total: 16384
     max_new_tokens: 4096
+  deepseek-v4-flash:
+    model_id: deepseek-v4-flash
+    base_url: "https://api.deepseek.com"
+    api_key: "sk-cbc58b634dc9406198911a740dc5b224"
+    default_headers: {}
+    total: 1048576
+    max_new_tokens: 16384
