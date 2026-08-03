@@ -10,7 +10,7 @@ SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 REPO_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/../.." && pwd)
 PROJECT_NAME=$1
 PROJECT_DIR="$REPO_ROOT/arkts_projects/automated_reduced_projects/$PROJECT_NAME"
-REPORT_DIR="$REPO_ROOT/data/arkts_preprocessing/$PROJECT_NAME"
+REPORT_DIR="$REPO_ROOT/arkts_data/preprocessing/$PROJECT_NAME"
 REPORT="$REPORT_DIR/phase_a_report.md"
 
 cd "$REPO_ROOT"
