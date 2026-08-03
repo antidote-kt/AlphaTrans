@@ -12,6 +12,7 @@ from arkts_extract_call_graph import attach_calls
 from arkts_generate_phase_report import generate_report
 
 
+# 执行统一第二阶段流程。
 def run(project_name: str) -> None:
     # AST 和 ArkIR 只在这里执行一次，后续消费者共享同一份合并结果。
     analysis = analyze_project(project_name)
@@ -29,6 +30,7 @@ def run(project_name: str) -> None:
     print(f"REPORT={generate_report(project_name)}")
 
 
+# 处理命令行并启动脚本。
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("project_name")

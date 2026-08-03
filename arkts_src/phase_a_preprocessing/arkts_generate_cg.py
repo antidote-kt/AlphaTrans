@@ -25,6 +25,7 @@ CALL_EXPR_KINDS = {"InstanceCallExpr", "StaticCallExpr", "PtrCallExpr"}
 INTERFACE_CATEGORY = 2
 
 
+# 把文件路径转换为模块 owner。
 def _module_owner(file_name: str) -> str:
     """将源码路径转换为调用图 owner；模块顶层函数以源文件模块为 owner。"""
     value = re.sub(r"\.(ets|ts|js|d\.ts)$", "", file_name.strip())
@@ -35,11 +36,13 @@ def _module_owner(file_name: str) -> str:
     return value.replace("/", ".").strip(".") or "module"
 
 
+# 辅助函数：处理 _declaring_class。
 def _declaring_class(method: dict[str, Any]) -> dict[str, Any]:
     value = method.get("declaringClass", {})
     return value if isinstance(value, dict) else {}
 
 
+# 计算方法的调用图 owner。
 def _method_owner(method: dict[str, Any]) -> str:
     declaring_class = _declaring_class(method)
     file_name = str(declaring_class.get("declaringFile", {}).get("fileName", "unknown"))
@@ -52,6 +55,7 @@ def _method_owner(method: dict[str, Any]) -> str:
     return f"{module_owner}${class_name}"
 
 
+# 辅助函数：处理 _type_text。
 def _type_text(value: Any) -> str:
     """将 ArkIR 类型转换为方法签名中的紧凑文本。"""
     if not isinstance(value, dict):
@@ -86,6 +90,7 @@ def _type_text(value: Any) -> str:
     return kind[:-4] if kind.endswith("Type") else kind or "unknown"
 
 
+# 生成方法调用签名。
 def method_signature(method: dict[str, Any]) -> str:
     owner = _method_owner(method)
     name = str(method.get("name", "<unknown>"))
@@ -98,6 +103,7 @@ def method_signature(method: dict[str, Any]) -> str:
     return re.sub(r"\s+", "", f"{owner}:{name}({parameter_text})")
 
 
+# 辅助函数：处理 _method_key。
 def _method_key(method: dict[str, Any]) -> tuple[str, str]:
     declaring_class = _declaring_class(method)
     return (
@@ -106,6 +112,7 @@ def _method_key(method: dict[str, Any]) -> tuple[str, str]:
     )
 
 
+# 辅助函数：处理 _interface_keys。
 def _interface_keys(documents: Iterable[dict[str, Any]]) -> set[tuple[str, str]]:
     interfaces: set[tuple[str, str]] = set()
     for document in documents:
@@ -120,6 +127,7 @@ def _interface_keys(documents: Iterable[dict[str, Any]]) -> set[tuple[str, str]]
     return interfaces
 
 
+# 递归查找 ArkIR 调用表达式。
 def _find_call_exprs(value: Any) -> Iterable[dict[str, Any]]:
     """递归遍历 ArkIR 语句，找出其中所有调用表达式。"""
     if isinstance(value, dict):
@@ -132,6 +140,7 @@ def _find_call_exprs(value: Any) -> Iterable[dict[str, Any]]:
             yield from _find_call_exprs(nested)
 
 
+# 判断 ArkIR 调用类型标记。
 def _call_type(expression: dict[str, Any], interfaces: set[tuple[str, str]]) -> str:
     """将 ArkIR 调用表达式映射为 M/I/O/S/D 调用类型。"""
     method = expression.get("method", {})
@@ -147,6 +156,7 @@ def _call_type(expression: dict[str, Any], interfaces: set[tuple[str, str]]) -> 
     return "M"
 
 
+# 把 ArkIR 文档转换为调用图行。
 def convert_arkir_documents(documents: list[dict[str, Any]]) -> list[str]:
     """将 ArkIR 转换为 AlphaTrans/JavaCG 兼容的 M: 方法边和 C: owner 边。"""
     interfaces = _interface_keys(documents)
@@ -174,6 +184,7 @@ def convert_arkir_documents(documents: list[dict[str, Any]]) -> list[str]:
     return sorted(class_lines) + sorted(method_lines)
 
 
+# 执行 ArkAnalyzer ArkIR 导出。
 def run_arkanalyzer_ir(project_dir: Path, output_dir: Path, executable: Path, sdk_home: str | None) -> None:
     """调用 ArkAnalyzer CLI，将 ArkTS 源码导出为临时 ArkIR JSON。"""
     if not executable.is_file():
@@ -186,11 +197,13 @@ def run_arkanalyzer_ir(project_dir: Path, output_dir: Path, executable: Path, sd
     subprocess.run(command, check=True)
 
 
+# 生成第一阶段兼容格式调用图。
 def generate_callgraph(
     project_name: str,
     arkanalyzer: Path = DEFAULT_ARKANALYZER,
     sdk_home: str | None = None,
 ) -> Path:
+    # 只对第一阶段已经复制并准备裁剪的 reduced project 生成调用图。
     project_dir = ARKTS_PROJECTS / project_name
     if not project_dir.is_dir():
         raise FileNotFoundError(f"ArkTS project not found: {project_dir}")
@@ -198,6 +211,7 @@ def generate_callgraph(
     with tempfile.TemporaryDirectory(prefix="alphatrans-arkts-ir-") as temp_dir:
         temp_root = Path(temp_dir)
         analysis_dir = temp_root / project_name
+        # 临时副本避免把依赖目录、构建缓存和旧产物送入 ArkAnalyzer。
         shutil.copytree(
             project_dir,
             analysis_dir,
@@ -206,13 +220,16 @@ def generate_callgraph(
                 "callgraph.txt", "trusted.txt", "untrusted.jsonl",
             ),
         )
+        # ArkAnalyzer 输出的是按源码文件组织的 ArkIR JSON；这里只读，不修改源码。
         ir_dir = temp_root / "arkir"
         run_arkanalyzer_ir(analysis_dir, ir_dir, arkanalyzer, sdk_home)
+        # 读取全部 ArkIR 文档后，统一转换成 M:/C: 兼容边。
         documents = []
         for json_file in sorted(ir_dir.rglob("*.json")):
             with json_file.open(encoding="utf-8") as handle:
                 documents.append(json.load(handle))
         lines = convert_arkir_documents(documents)
+    # 临时目录在离开 with 后删除，只有兼容格式的 callgraph.txt 被保留。
     output = project_dir / "callgraph.txt"
     output.write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
     method_edges = sum(line.startswith("M:") for line in lines)
@@ -220,6 +237,7 @@ def generate_callgraph(
     return output
 
 
+# 处理命令行并启动脚本。
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("project_name")

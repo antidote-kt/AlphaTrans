@@ -13,6 +13,7 @@ function nodeKind(node) {
   return ts.SyntaxKind[node.kind] || String(node.kind);
 }
 
+// 取得 AST 名称文本。
 function nameText(name, sourceFile) {
   if (!name) return '<anonymous>';
   if (ts.isIdentifier(name) || ts.isStringLiteral(name) || ts.isNumericLiteral(name)) {
@@ -48,6 +49,7 @@ function decoratorsOf(node, sourceFile) {
   return decorators.map((item) => item.getText(sourceFile));
 }
 
+// 提取声明 modifier。
 function modifiersOf(node) {
   if (!node.modifiers) return [];
   return [...node.modifiers]
@@ -55,10 +57,12 @@ function modifiersOf(node) {
     .map((item) => ts.tokenToString(item.kind) || nodeKind(item).replace(/Keyword$/, '').toLowerCase());
 }
 
+// 提取泛型参数。
 function typeParametersOf(node, sourceFile) {
   return node.typeParameters ? [...node.typeParameters].map((item) => item.getText(sourceFile)) : [];
 }
 
+// 提取参数信息。
 function parameterOf(parameter, sourceFile) {
   return {
     name: nameText(parameter.name, sourceFile),
@@ -100,6 +104,7 @@ function callableOf(node, sourceFile, className = null) {
   };
 }
 
+// 提取字段信息。
 function fieldOf(node, sourceFile) {
   const kind = ts.isEnumMember(node) ? 'enum_member' : 'field';
   return {
@@ -115,6 +120,7 @@ function fieldOf(node, sourceFile) {
   };
 }
 
+// 判断 class-like 节点类型。
 function classKind(node) {
   if (ts.isInterfaceDeclaration(node)) return 'interface';
   if (ts.isEnumDeclaration(node)) return 'enum';
@@ -183,6 +189,7 @@ function variableOf(statement, declaration, sourceFile) {
   };
 }
 
+// 提取 import 声明信息。
 function importOf(statement, sourceFile) {
   return {
     module: statement.moduleSpecifier.text,

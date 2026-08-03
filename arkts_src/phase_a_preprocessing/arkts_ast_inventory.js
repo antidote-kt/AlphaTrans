@@ -9,6 +9,7 @@ const fs = require('fs');
 const ts = require(process.argv[2]);
 const request = JSON.parse(fs.readFileSync(0, 'utf8'));
 
+// 取得 AST 名称文本。
 function nameText(name, sourceFile) {
   if (!name) return '<anonymous>';
   if (ts.isIdentifier(name) || ts.isStringLiteral(name) || ts.isNumericLiteral(name)) {
@@ -17,9 +18,11 @@ function nameText(name, sourceFile) {
   return name.getText(sourceFile);
 }
 
+// 辅助函数：处理 identifiers。
 function identifiers(node) {
   // 收集声明子树中的标识符，用于判断某个方法或类是否直接引用第三方 import 的本地名称。
   const values = new Set();
+// 辅助函数：处理 visit。
   function visit(current) {
     if (ts.isIdentifier(current)) values.add(current.text);
     ts.forEachChild(current, visit);
@@ -28,10 +31,12 @@ function identifiers(node) {
   return [...values].sort();
 }
 
+// 辅助函数：处理 declarationStart。
 function declarationStart(node, sourceFile) {
   return node.getStart(sourceFile, false);
 }
 
+// 辅助函数：处理 methodKind。
 function methodKind(node) {
   if (ts.isConstructorDeclaration(node)) return 'constructor';
   if (ts.isGetAccessorDeclaration(node)) return 'getter';
@@ -39,10 +44,12 @@ function methodKind(node) {
   return 'method';
 }
 
+// 辅助函数：处理 hasModifier。
 function hasModifier(node, kind) {
   return Boolean(node.modifiers && node.modifiers.some((item) => item.kind === kind));
 }
 
+// 扫描源码文件的顶层声明。
 function scanFile(filePath) {
   // ArkTS 的 .ets 语法由 ohos-typescript 按 TS AST 读取；只输出裁剪阶段需要的最小信息。
   const text = fs.readFileSync(filePath, 'utf8');
@@ -147,6 +154,7 @@ function jsonValue(node, sourceFile) {
   return node.getText(sourceFile);
 }
 
+// 解析 JSON5 manifest。
 function scanManifest(filePath) {
   // oh-package.json5 允许 JSON5 语法，不能假设它是严格 JSON。
   const text = fs.readFileSync(filePath, "utf8");

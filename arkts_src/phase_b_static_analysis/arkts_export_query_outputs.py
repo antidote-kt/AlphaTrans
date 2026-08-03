@@ -18,14 +18,17 @@ OUTPUT_NAMES = (
 )
 
 
+# 创建查询输出行容器。
 def _rows() -> dict[str, list[str]]:
     return {name: [] for name in OUTPUT_NAMES}
 
 
+# 生成 class 位置字符串。
 def _class_location(path: str, class_data: dict[str, Any]) -> str:
     return location(path, class_data)
 
 
+# 生成 callable 查询行。
 def _callable_rows(
     rows: dict[str, list[str]], path: str, class_data: dict[str, Any], method: dict[str, Any]
 ) -> None:
@@ -65,6 +68,7 @@ def _callable_rows(
         rows["all_methods"].append(pipe_row(common))
 
 
+# 建立源码声明索引。
 def _declaration_index(analysis: dict[str, Any]) -> dict[tuple[str, str, str, str, int], tuple[str, dict[str, Any]]]:
     """为 ArkIR 方法建立源码索引，以便语义调用目标映射回源码位置。"""
     result = {}
@@ -79,6 +83,7 @@ def _declaration_index(analysis: dict[str, Any]) -> dict[tuple[str, str, str, st
     return result
 
 
+# 查找 ArkIR 对应的源码声明。
 def _lookup(
     index: dict[tuple[str, str, str, str, int], tuple[str, dict[str, Any]]], method: dict[str, Any]
 ) -> tuple[str | None, dict[str, Any] | None]:
@@ -93,12 +98,14 @@ def _lookup(
     return None, None
 
 
+# 构造 15 类查询输出表。
 def build_rows(analysis: dict[str, Any]) -> dict[str, list[str]]:
     """对应原版 queries/*.ql，从统一分析结果构造 15 类表格。"""
     rows = _rows()
     type_pairs: set[tuple[str, str]] = set()
     class_by_name: dict[str, dict[str, Any]] = {}
 
+    # 按源码声明生成 imports、classes、fields、methods 等静态表。
     for file_data in analysis["files"]:
         path = file_data["path"]
         # 对应 get_imports.ql。
@@ -146,6 +153,7 @@ def build_rows(analysis: dict[str, Any]) -> dict[str, list[str]]:
             _callable_rows(rows, path, module_class, function)
             type_pairs.add((function["returnType"], function["resolvedReturnType"]))
 
+    # 复用统一分析中的 calls，生成三种调用相关表。
     declaration_index = _declaration_index(analysis)
     # 三类调用查询共享 ArkIR 中的同一批调用边，仅输出列结构不同。
     for call in analysis["calls"]:
@@ -174,6 +182,7 @@ def build_rows(analysis: dict[str, Any]) -> dict[str, list[str]]:
                 callee_location, call["callee"]["class"],
             ]))
 
+    # 最后补充项目内可解析的 override 关系；SDK 父类没有源码时不伪造结果。
     # ArkTS override 修饰符只说明意图；按继承类中的同名同参数方法建立对应关系。
     for file_data in analysis["files"]:
         path = file_data["path"]
@@ -195,16 +204,19 @@ def build_rows(analysis: dict[str, Any]) -> dict[str, list[str]]:
                                 location(parent_file, parent_method), parent["name"],
                             ]))
 
+    # 类型表是全项目源码类型到 ArkIR 类型的去重映射候选。
     rows["types"] = [pipe_row(pair) for pair in sorted(type_pairs)]
     return {name: sorted(set(values)) for name, values in rows.items()}
 
 
+# 使用共享结果写出查询输出。
 def export_query_outputs_from_analysis(analysis: dict[str, Any]) -> tuple[Path, dict[str, int]]:
     """使用已经完成的统一分析结果写出全部查询文件。"""
     rows = build_rows(analysis)
     project_name = analysis["project"]
     output_dir = ARKTS_DATA_ROOT / "query_outputs" / project_name
     output_dir.mkdir(parents=True, exist_ok=True)
+    # 覆盖写出而不是追加，保证重复执行不会造成重复行。
     for name in OUTPUT_NAMES:
         content = "\n".join(rows[name])
         (output_dir / f"{project_name}_{name}.txt").write_text(
@@ -213,11 +225,13 @@ def export_query_outputs_from_analysis(analysis: dict[str, Any]) -> tuple[Path, 
     return output_dir, {name: len(rows[name]) for name in OUTPUT_NAMES}
 
 
+# 独立生成查询输出。
 def export_query_outputs(project_name: str) -> tuple[Path, dict[str, int]]:
     """独立调用时分析一次；统一入口直接调用 *_from_analysis。"""
     return export_query_outputs_from_analysis(analyze_project(project_name))
 
 
+# 处理命令行并启动脚本。
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("project_name")

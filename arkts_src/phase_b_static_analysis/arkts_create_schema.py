@@ -11,12 +11,14 @@ from typing import Any
 from arkts_analysis import ARKTS_DATA_ROOT, analyze_project
 
 
+# 按源码行号截取正文。
 def _body(path: str, start: int, end: int) -> list[str]:
     """按 AST 的一基行号截取源码，保持原 schema 的 body=list[str]。"""
     lines = Path(path).read_text(encoding="utf-8").splitlines(keepends=True)
     return lines[start - 1:end]
 
 
+# 构建 callable Schema。
 def _method_schema(path: str, item: dict[str, Any]) -> dict[str, Any]:
     """保留原 callable 字段，并追加 ArkTS 参数与方法种类信息。"""
     return {
@@ -47,6 +49,7 @@ def _method_schema(path: str, item: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+# 构建 callable 映射。
 def _method_map(path: str, methods: list[dict[str, Any]]) -> dict[str, Any]:
     """沿用原版“起始行-结束行:方法名”作为 callable 主键。"""
     result = {}
@@ -59,6 +62,7 @@ def _method_map(path: str, methods: list[dict[str, Any]]) -> dict[str, Any]:
     return result
 
 
+# 构建字段 Schema。
 def _field_schema(path: str, field: dict[str, Any]) -> dict[str, Any]:
     """保留原字段位置、正文、修饰符和类型，并记录 ArkTS 初始化语义。"""
     return {
@@ -75,6 +79,7 @@ def _field_schema(path: str, field: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+# 生成 Schema 文件名。
 def _schema_name(relative_path: str) -> str:
     """沿用原版规则，把项目相对路径转换为点分 schema 文件名。"""
     value = relative_path.replace("\\", "/").replace("/", ".")
@@ -85,6 +90,7 @@ def _schema_name(relative_path: str) -> str:
     return value
 
 
+# 使用共享结果生成 Schema。
 def create_schemas_from_analysis(analysis: dict[str, Any]) -> tuple[Path, dict[str, int]]:
     """使用统一分析结果，按 ArkTS 源码文件生成 JSON。"""
     project_name = analysis["project"]
@@ -92,6 +98,7 @@ def create_schemas_from_analysis(analysis: dict[str, Any]) -> tuple[Path, dict[s
     output_dir.mkdir(parents=True, exist_ok=True)
     counts = {"files": 0, "classes": 0, "functions": 0, "methods": 0, "fields": 0}
 
+    # 同一份合并结果直接进入 Schema，不重新运行 AST 或 ArkAnalyzer。
     for file_data in analysis["files"]:
         path = file_data["path"]
         schema: dict[str, Any] = {
@@ -104,6 +111,7 @@ def create_schemas_from_analysis(analysis: dict[str, Any]) -> tuple[Path, dict[s
             "variables": {},
             "type_aliases": {},
         }
+        # imports 仍使用原版字典结构，同时增加 module/side_effect_only。
         for item in file_data["imports"]:
             key = f"{item['startLine']}-{item['endLine']}:{item['module']}"
             schema["imports"][key] = {
@@ -111,6 +119,7 @@ def create_schemas_from_analysis(analysis: dict[str, Any]) -> tuple[Path, dict[s
                 "body": _body(path, item["startLine"], item["endLine"]),
                 "module": item["module"], "side_effect_only": item["sideEffectOnly"],
             }
+        # 顶层变量和 type alias 无 Java class 容器，因此放在文件级新增字段中。
         for item in file_data["variables"]:
             schema["variables"][item["name"]] = {
                 "start": item["startLine"], "end": item["endLine"],
@@ -125,6 +134,7 @@ def create_schemas_from_analysis(analysis: dict[str, Any]) -> tuple[Path, dict[s
                 "type": item["type"], "modifiers": item["modifiers"],
                 "type_parameters": item["typeParameters"],
             }
+        # class/interface/struct/enum 共用原版 classes 容器，由 kind 区分。
         for item in file_data["classes"]:
             # 原 class 字段全部保留；ArkTS 新字段集中追加在末尾。
             class_schema = {
@@ -152,6 +162,7 @@ def create_schemas_from_analysis(analysis: dict[str, Any]) -> tuple[Path, dict[s
             counts["methods"] += len(item["methods"])
             counts["fields"] += len(item["fields"])
 
+        # 一个源码文件对应一个 schema 文件，文件名沿用原版点分规则。
         output = output_dir / f"{_schema_name(file_data['relativePath'])}.json"
         output.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         counts["files"] += 1
@@ -160,11 +171,13 @@ def create_schemas_from_analysis(analysis: dict[str, Any]) -> tuple[Path, dict[s
     return output_dir, counts
 
 
+# 独立生成 Schema。
 def create_schemas(project_name: str) -> tuple[Path, dict[str, int]]:
     """独立调用时分析一次；统一入口直接调用 *_from_analysis。"""
     return create_schemas_from_analysis(analyze_project(project_name))
 
 
+# 处理命令行并启动脚本。
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("project_name")

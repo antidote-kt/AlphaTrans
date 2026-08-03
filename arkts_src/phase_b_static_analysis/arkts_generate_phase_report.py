@@ -11,6 +11,7 @@ from arkts_analysis import ARKTS_DATA_ROOT
 from arkts_export_query_outputs import OUTPUT_NAMES
 
 
+# 生成阶段报告。
 def generate_report(project_name: str) -> Path:
     query_dir = ARKTS_DATA_ROOT / "query_outputs" / project_name
     schema_dir = ARKTS_DATA_ROOT / "schemas" / project_name
@@ -53,6 +54,7 @@ def generate_report(project_name: str) -> Path:
     return report
 
 
+# 处理命令行并启动脚本。
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("project_name")

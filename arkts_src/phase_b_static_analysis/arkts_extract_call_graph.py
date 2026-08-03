@@ -12,6 +12,7 @@ from arkts_analysis import ARKTS_DATA_ROOT, PROJECTS_ROOT
 from arkts_create_schema import _schema_name
 
 
+# 解析调用图位置。
 def _split_location(value: str) -> tuple[str, int, int, int, int]:
     """解析原版 file:///path:startLine:startCol:endLine:endCol。"""
     raw = value.removeprefix("file:///")
@@ -19,11 +20,13 @@ def _split_location(value: str) -> tuple[str, int, int, int, int]:
     return "/" + path.lstrip("/"), int(start_line), int(start_column), int(end_line), int(end_column)
 
 
+# 解析查询输出行。
 def _parse_row(line: str) -> list[str]:
     """读取原版竖线分隔行，并去掉首尾空列。"""
     return [item.strip() for item in line.split("|")[1:-1]]
 
 
+# 定位 Schema callable。
 def _find_callable(
     schema: dict[str, Any], name: str, start_line: int
 ) -> tuple[str, str, dict[str, Any]] | None:
@@ -38,12 +41,14 @@ def _find_callable(
     return None
 
 
+# 映射源码到 Schema 路径。
 def _schema_path(schema_dir: Path, project_dir: Path, source_path: str) -> Path:
     """把调用图中的源码绝对路径转换为对应 schema 文件路径。"""
     relative = str(Path(source_path).resolve().relative_to(project_dir.resolve())).replace("\\", "/")
     return schema_dir / f"{_schema_name(relative)}.json"
 
 
+# 将调用图写回 Schema。
 def attach_calls(project_name: str) -> tuple[int, int]:
     """对应原版 extract_call_graph.py，把七列调用图写回 calls。"""
     project_dir = PROJECTS_ROOT / project_name
@@ -57,6 +62,7 @@ def attach_calls(project_name: str) -> tuple[int, int]:
     cache: dict[Path, dict[str, Any]] = {}
     attached = 0
     skipped = 0
+    # 查询输出只负责传递调用边；这里负责把边解析成 Schema 中的三元组。
     for line in call_graph.read_text(encoding="utf-8").splitlines():
         values = _parse_row(line)
         if len(values) != 7:
@@ -68,6 +74,7 @@ def attach_calls(project_name: str) -> tuple[int, int]:
         caller_schema = cache.setdefault(
             caller_schema_path, json.loads(caller_schema_path.read_text(encoding="utf-8"))
         )
+        # caller 必须先在本项目 Schema 中定位，才能把 calls 写回正确方法。
         caller = _find_callable(caller_schema, caller_name, caller_line)
         if caller is None:
             skipped += 1
@@ -92,15 +99,18 @@ def attach_calls(project_name: str) -> tuple[int, int]:
             else:
                 # 项目内目标保持 [schema名, class/<module>, callable键]。
                 target = [callee_schema_path.stem, callee[0], callee[1]]
+        # 同一调用目标可能由多个 ArkIR CFG 路径重复发现，写回前去重。
         if target not in caller[2]["calls"]:
             caller[2]["calls"].append(target)
             attached += 1
 
+    # 统一写回所有被触及的 Schema 文件，未被调用图访问的文件不重复写入。
     for path, schema in cache.items():
         path.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return attached, skipped
 
 
+# 处理命令行并启动脚本。
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("project_name")
