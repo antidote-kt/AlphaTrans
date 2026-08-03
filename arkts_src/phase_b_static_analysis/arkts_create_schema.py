@@ -85,9 +85,9 @@ def _schema_name(relative_path: str) -> str:
     return value
 
 
-def create_schemas(project_name: str) -> tuple[Path, dict[str, int]]:
-    """对应原版 create_schema.py，按 ArkTS 源码文件生成 JSON。"""
-    analysis = analyze_project(project_name)
+def create_schemas_from_analysis(analysis: dict[str, Any]) -> tuple[Path, dict[str, int]]:
+    """使用统一分析结果，按 ArkTS 源码文件生成 JSON。"""
+    project_name = analysis["project"]
     output_dir = ARKTS_DATA_ROOT / "schemas" / project_name
     output_dir.mkdir(parents=True, exist_ok=True)
     counts = {"files": 0, "classes": 0, "functions": 0, "methods": 0, "fields": 0}
@@ -158,6 +158,11 @@ def create_schemas(project_name: str) -> tuple[Path, dict[str, int]]:
         counts["classes"] += len(file_data["classes"])
         counts["functions"] += len(file_data["functions"])
     return output_dir, counts
+
+
+def create_schemas(project_name: str) -> tuple[Path, dict[str, int]]:
+    """独立调用时分析一次；统一入口直接调用 *_from_analysis。"""
+    return create_schemas_from_analysis(analyze_project(project_name))
 
 
 def main() -> int:

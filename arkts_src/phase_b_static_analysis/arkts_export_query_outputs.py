@@ -199,10 +199,10 @@ def build_rows(analysis: dict[str, Any]) -> dict[str, list[str]]:
     return {name: sorted(set(values)) for name, values in rows.items()}
 
 
-def export_query_outputs(project_name: str) -> tuple[Path, dict[str, int]]:
-    """覆盖写出全部查询文件；无结果的查询也保留空文件。"""
-    analysis = analyze_project(project_name)
+def export_query_outputs_from_analysis(analysis: dict[str, Any]) -> tuple[Path, dict[str, int]]:
+    """使用已经完成的统一分析结果写出全部查询文件。"""
     rows = build_rows(analysis)
+    project_name = analysis["project"]
     output_dir = ARKTS_DATA_ROOT / "query_outputs" / project_name
     output_dir.mkdir(parents=True, exist_ok=True)
     for name in OUTPUT_NAMES:
@@ -211,6 +211,11 @@ def export_query_outputs(project_name: str) -> tuple[Path, dict[str, int]]:
             content + ("\n" if content else ""), encoding="utf-8"
         )
     return output_dir, {name: len(rows[name]) for name in OUTPUT_NAMES}
+
+
+def export_query_outputs(project_name: str) -> tuple[Path, dict[str, int]]:
+    """独立调用时分析一次；统一入口直接调用 *_from_analysis。"""
+    return export_query_outputs_from_analysis(analyze_project(project_name))
 
 
 def main() -> int:
