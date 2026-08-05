@@ -81,7 +81,7 @@ def attach_calls(project_name: str) -> tuple[int, int]:
             continue
 
         callee_source, callee_line, _, _, _ = _split_location(callee_location)
-        # SDK、标准库和第三方目标没有项目内源码，沿用原版 library 三元组。
+        # SDK、标准库和第三方目标没有项目内源码，沿用原版 library 三元组["library", 名称, 方法签名]。
         if callee_line == 0 or not Path(callee_source).is_file():
             target = ["library", callee_source.lstrip("/"), callee_signature]
         else:
