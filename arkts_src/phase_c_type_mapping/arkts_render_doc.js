@@ -11,7 +11,7 @@ async function main() {
   const page = await browser.newPage();
   try {
     await page.goto(url, {waitUntil: 'domcontentloaded', timeout: 30000});
-    await page.waitForTimeout(4000);
+    await page.waitForTimeout(5000);
     const result = await page.evaluate((searchText) => {
       const fullText = document.body ? document.body.innerText : '';
       const lines = fullText.split(/\n+/).map((line) => line.trim()).filter(Boolean);

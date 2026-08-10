@@ -81,8 +81,24 @@ def collect_types(project: str) -> dict:
 
     out = DATA / "type_resolution" / project
     out.mkdir(parents=True, exist_ok=True)
+    # 泛型实例使用其基础类判断，避免把项目类型送到官方文档搜索。
+    def is_project_type(name: str) -> bool:
+        base_name = name.strip()
+        base_name = base_name.removeprefix("new ").strip()
+        base_name = base_name.split("<", 1)[0].strip()
+        base_name = base_name.removesuffix("[]").strip()
+        return base_name in classes
+
+    # 类型参数没有独立官方文档，保留符号本身，不参与文档抓取。
+    def is_type_parameter(name: str) -> bool:
+        base_name = name.strip().removesuffix("[]").strip()
+        return base_name.isidentifier() and len(base_name) <= 2 and base_name[0].isupper()
+
     # 与原版一致：项目类已有目标名，SDK/外部类型留空交给后续翻译。
-    s1_input = {name: (name if name in classes else "") for name in sorted(found)}
+    s1_input = {
+        name: (name if is_project_type(name) or is_type_parameter(name) else "")
+        for name in sorted(found)
+    }
     (out / "s1_input.json").write_text(json.dumps(s1_input, ensure_ascii=False, indent=4), encoding="utf-8")
     (out / "type_locations.json").write_text(json.dumps(found, ensure_ascii=False, indent=2), encoding="utf-8")
     return s1_input
