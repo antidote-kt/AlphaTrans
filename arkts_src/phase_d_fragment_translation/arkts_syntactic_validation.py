@@ -49,6 +49,7 @@ def validate_generation(
     if fragment_type == "field":
         try:
             tree = ast.parse(code)
+            # 字段片段只接受第一条赋值语句，忽略模型附带的其他定义。
             assignments = [
                 node for node in tree.body if isinstance(node, (ast.Assign, ast.AnnAssign))
             ]
@@ -61,12 +62,14 @@ def validate_generation(
         except SyntaxError as exc:
             return False, [], f"{exc.msg} at line {exc.lineno}"
 
+    # 从骨架取得目标函数名，防止模型生成语法正确但名称错误的函数。
     expected = _expected_name(partial_translation, fragment_type)
     try:
         tree = ast.parse(code)
     except SyntaxError as exc:
         return False, [], f"{exc.msg} at line {exc.lineno}"
 
+    # 仅截取与骨架名称一致的函数或异步函数。
     callable_node = next(
         (
             node
@@ -81,6 +84,7 @@ def validate_generation(
 
     selected = textwrap.dedent(_node_source(code, callable_node))
     if in_class:
+        # 类方法恢复一级缩进，并包装到临时类中进行语法检查。
         selected = textwrap.indent(selected, "    ")
         validation_source = f"class Dummy:\n{selected}"
     else:

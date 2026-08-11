@@ -129,6 +129,8 @@ def translate_one(
     feedback = initial_feedback
     schema_path, schema = _load_schema(translation_dir, fragment)
     item = _fragment_item(schema, fragment)
+    # 支持断点续跑：已有可解析翻译且没有新的反馈时直接跳过，避免仓库级
+    # 翻译中断后重复消耗模型调用。
     if (
         item.get("translation_status") == "attempted"
         and item.get("syntactic_validation") == "parseable"
@@ -138,6 +140,8 @@ def translate_one(
 
     for _ in range(attempts):
         try:
+            # 每轮根据最新 schema 重建 prompt，使当前 fragment 能引用已完成的
+            # 字段和被调用函数；feedback 保存上一轮验证错误。
             prompt = ArkTSPromptGenerator(translation_dir, fragment, feedback).generate()
             generation = _prompt_model(
                 client, model_info, model_name, prompt, float(temperature_text)
@@ -148,6 +152,8 @@ def translate_one(
                 item.get("partial_translation", []),
                 fragment["class_name"] != "<module>",
             )
+            # 先验证函数 AST、名称和缩进；未通过时不写 partial schema，只把
+            # 具体错误加入下一轮 prompt。
             if not ok:
                 feedback = syntax_feedback
                 continue
@@ -182,6 +188,8 @@ def translate_one(
         except Exception as exc:
             feedback = str(exc)
 
+    # 全部尝试失败后记录最后错误。translation 留空，重组器会回退到 C 阶段
+    # 的 partial_translation，使项目仍保留可检查的 Python 骨架。
     schema_path, schema = _load_schema(translation_dir, fragment)
     item = _fragment_item(schema, fragment)
     _set_result(
@@ -224,9 +232,13 @@ def translate_project(
         DATA / "schemas" / "translations" / model_name / prompt_type / temperature / project
     )
     call_graph_path = DATA / "call_graphs" / project / "call_graph.json"
+    # traversal 合并字段顺序、项目内调用依赖和测试标记；它决定 LLM 调用顺序，
+    # 但不改变 partial schema 中 fragment 的身份和源码范围。
     traversal = get_fragment_traversal(call_graph_path, translation_dir)
     client, model_info = _client(model_name)
 
+    # 第一遍遍历所有 fragment。单个 fragment 的重试次数由 attempts 控制，
+    # 一个 fragment 失败不会阻止后续 fragment 保存各自结果。
     for fragment in traversal:
         translate_one(
             fragment,
@@ -240,12 +252,16 @@ def translate_project(
             attempts,
         )
 
+    # 首轮结束后重组完整项目并运行 pytest/pytest-cov。这里得到的是目标 Python
+    # 的运行结果，不是 ArkTS 源项目的运行时覆盖率。
     project_root = recompose_project(project, model_name, prompt_type, temperature)
     report = validate_project(project_root, run_tests=True)
     for _ in range(validation_rounds):
         if report["success"]:
             break
         affected = _affected_fragments(report, traversal)
+        # 只重试能够由错误模块或失败测试定位到的 fragment，避免每轮重新请求
+        # 整个仓库。项目级报告会作为统一 feedback 加入修复 prompt。
         if not affected:
             break
         validation_feedback = _feedback(report)

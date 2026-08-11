@@ -77,6 +77,7 @@ def _class_order(schema: dict) -> list[str]:
 
 def _render_schema(schema: dict, is_test_schema: bool = False) -> str:
     """根据 partial schema 当前状态渲染一个完整 Python 模块。"""
+    # 先去重并写入 C 阶段生成的 import，再按继承顺序输出类定义。
     lines = list(dict.fromkeys(schema.get("python_imports", []))) + [""]
     for class_name in _class_order(schema):
         class_data = schema["classes"][class_name]
@@ -87,11 +88,13 @@ def _render_schema(schema: dict, is_test_schema: bool = False) -> str:
         declaration = class_data.get("python_class_declaration", f"class {class_name}:\n").rstrip()
         lines.append(declaration)
         members = 0
+        # 字段必须位于方法之前；失败的字段由 _selected_lines 回退到骨架。
         for field in class_data.get("fields", {}).values():
             if field.get("kind") == "enum_member":
                 continue
             lines.extend(line.rstrip("\n") for line in _selected_lines(field))
             members += 1
+        # 方法保持 partial schema 中的稳定顺序，便于错误行回溯到对应 fragment。
         for method in class_data.get("methods", {}).values():
             if members:
                 lines.append("")
@@ -130,6 +133,8 @@ def recompose_project(
     )
     output_root.mkdir(parents=True, exist_ok=True)
 
+    # 一个 partial schema 对应一个 Python 模块；schema 限定名转换为包目录，
+    # 不把不同 ArkTS 文件中的类合并到同一 Python 文件。
     for path in sorted(translation_dir.glob("*_python_partial.json")):
         schema_name = path.name.removesuffix("_python_partial.json")
         schema = json.loads(path.read_text(encoding="utf-8"))

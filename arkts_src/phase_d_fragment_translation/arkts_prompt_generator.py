@@ -38,6 +38,7 @@ class ArkTSPromptGenerator:
         class_data = self.schema["classes"][self.fragment["class_name"]]
         snippets: list[str] = []
         for field_name, field_data in class_data.get("fields", {}).items():
+            # 只提供当前片段可能用到的字段，避免无关类上下文扩大 prompt。
             if field_name in body:
                 snippets.append(self._translated_or_partial(field_data))
         return "\n".join(snippets)
@@ -46,8 +47,10 @@ class ArkTSPromptGenerator:
         """加入已翻译被调用函数；未翻译时仅加入其 Python 签名。"""
         snippets: list[str] = []
         for call in fragment_data.get("calls", []):
+            # 外部库调用和无法定位到 schema callable 的 ArkIR 调用不提供上下文。
             if not isinstance(call, list) or len(call) < 3 or call[0] == "library" or ":" not in call[2]:
                 continue
+            # 调用边中的 schema 名直接定位被调用 fragment 所在的 partial schema。
             path = self.translation_dir / f"{call[0]}_python_partial.json"
             if not path.exists():
                 continue
@@ -66,6 +69,7 @@ class ArkTSPromptGenerator:
 
     def generate(self) -> str:
         """生成包含源码、骨架、依赖和验证反馈的完整 prompt。"""
+        # 源码决定实现语义，partial translation 约束 Python 签名。
         data = self._fragment_data()
         source = "".join(data.get("body", [])).rstrip()
         partial = self._partial_signature(data)
@@ -73,10 +77,12 @@ class ArkTSPromptGenerator:
         callees = self._callee_context(data)
         class_declaration = ""
         if self.fragment["class_name"] != "<module>":
+            # 类方法提供所属类声明，顶层函数不需要该上下文。
             class_declaration = self.schema["classes"][self.fragment["class_name"]].get(
                 "python_class_declaration", ""
             ).rstrip()
 
+        # 固定约束放在前面，防止模型输出整个文件或改变 C 阶段生成的签名。
         sections = [
             "Translate exactly one ArkTS fragment into Python 3.11.",
             "Preserve the provided Python function name, parameters, decorators and return annotation.",
@@ -94,6 +100,7 @@ class ArkTSPromptGenerator:
         if callees:
             sections.append(f"Available callees:\n```python\n{callees}\n```")
         if self.feedback:
+            # 重试时追加上一轮错误，使模型针对验证失败原因修正。
             sections.append(
                 "The previous translation failed validation. Correct this error:\n"
                 f"```text\n{self.feedback}\n```"

@@ -14,11 +14,7 @@ DATA = ROOT / "arkts_data"
 
 
 def validate_project(project_root: Path, run_tests: bool = True) -> dict:
-    """返回可直接反馈给 fragment LLM 的结构化验证结果。
-
-    GraalVM 不参与此流程。语法检查对所有模块执行；导入检查使用独立解释器，
-    防止前一个模块的缓存掩盖循环依赖。存在 pytest 测试时再执行 pytest-cov。
-    """
+    """返回可直接反馈给 fragment LLM 的结构化验证结果。"""
     report: dict = {
         "success": True,
         "syntax_errors": [],
@@ -27,6 +23,7 @@ def validate_project(project_root: Path, run_tests: bool = True) -> dict:
     }
     python_files = sorted(project_root.rglob("*.py"))
 
+    # 第一层验证只解析和编译源码，不执行模块顶层语句。
     for path in python_files:
         source = path.read_text(encoding="utf-8")
         try:
@@ -42,11 +39,13 @@ def validate_project(project_root: Path, run_tests: bool = True) -> dict:
                 }
             )
 
+    # 把重组项目根目录放入 PYTHONPATH，保证仓库内模块按真实包路径解析。
     environment = dict(os.environ)
     old_path = environment.get("PYTHONPATH", "")
     environment["PYTHONPATH"] = str(project_root) + (
         os.pathsep + old_path if old_path else ""
     )
+    # 第二层验证为每个模块启动独立解释器，暴露缺失依赖和循环导入问题。
     for path in python_files:
         if path.name == "__init__.py":
             continue
@@ -63,11 +62,14 @@ def validate_project(project_root: Path, run_tests: bool = True) -> dict:
                 {"module": module, "message": result.stderr.strip()}
             )
 
+    # 只把由 ArkTS src/test 和 src/ohosTest 重组出的模块交给 pytest 收集。
     test_files = [
         path
         for path in python_files
         if "/src/test/" in path.as_posix() or "/src/ohosTest/" in path.as_posix()
     ]
+    # 第三层验证执行目标 Python 测试，并把 coverage.xml 保存在重组项目根目录；
+    # 该覆盖率只描述 Python 目标项目，不代表 ArkTS 源项目覆盖率。
     if run_tests and test_files:
         coverage_path = project_root / "coverage.xml"
         result = subprocess.run(

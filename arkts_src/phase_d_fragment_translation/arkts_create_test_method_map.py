@@ -44,18 +44,19 @@ def create_test_method_map(
     prompt_type: str = "body",
     temperature: str = "0.0",
 ) -> dict:
-    """生成项目 callable 调用图，并标记 ArkTS 测试入口。
-
-    Java 原版只遍历类方法；ArkTS 允许顶层函数，因此使用 ``<module>`` 作为
-    顶层 callable 的所属类标识。``src.test`` 和 ``src.ohosTest`` 中的 callable
-    统一标记为测试入口，供后续组合验证选择测试。
-    """
+    """生成项目 callable 调用图，并标记 ArkTS 测试入口。"""
     translation_dir = _translation_dir(project, model, prompt_type, temperature)
+    # model、prompt_type 和 temperature 只用于定位 C 阶段输出目录；
+    # 本脚本不请求 LLM，也不会修改任何 fragment 的翻译结果。
+    # graph 节点对应可独立翻译的 callable，调用边直接复用 Phase B
+    # 已写入 partial schema 的 calls 信息。
     graph: dict[str, dict] = {}
 
     for path in sorted(translation_dir.glob("*_python_partial.json")):
+        # schema 名由模块和源码路径组成，用它区分不同文件中的同名类或函数。
         schema_name = path.name.removesuffix("_python_partial.json")
         schema = json.loads(path.read_text(encoding="utf-8"))
+        # ArkTS 的单元测试和设备测试目录都视作测试入口来源。
         is_test_schema = ".src.test." in schema_name or ".src.ohosTest." in schema_name
 
         for class_name, class_data in schema.get("classes", {}).items():
@@ -84,6 +85,7 @@ def create_test_method_map(
 
     out = DATA / "call_graphs" / project
     out.mkdir(parents=True, exist_ok=True)
+    # 该图表示静态调用依赖，不表示测试运行时覆盖率。
     (out / "call_graph.json").write_text(
         json.dumps(graph, ensure_ascii=False, indent=4), encoding="utf-8"
     )
