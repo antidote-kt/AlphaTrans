@@ -349,6 +349,32 @@ def _base_imports(schema_name: str, schema: dict, class_locations: dict[str, lis
     return imports
 
 
+def _project_call_imports(schema_name: str, schema: dict) -> list[str]:
+    """根据 Phase B 项目内调用边生成 Python 模块导入。"""
+    callables = list(schema.get("functions", {}).values())
+    for class_data in schema.get("classes", {}).values():
+        callables.extend(class_data.get("methods", {}).values())
+
+    imports: list[str] = []
+    for callable_data in callables:
+        for call in callable_data.get("calls", []):
+            if not isinstance(call, list) or len(call) < 3 or call[0] == "library":
+                continue
+            target_module, target_class, target_callable = call[:3]
+            if not target_module or target_module == schema_name:
+                continue
+            # 类方法通过所属类访问；顶层函数则导入实际函数名。
+            symbol = (
+                target_callable.split(":", 1)[-1]
+                if target_class in {"", "<module>"}
+                else target_class
+            )
+            statement = f"from {target_module} import {_safe_name(symbol)}"
+            if statement not in imports:
+                imports.append(statement)
+    return imports
+
+
 def _update_translation_state(item: dict, partial: list[str], model: str) -> None:
     """写入后续 fragment 翻译依赖的 partial schema 状态。
 
@@ -424,6 +450,8 @@ def create_skeleton(project: str, model: str, prompt_type: str, temperature: str
         target_schema = copy.deepcopy(schema)
         imports = ["from __future__ import annotations", "from abc import ABC, abstractmethod", "from enum import Enum, auto", "from typing import *"]
         imports.extend(_base_imports(schema_name, schema, class_locations))
+        # 方法体使用的项目类和顶层函数由静态调用边补充导入。
+        imports.extend(_project_call_imports(schema_name, schema))
         lines = imports + [""]
         # python_imports 会被下一阶段重组器读取，因此与实际骨架文件保持一致。
         target_schema["python_imports"] = imports.copy()

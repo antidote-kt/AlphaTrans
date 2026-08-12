@@ -41,6 +41,44 @@ class ArkTSRecomposeTest(unittest.TestCase):
         rendered = _render_schema(schema, is_test_schema=True)
         self.assertIn("test_abilityTest = abilityTest", rendered)
 
+    def test_property_getter_precedes_setter(self) -> None:
+        """ArkTS setter 即使先出现，Python 重组时也必须先定义 property。"""
+        schema = {
+            "python_imports": [],
+            "classes": {
+                "Connection": {
+                    "python_class_declaration": "class Connection:",
+                    "fields": {},
+                    "methods": {
+                        "1-2:version": {
+                            "kind": "setter",
+                            "signature": "version(number)",
+                            "partial_translation": [
+                                "    @version.setter",
+                                "    def version(self, value):",
+                                "        pass",
+                            ],
+                            "syntactic_validation": "pending",
+                        },
+                        "3-4:version": {
+                            "kind": "getter",
+                            "signature": "version()",
+                            "partial_translation": [
+                                "    @property",
+                                "    def version(self):",
+                                "        pass",
+                            ],
+                            "syntactic_validation": "pending",
+                        },
+                    },
+                }
+            },
+            "functions": {},
+        }
+        rendered = _render_schema(schema)
+        self.assertLess(rendered.index("@property"), rendered.index("@version.setter"))
+        compile(rendered, "<schema>", "exec")
+
 
 if __name__ == "__main__":
     unittest.main()

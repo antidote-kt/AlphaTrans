@@ -23,6 +23,21 @@ def query(self, sql: str) -> int:
         self.assertTrue(ok, feedback)
         self.assertIn("    def query", "\n".join(lines))
 
+    def test_normalize_misaligned_decorator_and_method(self) -> None:
+        generation = """```python
+@staticmethod
+    def build() -> int:
+        return 1
+```"""
+        ok, lines, feedback = validate_generation(
+            generation,
+            "method",
+            ["    @staticmethod\n", "    def build() -> int:\n", "        pass\n"],
+            True,
+        )
+        self.assertTrue(ok, feedback)
+        self.assertIn("    @staticmethod", lines)
+
     def test_reject_wrong_callable_name(self) -> None:
         ok, _, _ = validate_generation(
             "```python\ndef other() -> None:\n    pass\n```",

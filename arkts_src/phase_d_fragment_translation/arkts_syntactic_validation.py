@@ -35,6 +35,43 @@ def _node_source(source: str, node: ast.AST) -> str:
     return "\n".join(lines[start : node.end_lineno])
 
 
+def _normalize_callable_code(code: str, expected: str | None) -> str:
+    """抽取目标 callable，并统一装饰器、def 与方法体的相对缩进。"""
+    if not expected:
+        return code
+    lines = code.splitlines()
+    def_index = None
+    for index, line in enumerate(lines):
+        stripped = line.lstrip()
+        if stripped.startswith(f"def {expected}(") or stripped.startswith(
+            f"async def {expected}("
+        ):
+            def_index = index
+            break
+    if def_index is None:
+        return code
+
+    # 丢弃模型附带的类声明或解释，只保留紧邻目标函数的装饰器和函数。
+    start = def_index
+    while start > 0 and lines[start - 1].lstrip().startswith("@"):
+        start -= 1
+    fragment = lines[start:]
+    def_indent = len(lines[def_index]) - len(lines[def_index].lstrip())
+    normalized: list[str] = []
+    relative_def = def_index - start
+    for index, line in enumerate(fragment):
+        if index <= relative_def:
+            normalized.append(line.lstrip())
+            continue
+        if def_indent and line.startswith(" " * def_indent):
+            line = line[def_indent:]
+        # 模型偶尔让方法体与 def 同级；至少恢复一级 Python 缩进。
+        if line.strip() and not line[0].isspace():
+            line = "    " + line
+        normalized.append(line)
+    return "\n".join(normalized)
+
+
 def validate_generation(
     generation: str,
     fragment_type: str,
@@ -64,6 +101,7 @@ def validate_generation(
 
     # 从骨架取得目标函数名，防止模型生成语法正确但名称错误的函数。
     expected = _expected_name(partial_translation, fragment_type)
+    code = _normalize_callable_code(code, expected)
     try:
         tree = ast.parse(code)
     except SyntaxError as exc:

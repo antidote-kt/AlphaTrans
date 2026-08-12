@@ -6,6 +6,7 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+from arkts_src.phase_c_skeleton.arkts_create_skeleton import _project_call_imports
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "arkts_data"
@@ -75,10 +76,39 @@ def _class_order(schema: dict) -> list[str]:
     return order
 
 
-def _render_schema(schema: dict, is_test_schema: bool = False) -> str:
+def _ordered_methods(class_data: dict) -> list[dict]:
+    """保持源码顺序，但确保同名 property getter 位于 setter 之前。"""
+    methods = list(class_data.get("methods", {}).values())
+    getters = {
+        method.get("signature", "").split("(", 1)[0]: method
+        for method in methods
+        if method.get("kind") == "getter"
+    }
+    ordered: list[dict] = []
+    emitted: set[int] = set()
+    for method in methods:
+        property_name = method.get("signature", "").split("(", 1)[0]
+        # Python 的 @name.setter 只能在 @property name 已经定义后执行。
+        if method.get("kind") == "setter" and property_name in getters:
+            getter = getters[property_name]
+            if id(getter) not in emitted:
+                ordered.append(getter)
+                emitted.add(id(getter))
+        if id(method) not in emitted:
+            ordered.append(method)
+            emitted.add(id(method))
+    return ordered
+
+
+def _render_schema(
+    schema: dict, is_test_schema: bool = False, schema_name: str = ""
+) -> str:
     """根据 partial schema 当前状态渲染一个完整 Python 模块。"""
-    # 先去重并写入 C 阶段生成的 import，再按继承顺序输出类定义。
-    lines = list(dict.fromkeys(schema.get("python_imports", []))) + [""]
+    # 保留 C 阶段导入，并为旧 partial schema 动态补充项目内调用依赖。
+    imports = list(schema.get("python_imports", []))
+    if schema_name:
+        imports.extend(_project_call_imports(schema_name, schema))
+    lines = list(dict.fromkeys(imports)) + [""]
     for class_name in _class_order(schema):
         class_data = schema["classes"][class_name]
         if class_data.get("kind") == "enum":
@@ -94,8 +124,8 @@ def _render_schema(schema: dict, is_test_schema: bool = False) -> str:
                 continue
             lines.extend(line.rstrip("\n") for line in _selected_lines(field))
             members += 1
-        # 方法保持 partial schema 中的稳定顺序，便于错误行回溯到对应 fragment。
-        for method in class_data.get("methods", {}).values():
+        # 方法保持稳定顺序；同名 getter 会调整到 setter 之前。
+        for method in _ordered_methods(class_data):
             if members:
                 lines.append("")
             lines.extend(line.rstrip("\n") for line in _selected_lines(method))
@@ -145,7 +175,7 @@ def recompose_project(
             ".src.test." in schema_name or ".src.ohosTest." in schema_name
         )
         output_path.write_text(
-            _render_schema(schema, is_test_schema), encoding="utf-8"
+            _render_schema(schema, is_test_schema, schema_name), encoding="utf-8"
         )
 
     # 与原版一致使用 Black；未安装时不影响后续 AST/compile 验证。
