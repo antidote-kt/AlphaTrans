@@ -1,0 +1,55 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/TableParams.ts",
+  "imports": {},
+  "classes": {
+    "TableParams": {
+      "start": 1,
+      "end": 6,
+      "is_abstract": false,
+      "is_interface": true,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {},
+      "fields": {
+        "tableName": {
+          "start": 5,
+          "end": 5,
+          "body": [
+            "  tableName: string;\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "string",
+              "string"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "interface",
+      "type_parameters": [],
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "TableParams",
+      "kind": "interface",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

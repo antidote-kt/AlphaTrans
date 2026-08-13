@@ -1,0 +1,14 @@
+{
+    "success": true,
+    "syntax_errors": [],
+    "import_errors": [],
+    "test": {
+        "status": "passed",
+        "output": "============================= test session starts ==============================\nplatform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0\nrootdir: /mnt/zengjy69/AlphaTrans/arkts_data/recomposed_projects/deepseek-v4-flash/body/0.0/RdbPlus\nplugins: anyio-4.14.2, cov-5.0.0\ncollected 8 items\n\nentry/src/ohosTest/ets/test/Ability/test.py .                            [ 12%]\nentry/src/ohosTest/ets/test/List/test.py .                               [ 25%]\nentry/src/test/List/test.py .                                            [ 37%]\nentry/src/test/LocalUnit/test.py .                                       [ 50%]\nrdbplus/src/ohosTest/ets/test/Ability/test.py .                          [ 62%]\nrdbplus/src/ohosTest/ets/test/List/test.py .                             [ 75%]\nrdbplus/src/test/List/test.py .                                          [ 87%]\nrdbplus/src/test/LocalUnit/test.py .                                     [100%]\n\n---------- coverage: platform linux, python 3.11.15-final-0 ----------\nCoverage XML written to file /mnt/zengjy69/AlphaTrans/arkts_data/recomposed_projects/deepseek-v4-flash/body/0.0/RdbPlus/coverage.xml\n\n\n============================== 8 passed in 1.70s ===============================\n"
+    },
+    "fragment_translation": {
+        "total": 163,
+        "completed": 163,
+        "incomplete": []
+    }
+}

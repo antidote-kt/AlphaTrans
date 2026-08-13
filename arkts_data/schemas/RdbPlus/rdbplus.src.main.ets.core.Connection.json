@@ -1,0 +1,855 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+  "imports": {
+    "1-1:@ohos.data.relationalStore": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import relationalStore from '@ohos.data.relationalStore'\n"
+      ],
+      "module": "@ohos.data.relationalStore",
+      "side_effect_only": false
+    },
+    "2-2:@kit.ArkTS": {
+      "start": 2,
+      "end": 2,
+      "body": [
+        "import { util } from '@kit.ArkTS'\n"
+      ],
+      "module": "@kit.ArkTS",
+      "side_effect_only": false
+    },
+    "3-3:../log/Logger": {
+      "start": 3,
+      "end": 3,
+      "body": [
+        "import { Logger } from '../log/Logger'\n"
+      ],
+      "module": "../log/Logger",
+      "side_effect_only": false
+    }
+  },
+  "classes": {
+    "Connection": {
+      "start": 8,
+      "end": 145,
+      "is_abstract": false,
+      "is_interface": false,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {
+        "14-16:version": {
+          "start": 14,
+          "end": 16,
+          "body": [
+            "  set version(v: number) {\n",
+            "    this.store.version = v\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "void"
+            ]
+          ],
+          "signature": "version(number)",
+          "parameters": [
+            "v"
+          ],
+          "calls": [],
+          "kind": "setter",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "v",
+              "type": "number",
+              "resolved_type": "number",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "18-20:version": {
+          "start": 18,
+          "end": 20,
+          "body": [
+            "  get version() {\n",
+            "    return this.store.version\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "void"
+            ]
+          ],
+          "signature": "version()",
+          "parameters": [],
+          "calls": [],
+          "kind": "getter",
+          "type_parameters": [],
+          "parameter_details": []
+        },
+        "22-24:getStore": {
+          "start": 22,
+          "end": 24,
+          "body": [
+            "  getStore() {\n",
+            "    return this.store\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "void"
+            ]
+          ],
+          "signature": "getStore()",
+          "parameters": [],
+          "calls": [],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": []
+        },
+        "29-36:deleteRdbStore": {
+          "start": 29,
+          "end": 36,
+          "body": [
+            "  static async deleteRdbStore(dbName: string): Promise<void> {\n",
+            "    if (Connection.context === undefined) {\n",
+            "      Connection.logger?.error('Connection未初始化，context获取失败')\n",
+            "      return\n",
+            "    }\n",
+            "    relationalStore.deleteRdbStore(Connection.context, dbName)\n",
+            "    Connection.logger?.info('deleteRdbStore success')\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "static",
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<void>",
+              "Promise"
+            ]
+          ],
+          "signature": "deleteRdbStore(string)",
+          "parameters": [
+            "dbName"
+          ],
+          "calls": [
+            [
+              "library",
+              "",
+              "deleteRdbStore()"
+            ],
+            [
+              "rdbplus.src.main.ets.log.Logger",
+              "Logger",
+              "12-12:error"
+            ],
+            [
+              "rdbplus.src.main.ets.log.Logger",
+              "Logger",
+              "8-8:info"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "dbName",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "41-48:init": {
+          "start": 41,
+          "end": 48,
+          "body": [
+            "  static init(context?: Context, logger?: Logger): void {\n",
+            "    if (context === undefined) {\n",
+            "      Connection.logger?.error('Connection初始化失败，参数异常')\n",
+            "      return\n",
+            "    }\n",
+            "    Connection.context = context\n",
+            "    Connection.logger = logger\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "static"
+          ],
+          "return_types": [
+            [
+              "void",
+              "void"
+            ]
+          ],
+          "signature": "init(Context, Logger)",
+          "parameters": [
+            "context",
+            "logger"
+          ],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.log.Logger",
+              "Logger",
+              "12-12:error"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "context",
+              "type": "Context",
+              "resolved_type": "Context",
+              "optional": true,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "logger",
+              "type": "Logger",
+              "resolved_type": "Logger",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "50-53:constructor": {
+          "start": 50,
+          "end": 53,
+          "body": [
+            "  constructor(id: string, store: relationalStore.RdbStore) {\n",
+            "    this.id = id\n",
+            "    this.store = store\n",
+            "  }\n"
+          ],
+          "is_constructor": true,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "void",
+              "Connection"
+            ]
+          ],
+          "signature": "constructor(string, relationalStore.RdbStore)",
+          "parameters": [
+            "id",
+            "store"
+          ],
+          "calls": [
+            [
+              "library",
+              "Connection",
+              "%instInit()"
+            ]
+          ],
+          "kind": "constructor",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "id",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "store",
+              "type": "relationalStore.RdbStore",
+              "resolved_type": "relationalStore.RdbStore",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "58-70:create": {
+          "start": 58,
+          "end": 70,
+          "body": [
+            "  static async create(config: relationalStore.StoreConfig): Promise<Connection> {\n",
+            "    return new Promise((resolve, reject) => {\n",
+            "      relationalStore.getRdbStore(Connection.context, config)\n",
+            "        .then(store => {\n",
+            "          const db = new Connection(util.generateRandomUUID(), store)\n",
+            "          Connection.logger?.info(`connection create ${db.id}`)\n",
+            "          resolve(db)\n",
+            "        })\n",
+            "        .catch(() => {\n",
+            "          reject()\n",
+            "        })\n",
+            "    })\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "static",
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<Connection>",
+              "Promise"
+            ]
+          ],
+          "signature": "create(relationalStore.StoreConfig)",
+          "parameters": [
+            "config"
+          ],
+          "calls": [
+            [
+              "library",
+              "Promise",
+              "constructor()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "config",
+              "type": "relationalStore.StoreConfig",
+              "resolved_type": "relationalStore.StoreConfig",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "75-83:execDML": {
+          "start": 75,
+          "end": 83,
+          "body": [
+            "  async execDML(sql: string, params: Array<relationalStore.ValueType> = []): Promise<relationalStore.ValueType> {\n",
+            "    try {\n",
+            "      Connection.logger?.info('execDML:', sql, JSON.stringify(params))\n",
+            "      return this.store.execute(sql, params)\n",
+            "    } catch (e) {\n",
+            "      Connection.logger?.error('execDML', e.message, e.code, JSON.stringify(e))\n",
+            "      throw new Error('execDML 执行失败')\n",
+            "    }\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<relationalStore.ValueType>",
+              "Promise"
+            ]
+          ],
+          "signature": "execDML(string, Array<relationalStore.ValueType>)",
+          "parameters": [
+            "sql",
+            "params"
+          ],
+          "calls": [
+            [
+              "library",
+              "ErrorConstructor",
+              "construct-signature(string)"
+            ],
+            [
+              "rdbplus.src.main.ets.log.Logger",
+              "Logger",
+              "12-12:error"
+            ],
+            [
+              "library",
+              "",
+              "execute()"
+            ],
+            [
+              "rdbplus.src.main.ets.log.Logger",
+              "Logger",
+              "8-8:info"
+            ],
+            [
+              "library",
+              "JSON",
+              "stringify(any, Function, string\\u007cnumber)"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "sql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "params",
+              "type": "Array<relationalStore.ValueType>",
+              "resolved_type": "relationalStore.ValueType[]",
+              "optional": true,
+              "rest": false,
+              "default": "[]"
+            }
+          ]
+        },
+        "88-96:execDQL": {
+          "start": 88,
+          "end": 96,
+          "body": [
+            "  async execDQL(sql: string, params: Array<relationalStore.ValueType> = []): Promise<relationalStore.ResultSet> {\n",
+            "    try {\n",
+            "      Connection.logger?.info('execDQL:', sql, JSON.stringify(params))\n",
+            "      return this.store.querySql(sql, params)\n",
+            "    } catch (e) {\n",
+            "      Connection.logger?.error('execDQL', e.message, e.code, JSON.stringify(e))\n",
+            "      throw new Error('execDQL 执行失败')\n",
+            "    }\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<relationalStore.ResultSet>",
+              "Promise"
+            ]
+          ],
+          "signature": "execDQL(string, Array<relationalStore.ValueType>)",
+          "parameters": [
+            "sql",
+            "params"
+          ],
+          "calls": [
+            [
+              "library",
+              "ErrorConstructor",
+              "construct-signature(string)"
+            ],
+            [
+              "rdbplus.src.main.ets.log.Logger",
+              "Logger",
+              "12-12:error"
+            ],
+            [
+              "rdbplus.src.main.ets.log.Logger",
+              "Logger",
+              "8-8:info"
+            ],
+            [
+              "library",
+              "",
+              "querySql()"
+            ],
+            [
+              "library",
+              "JSON",
+              "stringify(any, Function, string\\u007cnumber)"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "sql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "params",
+              "type": "Array<relationalStore.ValueType>",
+              "resolved_type": "relationalStore.ValueType[]",
+              "optional": true,
+              "rest": false,
+              "default": "[]"
+            }
+          ]
+        },
+        "101-104:beginTransaction": {
+          "start": 101,
+          "end": 104,
+          "body": [
+            "  beginTransaction(): void {\n",
+            "    Connection.logger?.info('transaction begin ', this.id)\n",
+            "    this.store.beginTransaction()\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "void",
+              "void"
+            ]
+          ],
+          "signature": "beginTransaction()",
+          "parameters": [],
+          "calls": [
+            [
+              "library",
+              "",
+              "beginTransaction()"
+            ],
+            [
+              "rdbplus.src.main.ets.log.Logger",
+              "Logger",
+              "8-8:info"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": []
+        },
+        "109-112:commit": {
+          "start": 109,
+          "end": 112,
+          "body": [
+            "  commit(): void {\n",
+            "    Connection.logger?.info('transaction commit ', this.id)\n",
+            "    this.store.commit()\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "void",
+              "void"
+            ]
+          ],
+          "signature": "commit()",
+          "parameters": [],
+          "calls": [
+            [
+              "library",
+              "",
+              "commit()"
+            ],
+            [
+              "rdbplus.src.main.ets.log.Logger",
+              "Logger",
+              "8-8:info"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": []
+        },
+        "117-120:rollBack": {
+          "start": 117,
+          "end": 120,
+          "body": [
+            "  rollBack(): void {\n",
+            "    Connection.logger?.info('transaction rollBack ', this.id)\n",
+            "    this.store.rollBack()\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "void",
+              "void"
+            ]
+          ],
+          "signature": "rollBack()",
+          "parameters": [],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.log.Logger",
+              "Logger",
+              "8-8:info"
+            ],
+            [
+              "library",
+              "",
+              "rollBack()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": []
+        },
+        "125-128:close": {
+          "start": 125,
+          "end": 128,
+          "body": [
+            "  async close(): Promise<void> {\n",
+            "    Connection.logger?.info('connection close ', this.id)\n",
+            "    this.store.close()\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<void>",
+              "Promise"
+            ]
+          ],
+          "signature": "close()",
+          "parameters": [],
+          "calls": [
+            [
+              "library",
+              "",
+              "close()"
+            ],
+            [
+              "rdbplus.src.main.ets.log.Logger",
+              "Logger",
+              "8-8:info"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": []
+        },
+        "133-136:backup": {
+          "start": 133,
+          "end": 136,
+          "body": [
+            "  async backup(fileName: string = 'Backup.db'): Promise<void> {\n",
+            "    this.store.backup(fileName)\n",
+            "    Connection.logger?.info('backup success')\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<void>",
+              "Promise"
+            ]
+          ],
+          "signature": "backup(string)",
+          "parameters": [
+            "fileName"
+          ],
+          "calls": [
+            [
+              "library",
+              "",
+              "backup()"
+            ],
+            [
+              "rdbplus.src.main.ets.log.Logger",
+              "Logger",
+              "8-8:info"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "fileName",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": true,
+              "rest": false,
+              "default": "'Backup.db'"
+            }
+          ]
+        },
+        "141-144:restore": {
+          "start": 141,
+          "end": 144,
+          "body": [
+            "  async restore(fileName: string = 'Backup.db'): Promise<void> {\n",
+            "    this.store.restore(fileName)\n",
+            "    Connection.logger?.info('restore success')\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<void>",
+              "Promise"
+            ]
+          ],
+          "signature": "restore(string)",
+          "parameters": [
+            "fileName"
+          ],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.log.Logger",
+              "Logger",
+              "8-8:info"
+            ],
+            [
+              "library",
+              "",
+              "restore()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "fileName",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": true,
+              "rest": false,
+              "default": "'Backup.db'"
+            }
+          ]
+        }
+      },
+      "fields": {
+        "id": {
+          "start": 9,
+          "end": 9,
+          "body": [
+            "  private id: string\n"
+          ],
+          "modifiers": [
+            "private"
+          ],
+          "types": [
+            [
+              "string",
+              "string"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "store": {
+          "start": 10,
+          "end": 10,
+          "body": [
+            "  private store: relationalStore.RdbStore\n"
+          ],
+          "modifiers": [
+            "private"
+          ],
+          "types": [
+            [
+              "relationalStore.RdbStore",
+              "relationalStore.RdbStore"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "context": {
+          "start": 11,
+          "end": 11,
+          "body": [
+            "  private static context?: Context = undefined\n"
+          ],
+          "modifiers": [
+            "private",
+            "static"
+          ],
+          "types": [
+            [
+              "Context",
+              "Context"
+            ]
+          ],
+          "kind": "field",
+          "optional": true,
+          "definite": false,
+          "initializer": "undefined",
+          "annotations": []
+        },
+        "logger": {
+          "start": 12,
+          "end": 12,
+          "body": [
+            "  private static logger?: Logger = undefined\n"
+          ],
+          "modifiers": [
+            "private",
+            "static"
+          ],
+          "types": [
+            [
+              "Logger",
+              "Logger"
+            ]
+          ],
+          "kind": "field",
+          "optional": true,
+          "definite": false,
+          "initializer": "undefined",
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "class",
+      "type_parameters": [],
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "Connection",
+      "kind": "class",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

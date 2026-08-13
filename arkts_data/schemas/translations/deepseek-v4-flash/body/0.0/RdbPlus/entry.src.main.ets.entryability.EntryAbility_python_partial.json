@@ -1,0 +1,204 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/entryability/EntryAbility.ets",
+    "imports": {
+        "1-1:@kit.AbilityKit": {
+            "start": 1,
+            "end": 1,
+            "body": [
+                "import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';\n"
+            ],
+            "module": "@kit.AbilityKit",
+            "side_effect_only": false
+        },
+        "2-2:@kit.ArkUI": {
+            "start": 2,
+            "end": 2,
+            "body": [
+                "import { window } from '@kit.ArkUI';\n"
+            ],
+            "module": "@kit.ArkUI",
+            "side_effect_only": false
+        },
+        "3-3:rdbplus": {
+            "start": 3,
+            "end": 3,
+            "body": [
+                "import { Connection, DbLogger } from 'rdbplus';\n"
+            ],
+            "module": "rdbplus",
+            "side_effect_only": false
+        }
+    },
+    "classes": {
+        "EntryAbility": {
+            "start": 5,
+            "end": 15,
+            "is_abstract": false,
+            "is_interface": false,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [],
+            "extends": [
+                "UIAbility"
+            ],
+            "methods": {
+                "6-8:onCreate": {
+                    "start": 6,
+                    "end": 8,
+                    "body": [
+                        "  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {\n",
+                        "    Connection.init(this.context, new DbLogger())\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "void"
+                        ]
+                    ],
+                    "signature": "onCreate(Want, AbilityConstant.LaunchParam)",
+                    "parameters": [
+                        "want",
+                        "launchParam"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "DbLogger",
+                            "constructor()"
+                        ],
+                        [
+                            "rdbplus.src.main.ets.core.Connection",
+                            "Connection",
+                            "41-48:init"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "want",
+                            "type": "Want",
+                            "resolved_type": "Want",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        },
+                        {
+                            "name": "launchParam",
+                            "type": "AbilityConstant.LaunchParam",
+                            "resolved_type": "AbilityConstant.LaunchParam",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    def onCreate(self, want: dict[str, Any], launchParam: AbilityConstant.LaunchParam) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def onCreate(self, want: dict[str, Any], launchParam: AbilityConstant.LaunchParam) -> None:",
+                        "            Connection.init(self.context, DbLogger())"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 6.898532867431641,
+                    "generation_timestamp": "2026-08-11T23:36:46.463556",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "10-14:onWindowStageCreate": {
+                    "start": 10,
+                    "end": 14,
+                    "body": [
+                        "  onWindowStageCreate(windowStage: window.WindowStage) {\n",
+                        "    windowStage.loadContent('pages/Index', (err) => {\n",
+                        "\n",
+                        "    });\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "unknown",
+                            "void"
+                        ]
+                    ],
+                    "signature": "onWindowStageCreate(window.WindowStage)",
+                    "parameters": [
+                        "windowStage"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "",
+                            "loadContent()"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "windowStage",
+                            "type": "window.WindowStage",
+                            "resolved_type": "window.WindowStage",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    def onWindowStageCreate(self, windowStage: window.WindowStage) -> Any:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def onWindowStageCreate(self, windowStage: window.WindowStage) -> Any:",
+                        "        windowStage.loadContent('pages/Index', lambda err: None)"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 8.750198364257812,
+                    "generation_timestamp": "2026-08-11T23:36:08.032828",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "fields": {},
+            "static_initializers": {},
+            "kind": "class",
+            "type_parameters": [],
+            "annotations": [],
+            "modifiers": [
+                "export",
+                "default"
+            ],
+            "python_class_declaration": "class EntryAbility:\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "EntryAbility",
+            "kind": "class",
+            "default": true
+        }
+    ],
+    "functions": {},
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

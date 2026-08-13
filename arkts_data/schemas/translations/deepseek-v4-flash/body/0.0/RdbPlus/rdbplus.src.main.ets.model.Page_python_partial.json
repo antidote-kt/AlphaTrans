@@ -1,0 +1,268 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/Page.ets",
+    "imports": {},
+    "classes": {
+        "Page": {
+            "start": 1,
+            "end": 13,
+            "is_abstract": false,
+            "is_interface": false,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [],
+            "extends": [],
+            "methods": {
+                "7-12:constructor": {
+                    "start": 7,
+                    "end": 12,
+                    "body": [
+                        "  constructor(total: number, current: number, size: number, record: T[]) {\n",
+                        "    this.total = total\n",
+                        "    this.current = current\n",
+                        "    this.size = size\n",
+                        "    this.record = record\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": true,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "Page"
+                        ]
+                    ],
+                    "signature": "constructor(number, number, number, T[])",
+                    "parameters": [
+                        "total",
+                        "current",
+                        "size",
+                        "record"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "Page",
+                            "%instInit()"
+                        ]
+                    ],
+                    "kind": "constructor",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "total",
+                            "type": "number",
+                            "resolved_type": "number",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        },
+                        {
+                            "name": "current",
+                            "type": "number",
+                            "resolved_type": "number",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        },
+                        {
+                            "name": "size",
+                            "type": "number",
+                            "resolved_type": "number",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        },
+                        {
+                            "name": "record",
+                            "type": "T[]",
+                            "resolved_type": "T[]",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    def __init__(self, total: float, current: float, size: float, record: list[T]) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def __init__(self, total: float, current: float, size: float, record: list[T]) -> None:",
+                        "        self.total = total",
+                        "        self.current = current",
+                        "        self.size = size",
+                        "        self.record = record"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 5.575238466262817,
+                    "generation_timestamp": "2026-08-11T23:49:22.919444",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "fields": {
+                "total": {
+                    "start": 2,
+                    "end": 2,
+                    "body": [
+                        "  total: number = 0\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "number",
+                            "number"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": "0",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    total: float = None\n"
+                    ],
+                    "translation": [
+                        "    total: float = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 15.558454275131226,
+                    "generation_timestamp": "2026-08-11T23:34:48.394107",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "current": {
+                    "start": 3,
+                    "end": 3,
+                    "body": [
+                        "  current: number = 1\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "number",
+                            "number"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": "1",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    current: float = None\n"
+                    ],
+                    "translation": [
+                        "    current: float = 1"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 7.100141525268555,
+                    "generation_timestamp": "2026-08-11T23:34:55.497888",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "size": {
+                    "start": 4,
+                    "end": 4,
+                    "body": [
+                        "  size: number = 10\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "number",
+                            "number"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": "10",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    size: float = None\n"
+                    ],
+                    "translation": [
+                        "    size: float = 10"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 6.058294057846069,
+                    "generation_timestamp": "2026-08-11T23:35:01.560360",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "record": {
+                    "start": 5,
+                    "end": 5,
+                    "body": [
+                        "  record: T[] = []\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "T[]",
+                            "T[]"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": "[]",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    record: list[T] = None\n"
+                    ],
+                    "translation": [
+                        "    record: list[T] = []"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 16.67388892173767,
+                    "generation_timestamp": "2026-08-11T23:35:18.237915",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "static_initializers": {},
+            "kind": "class",
+            "type_parameters": [
+                "T"
+            ],
+            "annotations": [],
+            "modifiers": [
+                "export"
+            ],
+            "python_class_declaration": "class Page:\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "Page",
+            "kind": "class",
+            "default": false
+        }
+    ],
+    "functions": {},
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

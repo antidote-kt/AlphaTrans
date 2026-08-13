@@ -1,0 +1,116 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/DecoratorUtils.ts",
+  "imports": {
+    "1-1:../model/TableFieldParams": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { TableFieldParams } from \"../model/TableFieldParams\";\n"
+      ],
+      "module": "../model/TableFieldParams",
+      "side_effect_only": false
+    }
+  },
+  "classes": {},
+  "exports": [
+    {
+      "name": "getEntityMeta",
+      "kind": "function",
+      "default": false
+    },
+    {
+      "name": "getColumnMeta",
+      "kind": "function",
+      "default": false
+    }
+  ],
+  "functions": {
+    "8-10:getEntityMeta": {
+      "start": 8,
+      "end": 10,
+      "body": [
+        "export function getEntityMeta(Type: Class): string {\n",
+        "  return (Type as any).__tableMeta__.tableName ?? '';\n",
+        "}\n"
+      ],
+      "is_constructor": false,
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ],
+      "return_types": [
+        [
+          "string",
+          "string"
+        ]
+      ],
+      "signature": "getEntityMeta(Class)",
+      "parameters": [
+        "Type"
+      ],
+      "calls": [],
+      "kind": "function",
+      "type_parameters": [],
+      "parameter_details": [
+        {
+          "name": "Type",
+          "type": "Class",
+          "resolved_type": "Class",
+          "optional": false,
+          "rest": false,
+          "default": null
+        }
+      ]
+    },
+    "15-17:getColumnMeta": {
+      "start": 15,
+      "end": 17,
+      "body": [
+        "export function getColumnMeta(Type: Class): TableFieldParams[] {\n",
+        "  return (Type as any).__tableFieldMeta__ ?? [];\n",
+        "}"
+      ],
+      "is_constructor": false,
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ],
+      "return_types": [
+        [
+          "TableFieldParams[]",
+          "TableFieldParams[]"
+        ]
+      ],
+      "signature": "getColumnMeta(Class)",
+      "parameters": [
+        "Type"
+      ],
+      "calls": [],
+      "kind": "function",
+      "type_parameters": [],
+      "parameter_details": [
+        {
+          "name": "Type",
+          "type": "Class",
+          "resolved_type": "Class",
+          "optional": false,
+          "rest": false,
+          "default": null
+        }
+      ]
+    }
+  },
+  "variables": {},
+  "type_aliases": {
+    "Class": {
+      "start": 3,
+      "end": 3,
+      "body": [
+        "type Class = new (...args: any[]) => any;\n"
+      ],
+      "type": "new (...args: any[]) => any",
+      "modifiers": [],
+      "type_parameters": []
+    }
+  }
+}

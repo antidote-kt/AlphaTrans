@@ -1,0 +1,258 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+  "imports": {
+    "8-8:@ohos.promptAction": {
+      "start": 8,
+      "end": 8,
+      "body": [
+        "import promptAction from '@ohos.promptAction'\n"
+      ],
+      "module": "@ohos.promptAction",
+      "side_effect_only": false
+    }
+  },
+  "classes": {},
+  "exports": [
+    {
+      "name": "showToast",
+      "kind": "function",
+      "default": false
+    },
+    {
+      "name": "showDialog",
+      "kind": "function",
+      "default": false
+    },
+    {
+      "name": "alertDialog",
+      "kind": "function",
+      "default": false
+    }
+  ],
+  "functions": {
+    "15-20:showToast": {
+      "start": 15,
+      "end": 20,
+      "body": [
+        "export function showToast(message: string, time: number = 3000) {\n",
+        "  promptAction.showToast({\n",
+        "    message,\n",
+        "    duration: time\n",
+        "  })\n",
+        "}\n"
+      ],
+      "is_constructor": false,
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ],
+      "return_types": [
+        [
+          "unknown",
+          "void"
+        ]
+      ],
+      "signature": "showToast(string, number)",
+      "parameters": [
+        "message",
+        "time"
+      ],
+      "calls": [
+        [
+          "library",
+          "%AC0$%dflt-showToast",
+          "constructor()"
+        ],
+        [
+          "library",
+          "",
+          "showToast()"
+        ]
+      ],
+      "kind": "function",
+      "type_parameters": [],
+      "parameter_details": [
+        {
+          "name": "message",
+          "type": "string",
+          "resolved_type": "string",
+          "optional": false,
+          "rest": false,
+          "default": null
+        },
+        {
+          "name": "time",
+          "type": "number",
+          "resolved_type": "number",
+          "optional": true,
+          "rest": false,
+          "default": "3000"
+        }
+      ]
+    },
+    "22-31:showDialog": {
+      "start": 22,
+      "end": 31,
+      "body": [
+        "export function showDialog(msg: string, title: string = '系统提示', callBack = () => {\n",
+        "}) {\n",
+        "  promptAction.showDialog({\n",
+        "    title: title,\n",
+        "    message: msg\n",
+        "  })\n",
+        "  //弹窗没有按钮，确定对应then，取消或外部点击对应的catch\n",
+        "  //委托：将一个函数，作为参数，交付给另一个函数去执行\n",
+        "    .catch(callBack)\n",
+        "}\n"
+      ],
+      "is_constructor": false,
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ],
+      "return_types": [
+        [
+          "unknown",
+          "void"
+        ]
+      ],
+      "signature": "showDialog(string, string, unknown)",
+      "parameters": [
+        "msg",
+        "title",
+        "callBack"
+      ],
+      "calls": [
+        [
+          "library",
+          "",
+          "catch()"
+        ],
+        [
+          "library",
+          "%AC1$%dflt-showDialog",
+          "constructor()"
+        ],
+        [
+          "library",
+          "",
+          "showDialog()"
+        ]
+      ],
+      "kind": "function",
+      "type_parameters": [],
+      "parameter_details": [
+        {
+          "name": "msg",
+          "type": "string",
+          "resolved_type": "string",
+          "optional": false,
+          "rest": false,
+          "default": null
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "resolved_type": "string",
+          "optional": true,
+          "rest": false,
+          "default": "'系统提示'"
+        },
+        {
+          "name": "callBack",
+          "type": "unknown",
+          "resolved_type": "unknown",
+          "optional": true,
+          "rest": false,
+          "default": "() => {\n}"
+        }
+      ]
+    },
+    "35-45:alertDialog": {
+      "start": 35,
+      "end": 45,
+      "body": [
+        "export function alertDialog(msg: string, submit: () => void, title: string = '系统提示') {\n",
+        "  AlertDialog.show({\n",
+        "    title,\n",
+        "    message: msg,\n",
+        "    secondaryButton: {\n",
+        "      value: '取消', action: () => {\n",
+        "      }\n",
+        "    },\n",
+        "    primaryButton: { value: '确定', action: () => submit() }\n",
+        "  })\n",
+        "}\n"
+      ],
+      "is_constructor": false,
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ],
+      "return_types": [
+        [
+          "unknown",
+          "void"
+        ]
+      ],
+      "signature": "alertDialog(string, () => void, string)",
+      "parameters": [
+        "msg",
+        "submit",
+        "title"
+      ],
+      "calls": [
+        [
+          "library",
+          "%AC2$%dflt-alertDialog",
+          "constructor()"
+        ],
+        [
+          "library",
+          "%AC3$%dflt-alertDialog",
+          "constructor()"
+        ],
+        [
+          "library",
+          "%AC4$%dflt-alertDialog",
+          "constructor()"
+        ],
+        [
+          "library",
+          "",
+          "show()"
+        ]
+      ],
+      "kind": "function",
+      "type_parameters": [],
+      "parameter_details": [
+        {
+          "name": "msg",
+          "type": "string",
+          "resolved_type": "string",
+          "optional": false,
+          "rest": false,
+          "default": null
+        },
+        {
+          "name": "submit",
+          "type": "() => void",
+          "resolved_type": "Function",
+          "optional": false,
+          "rest": false,
+          "default": null
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "resolved_type": "string",
+          "optional": true,
+          "rest": false,
+          "default": "'系统提示'"
+        }
+      ]
+    }
+  },
+  "variables": {},
+  "type_aliases": {}
+}

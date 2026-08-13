@@ -1,0 +1,1834 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+  "imports": {
+    "1-1:@kit.ArkData": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { relationalStore } from \"@kit.ArkData\";\n"
+      ],
+      "module": "@kit.ArkData",
+      "side_effect_only": false
+    },
+    "2-2:./core/Connection": {
+      "start": 2,
+      "end": 2,
+      "body": [
+        "import { Connection } from \"./core/Connection\";\n"
+      ],
+      "module": "./core/Connection",
+      "side_effect_only": false
+    },
+    "3-3:./core/Wrapper": {
+      "start": 3,
+      "end": 3,
+      "body": [
+        "import { Wrapper } from \"./core/Wrapper\";\n"
+      ],
+      "module": "./core/Wrapper",
+      "side_effect_only": false
+    },
+    "4-4:./model/Page": {
+      "start": 4,
+      "end": 4,
+      "body": [
+        "import { Page } from \"./model/Page\";\n"
+      ],
+      "module": "./model/Page",
+      "side_effect_only": false
+    },
+    "5-5:./model/BuildParams": {
+      "start": 5,
+      "end": 5,
+      "body": [
+        "import { BuildParams } from \"./model/BuildParams\";\n"
+      ],
+      "module": "./model/BuildParams",
+      "side_effect_only": false
+    },
+    "6-6:./core/DecoratorUtils": {
+      "start": 6,
+      "end": 6,
+      "body": [
+        "import { getColumnMeta, getEntityMeta } from \"./core/DecoratorUtils\";\n"
+      ],
+      "module": "./core/DecoratorUtils",
+      "side_effect_only": false
+    },
+    "7-7:./core/SqlUtils": {
+      "start": 7,
+      "end": 7,
+      "body": [
+        "import { SqlUtils } from \"./core/SqlUtils\";\n"
+      ],
+      "module": "./core/SqlUtils",
+      "side_effect_only": false
+    },
+    "8-8:./core/MyWrapper": {
+      "start": 8,
+      "end": 8,
+      "body": [
+        "import { MyWrapper } from \"./core/MyWrapper\";\n"
+      ],
+      "module": "./core/MyWrapper",
+      "side_effect_only": false
+    }
+  },
+  "classes": {
+    "BaseMapper": {
+      "start": 10,
+      "end": 392,
+      "is_abstract": false,
+      "is_interface": false,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {
+        "15-40:build": {
+          "start": 15,
+          "end": 40,
+          "body": [
+            "  public static build<T>(param: BuildParams<T>): BaseMapper<T> {\n",
+            "    let tableName = getEntityMeta(param.class)\n",
+            "    let columnsMeta = getColumnMeta(param.class)\n",
+            "    // 校验参数\n",
+            "    if (tableName && columnsMeta.length > 0) {\n",
+            "    } else {\n",
+            "      console.error('rdb BaseMapper build 失败，实体类缺少装饰器')\n",
+            "      throw new Error('实体类缺少装饰器')\n",
+            "    }\n",
+            "    //-------\n",
+            "    let getRow: (res: relationalStore.ResultSet) => T = (res: relationalStore.ResultSet) => {\n",
+            "      let obj = new param.class()\n",
+            "      let result: ESObject = obj\n",
+            "      for (let i = 0; i < columnsMeta.length; i++) {\n",
+            "        let name = columnsMeta[i].name ?? ''\n",
+            "        let propertyKey = columnsMeta[i].propertyKey ?? ''\n",
+            "        let order = res.getColumnIndex(name)\n",
+            "        if (order !== -1) {\n",
+            "          result[propertyKey] = res.getValue(order)\n",
+            "        }\n",
+            "      }\n",
+            "      return result as T\n",
+            "    }\n",
+            "    let sqlUtil = new SqlUtils<T>(tableName, columnsMeta)\n",
+            "    return new BaseMapper(param.config, sqlUtil, getRow)\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "public",
+            "static"
+          ],
+          "return_types": [
+            [
+              "BaseMapper<T>",
+              "BaseMapper"
+            ]
+          ],
+          "signature": "build(BuildParams<T>)",
+          "parameters": [
+            "param"
+          ],
+          "calls": [
+            [
+              "library",
+              "ErrorConstructor",
+              "construct-signature(string)"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "42-47:constructor"
+            ],
+            [
+              "rdbplus.src.main.ets.core.SqlUtils",
+              "SqlUtils",
+              "22-36:constructor"
+            ],
+            [
+              "library",
+              "",
+              "error()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.DecoratorUtils",
+              "<module>",
+              "15-17:getColumnMeta"
+            ],
+            [
+              "rdbplus.src.main.ets.core.DecoratorUtils",
+              "<module>",
+              "8-10:getEntityMeta"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [
+            "T"
+          ],
+          "parameter_details": [
+            {
+              "name": "param",
+              "type": "BuildParams<T>",
+              "resolved_type": "BuildParams",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "42-47:constructor": {
+          "start": 42,
+          "end": 47,
+          "body": [
+            "  private constructor(config: relationalStore.StoreConfig, sqlUtils: SqlUtils<T>,\n",
+            "    getRow: (res: relationalStore.ResultSet) => T) {\n",
+            "    this.config = config;\n",
+            "    this.sqlUtils = sqlUtils;\n",
+            "    this.getRow = getRow;\n",
+            "  }\n"
+          ],
+          "is_constructor": true,
+          "annotations": [],
+          "modifiers": [
+            "private"
+          ],
+          "return_types": [
+            [
+              "void",
+              "BaseMapper"
+            ]
+          ],
+          "signature": "constructor(relationalStore.StoreConfig, SqlUtils<T>, (res: relationalStore.ResultSet) => T)",
+          "parameters": [
+            "config",
+            "sqlUtils",
+            "getRow"
+          ],
+          "calls": [
+            [
+              "library",
+              "BaseMapper",
+              "%instInit()"
+            ]
+          ],
+          "kind": "constructor",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "config",
+              "type": "relationalStore.StoreConfig",
+              "resolved_type": "relationalStore.StoreConfig",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "sqlUtils",
+              "type": "SqlUtils<T>",
+              "resolved_type": "SqlUtils",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "getRow",
+              "type": "(res: relationalStore.ResultSet) => T",
+              "resolved_type": "Function",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "52-54:getConnection": {
+          "start": 52,
+          "end": 54,
+          "body": [
+            "  async getConnection(): Promise<Connection> {\n",
+            "    return Connection.create(this.config)\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<Connection>",
+              "Promise"
+            ]
+          ],
+          "signature": "getConnection()",
+          "parameters": [],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "58-70:create"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": []
+        },
+        "61-80:count": {
+          "start": 61,
+          "end": 80,
+          "body": [
+            "  async count(wrapper: Wrapper = new Wrapper(), db?: Connection): Promise<number> {\n",
+            "    let isClose: boolean = true\n",
+            "    if (db === undefined) {\n",
+            "      db = await this.getConnection()\n",
+            "    } else {\n",
+            "      isClose = false\n",
+            "    }\n",
+            "    let myWrapper = MyWrapper.build(wrapper)\n",
+            "    const sql = this.sqlUtils.count(myWrapper.getWhere(),\n",
+            "      myWrapper.getGroup(),\n",
+            "      myWrapper.getOrder())\n",
+            "    const res: relationalStore.ResultSet = await db.execDQL(sql, myWrapper.getValue())\n",
+            "    res.goToFirstRow()\n",
+            "    const count: number = res.getLong(0)\n",
+            "    res.close()\n",
+            "    if (isClose) {\n",
+            "      await db.close()\n",
+            "    }\n",
+            "    return count\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<number>",
+              "Promise"
+            ]
+          ],
+          "signature": "count(Wrapper, Connection)",
+          "parameters": [
+            "wrapper",
+            "db"
+          ],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "9-21:build"
+            ],
+            [
+              "library",
+              "",
+              "close()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Wrapper",
+              "Wrapper",
+              "16-17:constructor"
+            ],
+            [
+              "rdbplus.src.main.ets.core.SqlUtils",
+              "SqlUtils",
+              "48-51:count"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "88-96:execDQL"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "59-69:getGroup"
+            ],
+            [
+              "library",
+              "",
+              "getLong()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "48-54:getOrder"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "41-43:getValue"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "33-36:getWhere"
+            ],
+            [
+              "library",
+              "",
+              "goToFirstRow()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "wrapper",
+              "type": "Wrapper",
+              "resolved_type": "Wrapper",
+              "optional": true,
+              "rest": false,
+              "default": "new Wrapper()"
+            },
+            {
+              "name": "db",
+              "type": "Connection",
+              "resolved_type": "Connection",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "87-116:getObject": {
+          "start": 87,
+          "end": 116,
+          "body": [
+            "  async getObject(wrapper: Wrapper = new Wrapper(), db?: Connection): Promise<ESObject[]> {\n",
+            "    let isClose: boolean = true\n",
+            "    if (db === undefined) {\n",
+            "      db = await this.getConnection()\n",
+            "    } else {\n",
+            "      isClose = false\n",
+            "    }\n",
+            "    let myWrapper = MyWrapper.build(wrapper)\n",
+            "    const sql = this.sqlUtils.list(myWrapper.getSelect(),\n",
+            "      myWrapper.getWhere(),\n",
+            "      myWrapper.getGroup(),\n",
+            "      myWrapper.getOrder())\n",
+            "    const res: relationalStore.ResultSet = await db.execDQL(\n",
+            "      sql, myWrapper.getValue()\n",
+            "    )\n",
+            "    const columnNames: Array<string> = res.columnNames\n",
+            "    const list: ESObject[] = []\n",
+            "    while (res.goToNextRow()) {\n",
+            "      let obj: ESObject = {}\n",
+            "      columnNames.forEach((name) => {\n",
+            "        obj[name] = res.getValue(res.getColumnIndex(name))\n",
+            "      })\n",
+            "      list.push(obj)\n",
+            "    }\n",
+            "    res.close()\n",
+            "    if (isClose) {\n",
+            "      await db.close()\n",
+            "    }\n",
+            "    return list\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<ESObject[]>",
+              "Promise"
+            ]
+          ],
+          "signature": "getObject(Wrapper, Connection)",
+          "parameters": [
+            "wrapper",
+            "db"
+          ],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "9-21:build"
+            ],
+            [
+              "library",
+              "",
+              "close()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "library",
+              "%AC0$BaseMapper-getObject",
+              "constructor()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Wrapper",
+              "Wrapper",
+              "16-17:constructor"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "88-96:execDQL"
+            ],
+            [
+              "library",
+              "Array",
+              "forEach(Function, any)"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "59-69:getGroup"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "48-54:getOrder"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "26-28:getSelect"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "41-43:getValue"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "33-36:getWhere"
+            ],
+            [
+              "library",
+              "",
+              "goToNextRow()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.SqlUtils",
+              "SqlUtils",
+              "38-41:list"
+            ],
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "wrapper",
+              "type": "Wrapper",
+              "resolved_type": "Wrapper",
+              "optional": true,
+              "rest": false,
+              "default": "new Wrapper()"
+            },
+            {
+              "name": "db",
+              "type": "Connection",
+              "resolved_type": "Connection",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "124-146:getObjectBySql": {
+          "start": 124,
+          "end": 146,
+          "body": [
+            "  async getObjectBySql(sql: string, params: relationalStore.ValueType[], db?: Connection): Promise<ESObject[]> {\n",
+            "    let isClose: boolean = true\n",
+            "    if (db === undefined) {\n",
+            "      db = await this.getConnection()\n",
+            "    } else {\n",
+            "      isClose = false\n",
+            "    }\n",
+            "    const res: relationalStore.ResultSet = await db.execDQL(sql, params)\n",
+            "    const columnNames: Array<string> = res.columnNames\n",
+            "    const list: ESObject[] = []\n",
+            "    while (res.goToNextRow()) {\n",
+            "      let obj: ESObject = {}\n",
+            "      columnNames.forEach((name) => {\n",
+            "        obj[name] = res.getValue(res.getColumnIndex(name))\n",
+            "      })\n",
+            "      list.push(obj)\n",
+            "    }\n",
+            "    res.close()\n",
+            "    if (isClose) {\n",
+            "      await db.close()\n",
+            "    }\n",
+            "    return list\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<ESObject[]>",
+              "Promise"
+            ]
+          ],
+          "signature": "getObjectBySql(string, relationalStore.ValueType[], Connection)",
+          "parameters": [
+            "sql",
+            "params",
+            "db"
+          ],
+          "calls": [
+            [
+              "library",
+              "",
+              "close()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "library",
+              "%AC1$BaseMapper-getObjectBySql",
+              "constructor()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "88-96:execDQL"
+            ],
+            [
+              "library",
+              "Array",
+              "forEach(Function, any)"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ],
+            [
+              "library",
+              "",
+              "goToNextRow()"
+            ],
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "sql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "params",
+              "type": "relationalStore.ValueType[]",
+              "resolved_type": "relationalStore.ValueType[]",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "db",
+              "type": "Connection",
+              "resolved_type": "Connection",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "153-178:getList": {
+          "start": 153,
+          "end": 178,
+          "body": [
+            "  async getList(wrapper: Wrapper = new Wrapper(), db?: Connection): Promise<T[]> {\n",
+            "    let isClose: boolean = true\n",
+            "    if (db === undefined) {\n",
+            "      db = await this.getConnection()\n",
+            "    } else {\n",
+            "      isClose = false\n",
+            "    }\n",
+            "    let myWrapper = MyWrapper.build(wrapper)\n",
+            "    const sql = this.sqlUtils.list(myWrapper.getSelect(),\n",
+            "      myWrapper.getWhere(),\n",
+            "      myWrapper.getGroup(),\n",
+            "      myWrapper.getOrder())\n",
+            "    const res: relationalStore.ResultSet = await db.execDQL(\n",
+            "      sql, myWrapper.getValue()\n",
+            "    )\n",
+            "    const list: T[] = []\n",
+            "    while (res.goToNextRow()) {\n",
+            "      let obj: T = this.getRow(res)\n",
+            "      list.push(obj)\n",
+            "    }\n",
+            "    res.close()\n",
+            "    if (isClose) {\n",
+            "      await db.close()\n",
+            "    }\n",
+            "    return list\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<T[]>",
+              "Promise"
+            ]
+          ],
+          "signature": "getList(Wrapper, Connection)",
+          "parameters": [
+            "wrapper",
+            "db"
+          ],
+          "calls": [
+            [
+              "library",
+              "BaseMapper",
+              "%AM0(relationalStore.ResultSet)"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "9-21:build"
+            ],
+            [
+              "library",
+              "",
+              "close()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Wrapper",
+              "Wrapper",
+              "16-17:constructor"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "88-96:execDQL"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "59-69:getGroup"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "48-54:getOrder"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "26-28:getSelect"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "41-43:getValue"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "33-36:getWhere"
+            ],
+            [
+              "library",
+              "",
+              "goToNextRow()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.SqlUtils",
+              "SqlUtils",
+              "38-41:list"
+            ],
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "wrapper",
+              "type": "Wrapper",
+              "resolved_type": "Wrapper",
+              "optional": true,
+              "rest": false,
+              "default": "new Wrapper()"
+            },
+            {
+              "name": "db",
+              "type": "Connection",
+              "resolved_type": "Connection",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "185-209:getOne": {
+          "start": 185,
+          "end": 209,
+          "body": [
+            "  async getOne(wrapper: Wrapper = new Wrapper(), db?: Connection): Promise<T | undefined> {\n",
+            "    let isClose: boolean = true\n",
+            "    if (db === undefined) {\n",
+            "      db = await this.getConnection()\n",
+            "    } else {\n",
+            "      isClose = false\n",
+            "    }\n",
+            "    let myWrapper = MyWrapper.build(wrapper)\n",
+            "    const sql = this.sqlUtils.getOne(myWrapper.getSelect(),\n",
+            "      myWrapper.getWhere(),\n",
+            "      myWrapper.getGroup(),\n",
+            "      myWrapper.getOrder())\n",
+            "    const res: relationalStore.ResultSet = await db.execDQL(\n",
+            "      sql, myWrapper.getValue()\n",
+            "    )\n",
+            "    let one: T | undefined = undefined\n",
+            "    if (res.goToNextRow()) {\n",
+            "      one = this.getRow(res)\n",
+            "    }\n",
+            "    res.close()\n",
+            "    if (isClose) {\n",
+            "      await db.close()\n",
+            "    }\n",
+            "    return one\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<T | undefined>",
+              "Promise"
+            ]
+          ],
+          "signature": "getOne(Wrapper, Connection)",
+          "parameters": [
+            "wrapper",
+            "db"
+          ],
+          "calls": [
+            [
+              "library",
+              "BaseMapper",
+              "%AM0(relationalStore.ResultSet)"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "9-21:build"
+            ],
+            [
+              "library",
+              "",
+              "close()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Wrapper",
+              "Wrapper",
+              "16-17:constructor"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "88-96:execDQL"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "59-69:getGroup"
+            ],
+            [
+              "rdbplus.src.main.ets.core.SqlUtils",
+              "SqlUtils",
+              "43-46:getOne"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "48-54:getOrder"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "26-28:getSelect"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "41-43:getValue"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "33-36:getWhere"
+            ],
+            [
+              "library",
+              "",
+              "goToNextRow()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "wrapper",
+              "type": "Wrapper",
+              "resolved_type": "Wrapper",
+              "optional": true,
+              "rest": false,
+              "default": "new Wrapper()"
+            },
+            {
+              "name": "db",
+              "type": "Connection",
+              "resolved_type": "Connection",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "218-243:getPage": {
+          "start": 218,
+          "end": 243,
+          "body": [
+            "  async getPage(current: number, size: number, wrapper: Wrapper = new Wrapper(), db?: Connection): Promise<Page<T>> {\n",
+            "    let isClose: boolean = true\n",
+            "    if (db === undefined) {\n",
+            "      db = await this.getConnection()\n",
+            "    } else {\n",
+            "      isClose = false\n",
+            "    }\n",
+            "    const count: number = await this.count(wrapper, db)\n",
+            "    let myWrapper = MyWrapper.build(wrapper)\n",
+            "    const sql = this.sqlUtils.page(myWrapper.getSelect(),\n",
+            "      myWrapper.getWhere(),\n",
+            "      myWrapper.getGroup(),\n",
+            "      myWrapper.getOrder(),\n",
+            "      current, size)\n",
+            "    const res: relationalStore.ResultSet = await db.execDQL(sql, myWrapper.getValue())\n",
+            "    const list: T[] = []\n",
+            "    while (res.goToNextRow()) {\n",
+            "      list.push(this.getRow(res))\n",
+            "    }\n",
+            "    res.close()\n",
+            "    if (isClose) {\n",
+            "      await db.close()\n",
+            "    }\n",
+            "    let page: Page<T> = new Page(count, current, size, list)\n",
+            "    return page\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<Page<T>>",
+              "Promise"
+            ]
+          ],
+          "signature": "getPage(number, number, Wrapper, Connection)",
+          "parameters": [
+            "current",
+            "size",
+            "wrapper",
+            "db"
+          ],
+          "calls": [
+            [
+              "library",
+              "BaseMapper",
+              "%AM0(relationalStore.ResultSet)"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "9-21:build"
+            ],
+            [
+              "library",
+              "",
+              "close()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Wrapper",
+              "Wrapper",
+              "16-17:constructor"
+            ],
+            [
+              "rdbplus.src.main.ets.model.Page",
+              "Page",
+              "7-12:constructor"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "61-80:count"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "88-96:execDQL"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "59-69:getGroup"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "48-54:getOrder"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "26-28:getSelect"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "41-43:getValue"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "33-36:getWhere"
+            ],
+            [
+              "library",
+              "",
+              "goToNextRow()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.SqlUtils",
+              "SqlUtils",
+              "53-59:page"
+            ],
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "current",
+              "type": "number",
+              "resolved_type": "number",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "size",
+              "type": "number",
+              "resolved_type": "number",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "wrapper",
+              "type": "Wrapper",
+              "resolved_type": "Wrapper",
+              "optional": true,
+              "rest": false,
+              "default": "new Wrapper()"
+            },
+            {
+              "name": "db",
+              "type": "Connection",
+              "resolved_type": "Connection",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "250-268:getById": {
+          "start": 250,
+          "end": 268,
+          "body": [
+            "  async getById(id: relationalStore.ValueType, db?: Connection): Promise<T | undefined> {\n",
+            "    let isClose: boolean = true\n",
+            "    if (db === undefined) {\n",
+            "      db = await this.getConnection()\n",
+            "    } else {\n",
+            "      isClose = false\n",
+            "    }\n",
+            "    const sqlData = this.sqlUtils.getById(id)\n",
+            "    const res: relationalStore.ResultSet = await db.execDQL(sqlData.sql, sqlData.values)\n",
+            "    let entity: T | undefined = undefined\n",
+            "    if (res.goToFirstRow()) {\n",
+            "      entity = this.getRow(res)\n",
+            "    }\n",
+            "    res.close()\n",
+            "    if (isClose) {\n",
+            "      await db.close()\n",
+            "    }\n",
+            "    return entity\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<T | undefined>",
+              "Promise"
+            ]
+          ],
+          "signature": "getById(relationalStore.ValueType, Connection)",
+          "parameters": [
+            "id",
+            "db"
+          ],
+          "calls": [
+            [
+              "library",
+              "BaseMapper",
+              "%AM0(relationalStore.ResultSet)"
+            ],
+            [
+              "library",
+              "",
+              "close()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "88-96:execDQL"
+            ],
+            [
+              "rdbplus.src.main.ets.core.SqlUtils",
+              "SqlUtils",
+              "61-67:getById"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ],
+            [
+              "library",
+              "",
+              "goToFirstRow()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "id",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "db",
+              "type": "Connection",
+              "resolved_type": "Connection",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "276-289:insert": {
+          "start": 276,
+          "end": 289,
+          "body": [
+            "  async insert(obj: T, db?: Connection): Promise<relationalStore.ValueType> {\n",
+            "    let isClose: boolean = true\n",
+            "    if (db === undefined) {\n",
+            "      db = await this.getConnection()\n",
+            "    } else {\n",
+            "      isClose = false\n",
+            "    }\n",
+            "    const sqlData = this.sqlUtils.insert(obj)\n",
+            "    let res = await db.execDML(sqlData.sql, sqlData.values)\n",
+            "    if (isClose) {\n",
+            "      await db.close()\n",
+            "    }\n",
+            "    return res\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<relationalStore.ValueType>",
+              "Promise"
+            ]
+          ],
+          "signature": "insert(T, Connection)",
+          "parameters": [
+            "obj",
+            "db"
+          ],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "75-83:execDML"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ],
+            [
+              "rdbplus.src.main.ets.core.SqlUtils",
+              "SqlUtils",
+              "69-85:insert"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "obj",
+              "type": "T",
+              "resolved_type": "T",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "db",
+              "type": "Connection",
+              "resolved_type": "Connection",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "296-309:insertBatch": {
+          "start": 296,
+          "end": 309,
+          "body": [
+            "  async insertBatch(list: T[], db?: Connection): Promise<relationalStore.ValueType> {\n",
+            "    let isClose: boolean = true\n",
+            "    if (db === undefined) {\n",
+            "      db = await this.getConnection()\n",
+            "    } else {\n",
+            "      isClose = false\n",
+            "    }\n",
+            "    const sqlData = this.sqlUtils.insertBatch(list)\n",
+            "    let res = await db.execDML(sqlData.sql, sqlData.values)\n",
+            "    if (isClose) {\n",
+            "      await db.close()\n",
+            "    }\n",
+            "    return res\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<relationalStore.ValueType>",
+              "Promise"
+            ]
+          ],
+          "signature": "insertBatch(T[], Connection)",
+          "parameters": [
+            "list",
+            "db"
+          ],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "75-83:execDML"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ],
+            [
+              "rdbplus.src.main.ets.core.SqlUtils",
+              "SqlUtils",
+              "87-107:insertBatch"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "list",
+              "type": "T[]",
+              "resolved_type": "T[]",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "db",
+              "type": "Connection",
+              "resolved_type": "Connection",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "316-330:update": {
+          "start": 316,
+          "end": 330,
+          "body": [
+            "  async update(wrapper: Wrapper, db?: Connection): Promise<relationalStore.ValueType> {\n",
+            "    let isClose: boolean = true\n",
+            "    if (db === undefined) {\n",
+            "      db = await this.getConnection()\n",
+            "    } else {\n",
+            "      isClose = false\n",
+            "    }\n",
+            "    let myWrapper = MyWrapper.build(wrapper)\n",
+            "    const sql = this.sqlUtils.update(myWrapper.getUpdate(), myWrapper.getWhere())\n",
+            "    let res = await db.execDML(sql, [...myWrapper.getUpdateValue(), ...myWrapper.getValue()])\n",
+            "    if (isClose) {\n",
+            "      await db.close()\n",
+            "    }\n",
+            "    return res\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<relationalStore.ValueType>",
+              "Promise"
+            ]
+          ],
+          "signature": "update(Wrapper, Connection)",
+          "parameters": [
+            "wrapper",
+            "db"
+          ],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "9-21:build"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "library",
+              "Array",
+              "concat(ConcatArray[])"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "75-83:execDML"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "74-76:getUpdate"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "81-83:getUpdateValue"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "41-43:getValue"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "33-36:getWhere"
+            ],
+            [
+              "rdbplus.src.main.ets.core.SqlUtils",
+              "SqlUtils",
+              "139-142:update"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "wrapper",
+              "type": "Wrapper",
+              "resolved_type": "Wrapper",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "db",
+              "type": "Connection",
+              "resolved_type": "Connection",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "337-350:updateById": {
+          "start": 337,
+          "end": 350,
+          "body": [
+            "  async updateById(obj: T, db?: Connection): Promise<relationalStore.ValueType> {\n",
+            "    let isClose: boolean = true\n",
+            "    if (db === undefined) {\n",
+            "      db = await this.getConnection()\n",
+            "    } else {\n",
+            "      isClose = false\n",
+            "    }\n",
+            "    const sqlData = this.sqlUtils.updateById(obj)\n",
+            "    let res = await db.execDML(sqlData.sql, sqlData.values)\n",
+            "    if (isClose) {\n",
+            "      await db.close()\n",
+            "    }\n",
+            "    return res\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<relationalStore.ValueType>",
+              "Promise"
+            ]
+          ],
+          "signature": "updateById(T, Connection)",
+          "parameters": [
+            "obj",
+            "db"
+          ],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "75-83:execDML"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ],
+            [
+              "rdbplus.src.main.ets.core.SqlUtils",
+              "SqlUtils",
+              "109-129:updateById"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "obj",
+              "type": "T",
+              "resolved_type": "T",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "db",
+              "type": "Connection",
+              "resolved_type": "Connection",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "357-371:delete": {
+          "start": 357,
+          "end": 371,
+          "body": [
+            "  async delete(wrapper: Wrapper, db?: Connection): Promise<relationalStore.ValueType> {\n",
+            "    let isClose: boolean = true\n",
+            "    if (db === undefined) {\n",
+            "      db = await this.getConnection()\n",
+            "    } else {\n",
+            "      isClose = false\n",
+            "    }\n",
+            "    let myWrapper = MyWrapper.build(wrapper)\n",
+            "    const sql = this.sqlUtils.delete(myWrapper.getWhere())\n",
+            "    let res = await db.execDML(sql, myWrapper.getValue())\n",
+            "    if (isClose) {\n",
+            "      await db.close()\n",
+            "    }\n",
+            "    return res\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<relationalStore.ValueType>",
+              "Promise"
+            ]
+          ],
+          "signature": "delete(Wrapper, Connection)",
+          "parameters": [
+            "wrapper",
+            "db"
+          ],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "9-21:build"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "rdbplus.src.main.ets.core.SqlUtils",
+              "SqlUtils",
+              "144-147:delete"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "75-83:execDML"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "41-43:getValue"
+            ],
+            [
+              "rdbplus.src.main.ets.core.MyWrapper",
+              "MyWrapper",
+              "33-36:getWhere"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "wrapper",
+              "type": "Wrapper",
+              "resolved_type": "Wrapper",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "db",
+              "type": "Connection",
+              "resolved_type": "Connection",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "378-391:deleteById": {
+          "start": 378,
+          "end": 391,
+          "body": [
+            "  async deleteById(id: relationalStore.ValueType, db?: Connection): Promise<relationalStore.ValueType> {\n",
+            "    let isClose: boolean = true\n",
+            "    if (db === undefined) {\n",
+            "      db = await this.getConnection()\n",
+            "    } else {\n",
+            "      isClose = false\n",
+            "    }\n",
+            "    const sqlData = this.sqlUtils.deleteById(id)\n",
+            "    let res = await db.execDML(sqlData.sql, sqlData.values)\n",
+            "    if (isClose) {\n",
+            "      await db.close()\n",
+            "    }\n",
+            "    return res\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "Promise<relationalStore.ValueType>",
+              "Promise"
+            ]
+          ],
+          "signature": "deleteById(relationalStore.ValueType, Connection)",
+          "parameters": [
+            "id",
+            "db"
+          ],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "rdbplus.src.main.ets.core.SqlUtils",
+              "SqlUtils",
+              "131-137:deleteById"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "75-83:execDML"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "id",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "db",
+              "type": "Connection",
+              "resolved_type": "Connection",
+              "optional": true,
+              "rest": false,
+              "default": null
+            }
+          ]
+        }
+      },
+      "fields": {
+        "config": {
+          "start": 11,
+          "end": 11,
+          "body": [
+            "  private config: relationalStore.StoreConfig\n"
+          ],
+          "modifiers": [
+            "private"
+          ],
+          "types": [
+            [
+              "relationalStore.StoreConfig",
+              "relationalStore.StoreConfig"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "sqlUtils": {
+          "start": 12,
+          "end": 12,
+          "body": [
+            "  private sqlUtils: SqlUtils<T>\n"
+          ],
+          "modifiers": [
+            "private"
+          ],
+          "types": [
+            [
+              "SqlUtils<T>",
+              "SqlUtils<T>"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "getRow": {
+          "start": 13,
+          "end": 13,
+          "body": [
+            "  private getRow: (res: relationalStore.ResultSet) => T\n"
+          ],
+          "modifiers": [
+            "private"
+          ],
+          "types": [
+            [
+              "(res: relationalStore.ResultSet) => T",
+              "(res: relationalStore.ResultSet) => T"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "class",
+      "type_parameters": [
+        "T"
+      ],
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "BaseMapper",
+      "kind": "class",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

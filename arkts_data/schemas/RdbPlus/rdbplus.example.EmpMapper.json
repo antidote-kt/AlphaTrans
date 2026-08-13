@@ -1,0 +1,234 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/example/EmpMapper.ets",
+  "imports": {
+    "1-1:@kit.ArkData": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { relationalStore } from '@kit.ArkData'\n"
+      ],
+      "module": "@kit.ArkData",
+      "side_effect_only": false
+    },
+    "2-2:../Index": {
+      "start": 2,
+      "end": 2,
+      "body": [
+        "import { BaseMapper, Connection } from '../Index'\n"
+      ],
+      "module": "../Index",
+      "side_effect_only": false
+    },
+    "3-3:./Employee": {
+      "start": 3,
+      "end": 3,
+      "body": [
+        "import { Employee } from './Employee'\n"
+      ],
+      "module": "./Employee",
+      "side_effect_only": false
+    }
+  },
+  "classes": {
+    "EmpMapper": {
+      "start": 5,
+      "end": 58,
+      "is_abstract": false,
+      "is_interface": false,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {
+        "9-20:getInstance": {
+          "start": 9,
+          "end": 20,
+          "body": [
+            "  static getInstance() {\n",
+            "    if (!EmpMapper.mapper) {\n",
+            "      EmpMapper.mapper = BaseMapper.build<Employee>({\n",
+            "        class: Employee,\n",
+            "        config: {\n",
+            "          name: 'RdbTest.db', // 数据库文件名\n",
+            "          securityLevel: relationalStore.SecurityLevel.S3, // 数据库安全级别\n",
+            "        }\n",
+            "      })\n",
+            "    }\n",
+            "    return EmpMapper.mapper\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "static"
+          ],
+          "return_types": [
+            [
+              "unknown",
+              "BaseMapper"
+            ]
+          ],
+          "signature": "getInstance()",
+          "parameters": [],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "15-40:build"
+            ],
+            [
+              "library",
+              "%AC0$EmpMapper-getInstance",
+              "constructor()"
+            ],
+            [
+              "library",
+              "%AC1$EmpMapper-getInstance",
+              "constructor()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": []
+        },
+        "27-57:createTable": {
+          "start": 27,
+          "end": 57,
+          "body": [
+            "  static async createTable() {\n",
+            "    let db: Connection | undefined = undefined\n",
+            "    try {\n",
+            "      db = await EmpMapper.getInstance().getConnection()\n",
+            "      console.log('createTable 首次打开 版本 0');\n",
+            "      // 初始默认 0\n",
+            "      if (db.version === 0) {\n",
+            "        await db.execDML(\n",
+            "          `create table if not exists \"t_emp\" (\n",
+            "              id integer primary key autoincrement,\n",
+            "              name varchar(20)\n",
+            "          )`, [])\n",
+            "        db.version = 1\n",
+            "        console.log('createTable 创建表后 版本 1')\n",
+            "      }\n",
+            "      if (db.version === 1) {\n",
+            "        // 添加字段\n",
+            "        db.execDML('ALTER TABLE t_emp ADD COLUMN  age integer');\n",
+            "        db.version = 2;\n",
+            "        console.log('createTable 修改后 版本 2')\n",
+            "      }\n",
+            "      if (db.version === 2) {\n",
+            "        // 以此类推\n",
+            "        console.log('createTable 最终版本 2')\n",
+            "      }\n",
+            "    } catch (e) {\n",
+            "      console.error(e)\n",
+            "    } finally {\n",
+            "      db?.close()\n",
+            "    }\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "static",
+            "async"
+          ],
+          "return_types": [
+            [
+              "unknown",
+              "Promise"
+            ]
+          ],
+          "signature": "createTable()",
+          "parameters": [],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "125-128:close"
+            ],
+            [
+              "library",
+              "",
+              "error()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "75-83:execDML"
+            ],
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "52-54:getConnection"
+            ],
+            [
+              "rdbplus.example.EmpMapper",
+              "EmpMapper",
+              "9-20:getInstance"
+            ],
+            [
+              "library",
+              "",
+              "log()"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "14-16:version"
+            ],
+            [
+              "rdbplus.src.main.ets.core.Connection",
+              "Connection",
+              "18-20:version"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": []
+        }
+      },
+      "fields": {
+        "mapper": {
+          "start": 6,
+          "end": 6,
+          "body": [
+            "  private static mapper: BaseMapper<Employee>\n"
+          ],
+          "modifiers": [
+            "private",
+            "static"
+          ],
+          "types": [
+            [
+              "BaseMapper<Employee>",
+              "BaseMapper<Employee>"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "class",
+      "type_parameters": [],
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "EmpMapper",
+      "kind": "class",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

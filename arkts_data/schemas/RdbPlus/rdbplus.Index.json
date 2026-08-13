@@ -1,0 +1,136 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/Index.ets",
+  "imports": {},
+  "classes": {},
+  "exports": [
+    {
+      "body": "export { Connection } from './src/main/ets/core/Connection'",
+      "start": 0,
+      "end": 59,
+      "startLine": 1,
+      "startColumn": 1,
+      "endLine": 1,
+      "endColumn": 60
+    },
+    {
+      "body": "export { Wrapper } from './src/main/ets/core/Wrapper'",
+      "start": 61,
+      "end": 114,
+      "startLine": 3,
+      "startColumn": 1,
+      "endLine": 3,
+      "endColumn": 54
+    },
+    {
+      "body": "export { TableField } from './src/main/ets/decorator/TableField'",
+      "start": 116,
+      "end": 180,
+      "startLine": 5,
+      "startColumn": 1,
+      "endLine": 5,
+      "endColumn": 65
+    },
+    {
+      "body": "export { Table } from './src/main/ets/decorator/Table'",
+      "start": 182,
+      "end": 236,
+      "startLine": 7,
+      "startColumn": 1,
+      "endLine": 7,
+      "endColumn": 55
+    },
+    {
+      "body": "export { Logger } from './src/main/ets/log/Logger'",
+      "start": 238,
+      "end": 288,
+      "startLine": 9,
+      "startColumn": 1,
+      "endLine": 9,
+      "endColumn": 51
+    },
+    {
+      "body": "export { DbLogger } from './src/main/ets/log/DbLogger'",
+      "start": 290,
+      "end": 344,
+      "startLine": 11,
+      "startColumn": 1,
+      "endLine": 11,
+      "endColumn": 55
+    },
+    {
+      "body": "export { BuildParams } from './src/main/ets/model/BuildParams'",
+      "start": 346,
+      "end": 408,
+      "startLine": 13,
+      "startColumn": 1,
+      "endLine": 13,
+      "endColumn": 63
+    },
+    {
+      "body": "export { TableFieldParams } from './src/main/ets/model/TableFieldParams'",
+      "start": 410,
+      "end": 482,
+      "startLine": 15,
+      "startColumn": 1,
+      "endLine": 15,
+      "endColumn": 73
+    },
+    {
+      "body": "export { FieldType } from './src/main/ets/model/FieldType'",
+      "start": 484,
+      "end": 542,
+      "startLine": 17,
+      "startColumn": 1,
+      "endLine": 17,
+      "endColumn": 59
+    },
+    {
+      "body": "export { TableParams } from './src/main/ets/model/TableParams'",
+      "start": 544,
+      "end": 606,
+      "startLine": 19,
+      "startColumn": 1,
+      "endLine": 19,
+      "endColumn": 63
+    },
+    {
+      "body": "export { Page } from './src/main/ets/model/Page'",
+      "start": 608,
+      "end": 656,
+      "startLine": 21,
+      "startColumn": 1,
+      "endLine": 21,
+      "endColumn": 49
+    },
+    {
+      "body": "export { SqlData } from './src/main/ets/model/SqlData'",
+      "start": 658,
+      "end": 712,
+      "startLine": 23,
+      "startColumn": 1,
+      "endLine": 23,
+      "endColumn": 55
+    },
+    {
+      "body": "export { BaseMapper } from './src/main/ets/BaseMapper'",
+      "start": 714,
+      "end": 768,
+      "startLine": 25,
+      "startColumn": 1,
+      "endLine": 25,
+      "endColumn": 55
+    },
+    {
+      "body": "export * from './src/main/ets/utils/tsUtils'",
+      "start": 770,
+      "end": 814,
+      "startLine": 27,
+      "startColumn": 1,
+      "endLine": 27,
+      "endColumn": 45
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

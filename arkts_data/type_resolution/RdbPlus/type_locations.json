@@ -1,0 +1,1619 @@
+{
+  "UIAbility": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/entryability/EntryAbility.ets",
+      "field": "extends"
+    }
+  ],
+  "Want": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/entryability/EntryAbility.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/entryability/EntryAbility.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 30,
+      "field": "query"
+    }
+  ],
+  "AbilityConstant.LaunchParam": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/entryability/EntryAbility.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/entryability/EntryAbility.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 5,
+      "field": "query"
+    }
+  ],
+  "window.WindowStage": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/entryability/EntryAbility.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/entryability/EntryAbility.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 59,
+      "field": "query"
+    }
+  ],
+  "BackupExtensionAbility": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/entrybackupability/EntryBackupAbility.ets",
+      "field": "extends"
+    }
+  ],
+  "BundleVersion": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/entrybackupability/EntryBackupAbility.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/entrybackupability/EntryBackupAbility.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 10,
+      "field": "query"
+    }
+  ],
+  "Index": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/pages/Index.ets",
+      "field": "resolved_type"
+    }
+  ],
+  "LocalStorage": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/pages/Index.ets",
+      "field": "resolved_type"
+    }
+  ],
+  "string": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 41,
+      "field": "query"
+    }
+  ],
+  "number": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/Page.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/Page.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/Page.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/Page.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/Page.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/Page.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 34,
+      "field": "query"
+    }
+  ],
+  "() => void": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "type"
+    }
+  ],
+  "Function": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    }
+  ],
+  "BuildParams<T>": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 9,
+      "field": "query"
+    }
+  ],
+  "BuildParams": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    }
+  ],
+  "relationalStore.StoreConfig": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 36,
+      "field": "query"
+    }
+  ],
+  "SqlUtils<T>": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 25,
+      "field": "query"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 26,
+      "field": "query"
+    }
+  ],
+  "SqlUtils": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    }
+  ],
+  "(res: relationalStore.ResultSet) => T": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 3,
+      "field": "query"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 4,
+      "field": "query"
+    }
+  ],
+  "Wrapper": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/MyWrapper.ets",
+      "field": "extends"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/MyWrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/MyWrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 31,
+      "field": "query"
+    }
+  ],
+  "Connection": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 11,
+      "field": "query"
+    }
+  ],
+  "relationalStore.ValueType[]": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 38,
+      "field": "query"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 39,
+      "field": "query"
+    }
+  ],
+  "relationalStore.ValueType": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 37,
+      "field": "query"
+    }
+  ],
+  "T": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 27,
+      "field": "query"
+    }
+  ],
+  "T[]": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/Page.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/Page.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 28,
+      "field": "query"
+    }
+  ],
+  "Context": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 12,
+      "field": "query"
+    }
+  ],
+  "Logger": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/DbLogger.ets",
+      "field": "implements"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 14,
+      "field": "query"
+    }
+  ],
+  "relationalStore.RdbStore": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 35,
+      "field": "query"
+    }
+  ],
+  "Array<relationalStore.ValueType>": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 6,
+      "field": "query"
+    }
+  ],
+  "Class": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/DecoratorUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/DecoratorUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/DecoratorUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/DecoratorUtils.ts",
+      "field": "resolved_type"
+    }
+  ],
+  "new (...args: any[]) => any": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/DecoratorUtils.ts",
+      "field": "type"
+    }
+  ],
+  "TableFieldParams[]": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 29,
+      "field": "query"
+    }
+  ],
+  "boolean": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 32,
+      "field": "query"
+    }
+  ],
+  "string | string[]": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    }
+  ],
+  "string|unknown[]": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    }
+  ],
+  "string[]": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/DbLogger.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/DbLogger.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/DbLogger.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/DbLogger.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/DbLogger.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/DbLogger.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/DbLogger.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/DbLogger.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/Logger.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/Logger.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/Logger.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/Logger.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/Logger.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/Logger.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/Logger.ets",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/Logger.ets",
+      "field": "resolved_type"
+    },
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 42,
+      "field": "query"
+    }
+  ],
+  "TableParams": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/decorator/Table.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/decorator/Table.ts",
+      "field": "resolved_type"
+    }
+  ],
+  "TableFieldParams": [
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/decorator/TableField.ts",
+      "field": "type"
+    },
+    {
+      "file": "arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/decorator/TableField.ts",
+      "field": "resolved_type"
+    }
+  ],
+  "BaseMapper<Employee>": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 7,
+      "field": "query"
+    }
+  ],
+  "BaseMapper<T>": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 8,
+      "field": "query"
+    }
+  ],
+  "FieldType": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 13,
+      "field": "query"
+    }
+  ],
+  "MyWrapper": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 15,
+      "field": "query"
+    }
+  ],
+  "Promise<Connection>": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 16,
+      "field": "query"
+    }
+  ],
+  "Promise<ESObject[]>": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 17,
+      "field": "query"
+    }
+  ],
+  "Promise<Page<T>>": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 18,
+      "field": "query"
+    }
+  ],
+  "Promise<T \\u007c undefined>": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 19,
+      "field": "query"
+    }
+  ],
+  "Promise<T[]>": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 20,
+      "field": "query"
+    }
+  ],
+  "Promise<number>": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 21,
+      "field": "query"
+    }
+  ],
+  "Promise<relationalStore.ResultSet>": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 22,
+      "field": "query"
+    }
+  ],
+  "Promise<relationalStore.ValueType>": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 23,
+      "field": "query"
+    }
+  ],
+  "Promise<void>": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 24,
+      "field": "query"
+    }
+  ],
+  "new () => T": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 33,
+      "field": "query"
+    }
+  ],
+  "string \\u007c string[]": [
+    {
+      "file": "arkts_data/query_outputs/RdbPlus/RdbPlus_types.txt",
+      "line": 40,
+      "field": "query"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+    "entry.hvigorfile:<module>": [],
+    "entry.src.main.ets.entryability.EntryAbility:EntryAbility": [
+        [
+            "Connection",
+            "rdbplus.src.main.ets.core.Connection"
+        ]
+    ],
+    "entry.src.main.ets.entrybackupability.EntryBackupAbility:EntryBackupAbility": [],
+    "entry.src.main.ets.pages.Index:Index": [],
+    "entry.src.main.ets.rdb.EmpMapper:EmpMapper": [
+        [
+            "BaseMapper",
+            "rdbplus.src.main.ets.BaseMapper"
+        ],
+        [
+            "Connection",
+            "rdbplus.src.main.ets.core.Connection"
+        ]
+    ],
+    "entry.src.main.ets.rdb.Employee:Employee": [],
+    "entry.src.main.ets.rdb.MapperMultiple:MapperMultiple": [
+        [
+            "BaseMapper",
+            "rdbplus.src.main.ets.BaseMapper"
+        ]
+    ],
+    "entry.src.main.ets.rdb.MessageDialog:<module>": [],
+    "entry.src.ohosTest.ets.test.Ability.test:<module>": [],
+    "entry.src.ohosTest.ets.test.List.test:<module>": [
+        [
+            "<module>",
+            "entry.src.ohosTest.ets.test.Ability.test"
+        ]
+    ],
+    "entry.src.test.List.test:<module>": [
+        [
+            "<module>",
+            "entry.src.test.LocalUnit.test"
+        ]
+    ],
+    "entry.src.test.LocalUnit.test:<module>": [],
+    "hvigorfile:<module>": [],
+    "rdbplus.BuildProfile:BuildProfile": [],
+    "rdbplus.Index:<module>": [],
+    "rdbplus.example.EmpMapper:EmpMapper": [
+        [
+            "BaseMapper",
+            "rdbplus.src.main.ets.BaseMapper"
+        ],
+        [
+            "Connection",
+            "rdbplus.src.main.ets.core.Connection"
+        ]
+    ],
+    "rdbplus.example.Employee:Employee": [],
+    "rdbplus.hvigorfile:<module>": [],
+    "rdbplus.src.main.ets.BaseMapper:BaseMapper": [
+        [
+            "Connection",
+            "rdbplus.src.main.ets.core.Connection"
+        ],
+        [
+            "<module>",
+            "rdbplus.src.main.ets.core.DecoratorUtils"
+        ],
+        [
+            "MyWrapper",
+            "rdbplus.src.main.ets.core.MyWrapper"
+        ],
+        [
+            "SqlUtils",
+            "rdbplus.src.main.ets.core.SqlUtils"
+        ],
+        [
+            "Wrapper",
+            "rdbplus.src.main.ets.core.Wrapper"
+        ],
+        [
+            "BuildParams",
+            "rdbplus.src.main.ets.model.BuildParams"
+        ],
+        [
+            "Page",
+            "rdbplus.src.main.ets.model.Page"
+        ]
+    ],
+    "rdbplus.src.main.ets.core.Connection:Connection": [
+        [
+            "Logger",
+            "rdbplus.src.main.ets.log.Logger"
+        ]
+    ],
+    "rdbplus.src.main.ets.core.DecoratorUtils:<module>": [
+        [
+            "TableFieldParams",
+            "rdbplus.src.main.ets.model.TableFieldParams"
+        ]
+    ],
+    "rdbplus.src.main.ets.core.MyWrapper:MyWrapper": [
+        [
+            "Wrapper",
+            "rdbplus.src.main.ets.core.Wrapper"
+        ]
+    ],
+    "rdbplus.src.main.ets.core.SqlUtils:SqlUtils": [
+        [
+            "TableFieldParams",
+            "rdbplus.src.main.ets.model.TableFieldParams"
+        ]
+    ],
+    "rdbplus.src.main.ets.core.Wrapper:Wrapper": [],
+    "rdbplus.src.main.ets.decorator.Table:<module>": [
+        [
+            "TableParams",
+            "rdbplus.src.main.ets.model.TableParams"
+        ]
+    ],
+    "rdbplus.src.main.ets.decorator.TableField:<module>": [
+        [
+            "TableFieldParams",
+            "rdbplus.src.main.ets.model.TableFieldParams"
+        ]
+    ],
+    "rdbplus.src.main.ets.log.DbLogger:DbLogger": [
+        [
+            "Logger",
+            "rdbplus.src.main.ets.log.Logger"
+        ]
+    ],
+    "rdbplus.src.main.ets.log.Logger:Logger": [],
+    "rdbplus.src.main.ets.model.BuildParams:BuildParams": [],
+    "rdbplus.src.main.ets.model.FieldType:FieldType": [],
+    "rdbplus.src.main.ets.model.Page:Page": [],
+    "rdbplus.src.main.ets.model.SqlData:SqlData": [],
+    "rdbplus.src.main.ets.model.TableFieldParams:TableFieldParams": [
+        [
+            "FieldType",
+            "rdbplus.src.main.ets.model.FieldType"
+        ]
+    ],
+    "rdbplus.src.main.ets.model.TableParams:TableParams": [],
+    "rdbplus.src.main.ets.utils.tsUtils:<module>": [],
+    "rdbplus.src.ohosTest.ets.test.Ability.test:<module>": [],
+    "rdbplus.src.ohosTest.ets.test.List.test:<module>": [
+        [
+            "<module>",
+            "rdbplus.src.ohosTest.ets.test.Ability.test"
+        ]
+    ],
+    "rdbplus.src.test.List.test:<module>": [
+        [
+            "<module>",
+            "rdbplus.src.test.LocalUnit.test"
+        ]
+    ],
+    "rdbplus.src.test.LocalUnit.test:<module>": []
+}

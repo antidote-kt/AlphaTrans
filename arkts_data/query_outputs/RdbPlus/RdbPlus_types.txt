@@ -1,0 +1,59 @@
+|  | Index |
+|  | LocalStorage |
+| (res: relationalStore.ResultSet) => T | (res: relationalStore.ResultSet) => T |
+| (res: relationalStore.ResultSet) => T | Function |
+| AbilityConstant.LaunchParam | AbilityConstant.LaunchParam |
+| Array<relationalStore.ValueType> | relationalStore.ValueType[] |
+| BaseMapper<Employee> | BaseMapper<Employee> |
+| BaseMapper<T> | BaseMapper |
+| BuildParams<T> | BuildParams |
+| BundleVersion | BundleVersion |
+| Connection | Connection |
+| Context | Context |
+| FieldType | FieldType |
+| Logger | Logger |
+| MyWrapper | MyWrapper |
+| Promise<Connection> | Promise |
+| Promise<ESObject[]> | Promise |
+| Promise<Page<T>> | Promise |
+| Promise<T \u007c undefined> | Promise |
+| Promise<T[]> | Promise |
+| Promise<number> | Promise |
+| Promise<relationalStore.ResultSet> | Promise |
+| Promise<relationalStore.ValueType> | Promise |
+| Promise<void> | Promise |
+| SqlUtils<T> | SqlUtils |
+| SqlUtils<T> | SqlUtils<T> |
+| T | T |
+| T[] | T[] |
+| TableFieldParams[] | TableFieldParams[] |
+| Want | Want |
+| Wrapper | Wrapper |
+| boolean | boolean |
+| new () => T | new () => T |
+| number | number |
+| relationalStore.RdbStore | relationalStore.RdbStore |
+| relationalStore.StoreConfig | relationalStore.StoreConfig |
+| relationalStore.ValueType | relationalStore.ValueType |
+| relationalStore.ValueType[] | any[] |
+| relationalStore.ValueType[] | relationalStore.ValueType[] |
+| string \u007c string[] | string\u007cunknown[] |
+| string | string |
+| string[] | string[] |
+| unknown | BaseMapper |
+| unknown | Function |
+| unknown | Promise |
+| unknown | SqlData |
+| unknown | Wrapper |
+| unknown | any[] |
+| unknown | string |
+| unknown | unknown |
+| unknown | void |
+| void | BaseMapper |
+| void | Connection |
+| void | Index |
+| void | Page |
+| void | SqlUtils |
+| void | Wrapper |
+| void | void |
+| window.WindowStage | window.WindowStage |

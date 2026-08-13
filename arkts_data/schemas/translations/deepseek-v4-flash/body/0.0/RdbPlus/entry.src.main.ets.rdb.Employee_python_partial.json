@@ -1,0 +1,196 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/Employee.ets",
+    "imports": {
+        "1-1:rdbplus": {
+            "start": 1,
+            "end": 1,
+            "body": [
+                "import { Table, TableField, FieldType } from \"rdbplus\"\n"
+            ],
+            "module": "rdbplus",
+            "side_effect_only": false
+        }
+    },
+    "classes": {
+        "Employee": {
+            "start": 3,
+            "end": 25,
+            "is_abstract": false,
+            "is_interface": false,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [],
+            "extends": [],
+            "methods": {},
+            "fields": {
+                "id": {
+                    "start": 8,
+                    "end": 9,
+                    "body": [
+                        "  @TableField({ name: 'id', type: FieldType.NUMBER, isPrimaryKey: true })\n",
+                        "  id?: number\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "number",
+                            "number"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": true,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [
+                        "@TableField({ name: 'id', type: FieldType.NUMBER, isPrimaryKey: true })"
+                    ],
+                    "partial_translation": [
+                        "    id: float = None\n"
+                    ],
+                    "translation": [
+                        "    id: float = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 8.539123296737671,
+                    "generation_timestamp": "2026-08-11T23:22:49.662590",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "pending",
+                    "validation_feedback": ""
+                },
+                "name": {
+                    "start": 13,
+                    "end": 14,
+                    "body": [
+                        "  @TableField({ type: FieldType.TEXT, })\n",
+                        "  name?: string\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "string",
+                            "string"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": true,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [
+                        "@TableField({ type: FieldType.TEXT, })"
+                    ],
+                    "partial_translation": [
+                        "    name: str = None\n"
+                    ],
+                    "translation": [
+                        "    name: str = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 5.240869998931885,
+                    "generation_timestamp": "2026-08-11T23:30:02.294960",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "myAge": {
+                    "start": 18,
+                    "end": 19,
+                    "body": [
+                        "  @TableField({ name: 'age', type: FieldType.NUMBER, })\n",
+                        "  myAge?: number\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "number",
+                            "number"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": true,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [
+                        "@TableField({ name: 'age', type: FieldType.NUMBER, })"
+                    ],
+                    "partial_translation": [
+                        "    myAge: float = None\n"
+                    ],
+                    "translation": [
+                        "    myAge: float = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 5.790831089019775,
+                    "generation_timestamp": "2026-08-11T23:30:08.089107",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "other": {
+                    "start": 24,
+                    "end": 24,
+                    "body": [
+                        "  other?: number\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "number",
+                            "number"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": true,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    other: float = None\n"
+                    ],
+                    "translation": [
+                        "    other: float = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 6.44434118270874,
+                    "generation_timestamp": "2026-08-11T23:30:14.537015",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "static_initializers": {},
+            "kind": "class",
+            "type_parameters": [],
+            "annotations": [
+                "@Table({ tableName: 't_emp' })"
+            ],
+            "modifiers": [
+                "export"
+            ],
+            "python_class_declaration": "class Employee:\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "Employee",
+            "kind": "class",
+            "default": false
+        }
+    ],
+    "functions": {},
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

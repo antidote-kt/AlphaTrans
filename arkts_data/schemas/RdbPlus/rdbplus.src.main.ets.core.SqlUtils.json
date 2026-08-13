@@ -1,0 +1,1020 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts",
+  "imports": {
+    "1-1:../model/TableFieldParams": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { TableFieldParams } from \"../model/TableFieldParams\"\n"
+      ],
+      "module": "../model/TableFieldParams",
+      "side_effect_only": false
+    },
+    "2-2:../model/FieldType": {
+      "start": 2,
+      "end": 2,
+      "body": [
+        "import { FieldType } from \"../model/FieldType\"\n"
+      ],
+      "module": "../model/FieldType",
+      "side_effect_only": false
+    },
+    "3-3:@kit.ArkData": {
+      "start": 3,
+      "end": 3,
+      "body": [
+        "import { relationalStore } from \"@kit.ArkData\"\n"
+      ],
+      "module": "@kit.ArkData",
+      "side_effect_only": false
+    },
+    "4-4:../model/SqlData": {
+      "start": 4,
+      "end": 4,
+      "body": [
+        "import { SqlData } from \"../model/SqlData\"\n"
+      ],
+      "module": "../model/SqlData",
+      "side_effect_only": false
+    }
+  },
+  "classes": {
+    "SqlUtils": {
+      "start": 6,
+      "end": 148,
+      "is_abstract": false,
+      "is_interface": false,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {
+        "22-36:constructor": {
+          "start": 22,
+          "end": 36,
+          "body": [
+            "  constructor(tableName: string, columns: TableFieldParams[]) {\n",
+            "    this.columns = columns\n",
+            "    this.tableName = tableName\n",
+            "    this.fields = []\n",
+            "    this.propertyKeys = []\n",
+            "    for (let index = 0; index < columns.length; index++) {\n",
+            "      if (columns[index].isPrimaryKey) {\n",
+            "        this.idName = columns[index].name\n",
+            "      }\n",
+            "      this.fields.push(columns[index].name)\n",
+            "      this.propertyKeys.push(columns[index].propertyKey)\n",
+            "    }\n",
+            "    this.fieldsTemp = this.fields.join(',')\n",
+            "    this.valueTemp = new Array(this.fields.length).fill('?').join(',')\n",
+            "  }\n"
+          ],
+          "is_constructor": true,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "void",
+              "SqlUtils"
+            ]
+          ],
+          "signature": "constructor(string, TableFieldParams[])",
+          "parameters": [
+            "tableName",
+            "columns"
+          ],
+          "calls": [
+            [
+              "library",
+              "SqlUtils",
+              "%instInit()"
+            ],
+            [
+              "library",
+              "Array",
+              "fill(T, number, number)"
+            ],
+            [
+              "library",
+              "",
+              "join()"
+            ],
+            [
+              "library",
+              "Array",
+              "join(string)"
+            ],
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ]
+          ],
+          "kind": "constructor",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "tableName",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "columns",
+              "type": "TableFieldParams[]",
+              "resolved_type": "TableFieldParams[]",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "38-41:list": {
+          "start": 38,
+          "end": 41,
+          "body": [
+            "  list(selectSql: string, whereSql: string, groupSql: string, orderSql: string) {\n",
+            "    let sql = `select ${selectSql} from ${this.tableName} where ${whereSql} ${groupSql} ${orderSql} ;`\n",
+            "    return sql\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "string"
+            ]
+          ],
+          "signature": "list(string, string, string, string)",
+          "parameters": [
+            "selectSql",
+            "whereSql",
+            "groupSql",
+            "orderSql"
+          ],
+          "calls": [
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "selectSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "whereSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "groupSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "orderSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "43-46:getOne": {
+          "start": 43,
+          "end": 46,
+          "body": [
+            "  getOne(selectSql: string, whereSql: string, groupSql: string, orderSql: string) {\n",
+            "    let sql = `select ${selectSql} from ${this.tableName} where ${whereSql} ${groupSql} ${orderSql} limit 1 ;`\n",
+            "    return sql\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "string"
+            ]
+          ],
+          "signature": "getOne(string, string, string, string)",
+          "parameters": [
+            "selectSql",
+            "whereSql",
+            "groupSql",
+            "orderSql"
+          ],
+          "calls": [
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "selectSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "whereSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "groupSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "orderSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "48-51:count": {
+          "start": 48,
+          "end": 51,
+          "body": [
+            "  count(whereSql: string, groupSql: string, orderSql: string) {\n",
+            "    let sql = `select count(*) from ${this.tableName} where ${whereSql} ${groupSql} ${orderSql};`\n",
+            "    return sql\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "string"
+            ]
+          ],
+          "signature": "count(string, string, string)",
+          "parameters": [
+            "whereSql",
+            "groupSql",
+            "orderSql"
+          ],
+          "calls": [
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "whereSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "groupSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "orderSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "53-59:page": {
+          "start": 53,
+          "end": 59,
+          "body": [
+            "  page(selectSql: string, whereSql: string, groupSql: string, orderSql: string, current: number,\n",
+            "    size: number,) {\n",
+            "    let sql =\n",
+            "      `select ${selectSql} from ${this.tableName} where ${whereSql} ${groupSql} ${orderSql} limit ${(current - 1) *\n",
+            "        size},${size};`\n",
+            "    return sql\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "string"
+            ]
+          ],
+          "signature": "page(string, string, string, string, number, number)",
+          "parameters": [
+            "selectSql",
+            "whereSql",
+            "groupSql",
+            "orderSql",
+            "current",
+            "size"
+          ],
+          "calls": [
+            [
+              "library",
+              "Number",
+              "toString(number)"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "selectSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "whereSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "groupSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "orderSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "current",
+              "type": "number",
+              "resolved_type": "number",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "size",
+              "type": "number",
+              "resolved_type": "number",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "61-67:getById": {
+          "start": 61,
+          "end": 67,
+          "body": [
+            "  getById(id: relationalStore.ValueType) {\n",
+            "    let sql = `select * from ${this.tableName} where ${this.idName} = ?;`\n",
+            "    return {\n",
+            "      sql: sql,\n",
+            "      values: [id]\n",
+            "    } as SqlData\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "SqlData"
+            ]
+          ],
+          "signature": "getById(relationalStore.ValueType)",
+          "parameters": [
+            "id"
+          ],
+          "calls": [
+            [
+              "library",
+              "%AC0$SqlUtils-getById",
+              "constructor()"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "id",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "69-85:insert": {
+          "start": 69,
+          "end": 85,
+          "body": [
+            "  insert(obj: T) {\n",
+            "    // 取出数据库字段\n",
+            "    let values: relationalStore.ValueType[] = []\n",
+            "    for (let propertyKey of this.propertyKeys){\n",
+            "      let v = obj[propertyKey]\n",
+            "      if (v !== undefined) {\n",
+            "        values.push(v)\n",
+            "      } else {\n",
+            "        values.push(null)\n",
+            "      }\n",
+            "    }\n",
+            "    let sql = `INSERT INTO ${this.tableName} (${this.fieldsTemp}) VALUES (${this.valueTemp});`\n",
+            "    return {\n",
+            "      sql: sql,\n",
+            "      values: values\n",
+            "    } as SqlData\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "SqlData"
+            ]
+          ],
+          "signature": "insert(T)",
+          "parameters": [
+            "obj"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "Symbol.iterator()"
+            ],
+            [
+              "library",
+              "%AC1$SqlUtils-insert",
+              "constructor()"
+            ],
+            [
+              "library",
+              "Iterator",
+              "next([]\\u007c[undefined])"
+            ],
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "obj",
+              "type": "T",
+              "resolved_type": "T",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "87-107:insertBatch": {
+          "start": 87,
+          "end": 107,
+          "body": [
+            "  insertBatch(list: T[]) {\n",
+            "    // 取出数据库字段\n",
+            "    let values: relationalStore.ValueType[] = []\n",
+            "    for (let item of list) {\n",
+            "      for (let propertyKey of this.propertyKeys) {\n",
+            "        let v = item[propertyKey]\n",
+            "        if (v !== undefined) {\n",
+            "          values.push(v)\n",
+            "        } else {\n",
+            "          values.push(null)\n",
+            "        }\n",
+            "      }\n",
+            "    }\n",
+            "    let insertSql = `(${this.valueTemp})`\n",
+            "    let insertBatchSql = new Array(list.length).fill(insertSql).join(',')\n",
+            "    let sql = `INSERT INTO ${this.tableName} (${this.fieldsTemp}) VALUES ${insertBatchSql};`\n",
+            "    return {\n",
+            "      sql: sql,\n",
+            "      values: values\n",
+            "    } as SqlData\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "SqlData"
+            ]
+          ],
+          "signature": "insertBatch(T[])",
+          "parameters": [
+            "list"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "Symbol.iterator()"
+            ],
+            [
+              "library",
+              "%AC2$SqlUtils-insertBatch",
+              "constructor()"
+            ],
+            [
+              "library",
+              "Array",
+              "fill(T, number, number)"
+            ],
+            [
+              "library",
+              "",
+              "join()"
+            ],
+            [
+              "library",
+              "Iterator",
+              "next([]\\u007c[undefined])"
+            ],
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "",
+              "toString()"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "list",
+              "type": "T[]",
+              "resolved_type": "T[]",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "109-129:updateById": {
+          "start": 109,
+          "end": 129,
+          "body": [
+            "  updateById(obj: T) {\n",
+            "    let keyValue: relationalStore.ValueType = obj[this.idName]\n",
+            "    // 取出数据库字段\n",
+            "    let values: relationalStore.ValueType[] = []\n",
+            "    let setSql: string[] = []\n",
+            "    for (let i = 0; i < this.propertyKeys.length; i++) {\n",
+            "      let v = obj[this.propertyKeys[i]]\n",
+            "      // 不更新 undefined，更新null\n",
+            "      if (v !== undefined) {\n",
+            "        setSql.push(`${this.fields[i]}=?`)\n",
+            "        values.push(v)\n",
+            "      }\n",
+            "    }\n",
+            "    //补全id的值\n",
+            "    values.push(keyValue)\n",
+            "    let sql = `update ${this.tableName} set ${setSql.join(',')} where ${this.idName} = ?;`\n",
+            "    return {\n",
+            "      sql: sql,\n",
+            "      values: values\n",
+            "    } as SqlData\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "SqlData"
+            ]
+          ],
+          "signature": "updateById(T)",
+          "parameters": [
+            "obj"
+          ],
+          "calls": [
+            [
+              "library",
+              "%AC3$SqlUtils-updateById",
+              "constructor()"
+            ],
+            [
+              "library",
+              "Array",
+              "join(string)"
+            ],
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "obj",
+              "type": "T",
+              "resolved_type": "T",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "131-137:deleteById": {
+          "start": 131,
+          "end": 137,
+          "body": [
+            "  deleteById(id: relationalStore.ValueType) {\n",
+            "    let sql = `delete from ${this.tableName} where ${this.idName} = ?;`\n",
+            "    return {\n",
+            "      sql: sql,\n",
+            "      values: [id]\n",
+            "    } as SqlData\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "SqlData"
+            ]
+          ],
+          "signature": "deleteById(relationalStore.ValueType)",
+          "parameters": [
+            "id"
+          ],
+          "calls": [
+            [
+              "library",
+              "%AC4$SqlUtils-deleteById",
+              "constructor()"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "id",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "139-142:update": {
+          "start": 139,
+          "end": 142,
+          "body": [
+            "  update(setSql: string, whereSql: string) {\n",
+            "    let sql = `update ${this.tableName} set ${setSql} where ${whereSql};`\n",
+            "    return sql\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "string"
+            ]
+          ],
+          "signature": "update(string, string)",
+          "parameters": [
+            "setSql",
+            "whereSql"
+          ],
+          "calls": [
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "setSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "whereSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        },
+        "144-147:delete": {
+          "start": 144,
+          "end": 147,
+          "body": [
+            "  delete(whereSql: string) {\n",
+            "    let sql = `delete from ${this.tableName} where ${whereSql};`\n",
+            "    return sql\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "string"
+            ]
+          ],
+          "signature": "delete(string)",
+          "parameters": [
+            "whereSql"
+          ],
+          "calls": [
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "whereSql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        }
+      },
+      "fields": {
+        "columns": {
+          "start": 8,
+          "end": 8,
+          "body": [
+            "  columns: TableFieldParams[]\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "TableFieldParams[]",
+              "TableFieldParams[]"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "tableName": {
+          "start": 10,
+          "end": 10,
+          "body": [
+            "  tableName: string\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "string",
+              "string"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "idName": {
+          "start": 12,
+          "end": 12,
+          "body": [
+            "  idName: string\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "string",
+              "string"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "propertyKeys": {
+          "start": 14,
+          "end": 14,
+          "body": [
+            "  propertyKeys: string[]\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "string[]",
+              "string[]"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "fields": {
+          "start": 16,
+          "end": 16,
+          "body": [
+            "  fields: string[]\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "string[]",
+              "string[]"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "fieldsTemp": {
+          "start": 18,
+          "end": 18,
+          "body": [
+            "  fieldsTemp: string\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "string",
+              "string"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "valueTemp": {
+          "start": 20,
+          "end": 20,
+          "body": [
+            "  valueTemp: string\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "string",
+              "string"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "class",
+      "type_parameters": [
+        "T"
+      ],
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "SqlUtils",
+      "kind": "class",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

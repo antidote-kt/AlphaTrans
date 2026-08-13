@@ -1,0 +1,186 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/Page.ets",
+  "imports": {},
+  "classes": {
+    "Page": {
+      "start": 1,
+      "end": 13,
+      "is_abstract": false,
+      "is_interface": false,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {
+        "7-12:constructor": {
+          "start": 7,
+          "end": 12,
+          "body": [
+            "  constructor(total: number, current: number, size: number, record: T[]) {\n",
+            "    this.total = total\n",
+            "    this.current = current\n",
+            "    this.size = size\n",
+            "    this.record = record\n",
+            "  }\n"
+          ],
+          "is_constructor": true,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "void",
+              "Page"
+            ]
+          ],
+          "signature": "constructor(number, number, number, T[])",
+          "parameters": [
+            "total",
+            "current",
+            "size",
+            "record"
+          ],
+          "calls": [
+            [
+              "library",
+              "Page",
+              "%instInit()"
+            ]
+          ],
+          "kind": "constructor",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "total",
+              "type": "number",
+              "resolved_type": "number",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "current",
+              "type": "number",
+              "resolved_type": "number",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "size",
+              "type": "number",
+              "resolved_type": "number",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "record",
+              "type": "T[]",
+              "resolved_type": "T[]",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        }
+      },
+      "fields": {
+        "total": {
+          "start": 2,
+          "end": 2,
+          "body": [
+            "  total: number = 0\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "number",
+              "number"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "0",
+          "annotations": []
+        },
+        "current": {
+          "start": 3,
+          "end": 3,
+          "body": [
+            "  current: number = 1\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "number",
+              "number"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "1",
+          "annotations": []
+        },
+        "size": {
+          "start": 4,
+          "end": 4,
+          "body": [
+            "  size: number = 10\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "number",
+              "number"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "10",
+          "annotations": []
+        },
+        "record": {
+          "start": 5,
+          "end": 5,
+          "body": [
+            "  record: T[] = []\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "T[]",
+              "T[]"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "[]",
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "class",
+      "type_parameters": [
+        "T"
+      ],
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "Page",
+      "kind": "class",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

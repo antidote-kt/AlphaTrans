@@ -1,0 +1,133 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/Employee.ets",
+  "imports": {
+    "1-1:rdbplus": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { Table, TableField, FieldType } from \"rdbplus\"\n"
+      ],
+      "module": "rdbplus",
+      "side_effect_only": false
+    }
+  },
+  "classes": {
+    "Employee": {
+      "start": 3,
+      "end": 25,
+      "is_abstract": false,
+      "is_interface": false,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {},
+      "fields": {
+        "id": {
+          "start": 8,
+          "end": 9,
+          "body": [
+            "  @TableField({ name: 'id', type: FieldType.NUMBER, isPrimaryKey: true })\n",
+            "  id?: number\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "number",
+              "number"
+            ]
+          ],
+          "kind": "field",
+          "optional": true,
+          "definite": false,
+          "initializer": null,
+          "annotations": [
+            "@TableField({ name: 'id', type: FieldType.NUMBER, isPrimaryKey: true })"
+          ]
+        },
+        "name": {
+          "start": 13,
+          "end": 14,
+          "body": [
+            "  @TableField({ type: FieldType.TEXT, })\n",
+            "  name?: string\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "string",
+              "string"
+            ]
+          ],
+          "kind": "field",
+          "optional": true,
+          "definite": false,
+          "initializer": null,
+          "annotations": [
+            "@TableField({ type: FieldType.TEXT, })"
+          ]
+        },
+        "myAge": {
+          "start": 18,
+          "end": 19,
+          "body": [
+            "  @TableField({ name: 'age', type: FieldType.NUMBER, })\n",
+            "  myAge?: number\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "number",
+              "number"
+            ]
+          ],
+          "kind": "field",
+          "optional": true,
+          "definite": false,
+          "initializer": null,
+          "annotations": [
+            "@TableField({ name: 'age', type: FieldType.NUMBER, })"
+          ]
+        },
+        "other": {
+          "start": 24,
+          "end": 24,
+          "body": [
+            "  other?: number\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "number",
+              "number"
+            ]
+          ],
+          "kind": "field",
+          "optional": true,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "class",
+      "type_parameters": [],
+      "annotations": [
+        "@Table({ tableName: 't_emp' })"
+      ],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "Employee",
+      "kind": "class",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

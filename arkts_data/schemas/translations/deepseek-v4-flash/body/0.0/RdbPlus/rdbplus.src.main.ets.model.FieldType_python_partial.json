@@ -1,0 +1,159 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/FieldType.ts",
+    "imports": {},
+    "classes": {
+        "FieldType": {
+            "start": 1,
+            "end": 6,
+            "is_abstract": false,
+            "is_interface": false,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [],
+            "extends": [],
+            "methods": {},
+            "fields": {
+                "NUMBER": {
+                    "start": 2,
+                    "end": 2,
+                    "body": [
+                        "  NUMBER = 'NUMBER',\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "unknown",
+                            "unknown"
+                        ]
+                    ],
+                    "kind": "enum_member",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": "'NUMBER'",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    NUMBER: Any = None\n"
+                    ],
+                    "translation": [],
+                    "translation_status": "pending",
+                    "syntactic_validation": "pending",
+                    "elapsed_time": 0,
+                    "generation_timestamp": 0,
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true
+                },
+                "TEXT": {
+                    "start": 3,
+                    "end": 3,
+                    "body": [
+                        "  TEXT = 'TEXT',\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "unknown",
+                            "unknown"
+                        ]
+                    ],
+                    "kind": "enum_member",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": "'TEXT'",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    TEXT: Any = None\n"
+                    ],
+                    "translation": [],
+                    "translation_status": "pending",
+                    "syntactic_validation": "pending",
+                    "elapsed_time": 0,
+                    "generation_timestamp": 0,
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true
+                },
+                "BLOB": {
+                    "start": 4,
+                    "end": 4,
+                    "body": [
+                        "  BLOB = 'BLOB',\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "unknown",
+                            "unknown"
+                        ]
+                    ],
+                    "kind": "enum_member",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": "'BLOB'",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    BLOB: Any = None\n"
+                    ],
+                    "translation": [],
+                    "translation_status": "pending",
+                    "syntactic_validation": "pending",
+                    "elapsed_time": 0,
+                    "generation_timestamp": 0,
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true
+                },
+                "BOOLEAN": {
+                    "start": 5,
+                    "end": 5,
+                    "body": [
+                        "  BOOLEAN = 'BOOLEAN'\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "unknown",
+                            "unknown"
+                        ]
+                    ],
+                    "kind": "enum_member",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": "'BOOLEAN'",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    BOOLEAN: Any = None\n"
+                    ],
+                    "translation": [],
+                    "translation_status": "pending",
+                    "syntactic_validation": "pending",
+                    "elapsed_time": 0,
+                    "generation_timestamp": 0,
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true
+                }
+            },
+            "static_initializers": {},
+            "kind": "enum",
+            "type_parameters": [],
+            "annotations": [],
+            "modifiers": [
+                "export"
+            ],
+            "python_class_declaration": "class FieldType(Enum):\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "FieldType",
+            "kind": "enum",
+            "default": false
+        }
+    ],
+    "functions": {},
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

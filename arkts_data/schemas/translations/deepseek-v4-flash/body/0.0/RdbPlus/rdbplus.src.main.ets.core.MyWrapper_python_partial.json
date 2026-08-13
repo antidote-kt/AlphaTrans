@@ -1,0 +1,472 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/MyWrapper.ets",
+    "imports": {
+        "1-1:./Wrapper": {
+            "start": 1,
+            "end": 1,
+            "body": [
+                "import { Wrapper } from \"./Wrapper\"\n"
+            ],
+            "module": "./Wrapper",
+            "side_effect_only": false
+        },
+        "2-2:@kit.ArkData": {
+            "start": 2,
+            "end": 2,
+            "body": [
+                "import { relationalStore } from \"@kit.ArkData\"\n"
+            ],
+            "module": "@kit.ArkData",
+            "side_effect_only": false
+        }
+    },
+    "classes": {
+        "MyWrapper": {
+            "start": 5,
+            "end": 84,
+            "is_abstract": false,
+            "is_interface": false,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [],
+            "extends": [
+                "Wrapper"
+            ],
+            "methods": {
+                "9-21:build": {
+                    "start": 9,
+                    "end": 21,
+                    "body": [
+                        "  static build(parent: Wrapper): MyWrapper {\n",
+                        "    let x = parent as MyWrapper\n",
+                        "    const myWrapper = new MyWrapper();\n",
+                        "    myWrapper.selectSql = x.selectSql\n",
+                        "    myWrapper.groupSql = x.groupSql\n",
+                        "    myWrapper.havingSql = x.havingSql\n",
+                        "    myWrapper.orderList = x.orderList\n",
+                        "    myWrapper.whereList = x.whereList\n",
+                        "    myWrapper.valueList = x.valueList\n",
+                        "    myWrapper.updateList = x.updateList\n",
+                        "    myWrapper.updateValueList = x.updateValueList\n",
+                        "    return myWrapper\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [
+                        "static"
+                    ],
+                    "return_types": [
+                        [
+                            "MyWrapper",
+                            "MyWrapper"
+                        ]
+                    ],
+                    "signature": "build(Wrapper)",
+                    "parameters": [
+                        "parent"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "MyWrapper",
+                            "constructor()"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "parent",
+                            "type": "Wrapper",
+                            "resolved_type": "Wrapper",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    @staticmethod\n",
+                        "    def build(parent: Wrapper) -> MyWrapper:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    @staticmethod",
+                        "    def build(parent: Wrapper) -> MyWrapper:",
+                        "        my_wrapper = MyWrapper()",
+                        "        my_wrapper.selectSql = parent.selectSql",
+                        "        my_wrapper.groupSql = parent.groupSql",
+                        "        my_wrapper.havingSql = parent.havingSql",
+                        "        my_wrapper.orderList = parent.orderList",
+                        "        my_wrapper.whereList = parent.whereList",
+                        "        my_wrapper.valueList = parent.valueList",
+                        "        my_wrapper.updateList = parent.updateList",
+                        "        my_wrapper.updateValueList = parent.updateValueList",
+                        "        return my_wrapper"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 10.537821054458618,
+                    "generation_timestamp": "2026-08-12T00:23:14.061477",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "26-28:getSelect": {
+                    "start": 26,
+                    "end": 28,
+                    "body": [
+                        "  getSelect(): string {\n",
+                        "    return this.selectSql\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "string",
+                            "string"
+                        ]
+                    ],
+                    "signature": "getSelect()",
+                    "parameters": [],
+                    "calls": [],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    def getSelect(self) -> str:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def getSelect(self) -> str:",
+                        "            return self.selectSql"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 5.103713750839233,
+                    "generation_timestamp": "2026-08-11T23:47:11.541943",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "33-36:getWhere": {
+                    "start": 33,
+                    "end": 36,
+                    "body": [
+                        "  getWhere(): string {\n",
+                        "    let sql = '1=1 ' + this.whereList.join(\" \")\n",
+                        "    return sql\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "string",
+                            "string"
+                        ]
+                    ],
+                    "signature": "getWhere()",
+                    "parameters": [],
+                    "calls": [
+                        [
+                            "library",
+                            "Array",
+                            "join(string)"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    def getWhere(self) -> str:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def getWhere(self) -> str:",
+                        "            sql = '1=1 ' + ' '.join(self.whereList)",
+                        "            return sql"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 6.482298851013184,
+                    "generation_timestamp": "2026-08-11T23:47:18.028485",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "41-43:getValue": {
+                    "start": 41,
+                    "end": 43,
+                    "body": [
+                        "  getValue(): relationalStore.ValueType[] {\n",
+                        "    return this.valueList\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "relationalStore.ValueType[]",
+                            "any[]"
+                        ]
+                    ],
+                    "signature": "getValue()",
+                    "parameters": [],
+                    "calls": [],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    def getValue(self) -> list[ValueType]:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def getValue(self) -> list[ValueType]:",
+                        "            return self.valueList"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 5.119398593902588,
+                    "generation_timestamp": "2026-08-11T23:47:23.151408",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "48-54:getOrder": {
+                    "start": 48,
+                    "end": 54,
+                    "body": [
+                        "  getOrder(): string {\n",
+                        "    if (this.orderList.length == 0) {\n",
+                        "      return ''\n",
+                        "    } else {\n",
+                        "      return 'order by ' + this.orderList.join(',')\n",
+                        "    }\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "string",
+                            "string"
+                        ]
+                    ],
+                    "signature": "getOrder()",
+                    "parameters": [],
+                    "calls": [
+                        [
+                            "library",
+                            "Array",
+                            "join(string)"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    def getOrder(self) -> str:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def getOrder(self) -> str:",
+                        "            if len(self.orderList) == 0:",
+                        "                return ''",
+                        "            else:",
+                        "                return 'order by ' + ','.join(self.orderList)"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 7.0469746589660645,
+                    "generation_timestamp": "2026-08-11T23:47:30.202524",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "59-69:getGroup": {
+                    "start": 59,
+                    "end": 69,
+                    "body": [
+                        "  getGroup(): string {\n",
+                        "    if (this.groupSql == '') {\n",
+                        "      return ''\n",
+                        "    } else {\n",
+                        "      let sql = this.groupSql\n",
+                        "      if (this.havingSql != '') {\n",
+                        "        sql += ` ${this.havingSql}`\n",
+                        "      }\n",
+                        "      return sql\n",
+                        "    }\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "string",
+                            "string"
+                        ]
+                    ],
+                    "signature": "getGroup()",
+                    "parameters": [],
+                    "calls": [
+                        [
+                            "library",
+                            "String",
+                            "toString()"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    def getGroup(self) -> str:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def getGroup(self) -> str:",
+                        "            if self.groupSql == '':",
+                        "                return ''",
+                        "            else:",
+                        "                sql = self.groupSql",
+                        "                if self.havingSql != '':",
+                        "                    sql += f' {self.havingSql}'",
+                        "                return sql"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 6.380261659622192,
+                    "generation_timestamp": "2026-08-11T23:47:36.587095",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "74-76:getUpdate": {
+                    "start": 74,
+                    "end": 76,
+                    "body": [
+                        "  getUpdate() {\n",
+                        "    return this.updateList.join(\",\")\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "unknown",
+                            "string"
+                        ]
+                    ],
+                    "signature": "getUpdate()",
+                    "parameters": [],
+                    "calls": [
+                        [
+                            "library",
+                            "Array",
+                            "join(string)"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    def getUpdate(self) -> Any:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def getUpdate(self) -> Any:",
+                        "            return \", \".join(self.updateList)"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 8.046841859817505,
+                    "generation_timestamp": "2026-08-11T23:50:58.342819",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "81-83:getUpdateValue": {
+                    "start": 81,
+                    "end": 83,
+                    "body": [
+                        "  getUpdateValue() {\n",
+                        "    return this.updateValueList\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "unknown",
+                            "any[]"
+                        ]
+                    ],
+                    "signature": "getUpdateValue()",
+                    "parameters": [],
+                    "calls": [],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    def getUpdateValue(self) -> Any:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def getUpdateValue(self) -> Any:",
+                        "            return self.updateValueList"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 5.208809852600098,
+                    "generation_timestamp": "2026-08-11T23:51:03.555637",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "fields": {},
+            "static_initializers": {},
+            "kind": "class",
+            "type_parameters": [],
+            "annotations": [],
+            "modifiers": [
+                "export"
+            ],
+            "python_class_declaration": "class MyWrapper(Wrapper):\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "MyWrapper",
+            "kind": "class",
+            "default": false
+        }
+    ],
+    "functions": {},
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *",
+        "from rdbplus.src.main.ets.core.Wrapper import Wrapper"
+    ]
+}

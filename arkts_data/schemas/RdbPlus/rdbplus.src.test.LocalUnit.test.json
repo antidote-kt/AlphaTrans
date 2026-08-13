@@ -1,0 +1,87 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/test/LocalUnit.test.ets",
+  "imports": {
+    "1-1:@ohos/hypium": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';\n"
+      ],
+      "module": "@ohos/hypium",
+      "side_effect_only": false
+    }
+  },
+  "classes": {},
+  "exports": [
+    {
+      "name": "localUnitTest",
+      "kind": "function",
+      "default": true
+    }
+  ],
+  "functions": {
+    "3-33:localUnitTest": {
+      "start": 3,
+      "end": 33,
+      "body": [
+        "export default function localUnitTest() {\n",
+        "  describe('localUnitTest', () => {\n",
+        "    // Defines a test suite. Two parameters are supported: test suite name and test suite function.\n",
+        "    beforeAll(() => {\n",
+        "      // Presets an action, which is performed only once before all test cases of the test suite start.\n",
+        "      // This API supports only one parameter: preset action function.\n",
+        "    });\n",
+        "    beforeEach(() => {\n",
+        "      // Presets an action, which is performed before each unit test case starts.\n",
+        "      // The number of execution times is the same as the number of test cases defined by **it**.\n",
+        "      // This API supports only one parameter: preset action function.\n",
+        "    });\n",
+        "    afterEach(() => {\n",
+        "      // Presets a clear action, which is performed after each unit test case ends.\n",
+        "      // The number of execution times is the same as the number of test cases defined by **it**.\n",
+        "      // This API supports only one parameter: clear action function.\n",
+        "    });\n",
+        "    afterAll(() => {\n",
+        "      // Presets a clear action, which is performed after all test cases of the test suite end.\n",
+        "      // This API supports only one parameter: clear action function.\n",
+        "    });\n",
+        "    it('assertContain', 0, () => {\n",
+        "      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.\n",
+        "      let a = 'abc';\n",
+        "      let b = 'b';\n",
+        "      // Defines a variety of assertion methods, which are used to declare expected boolean conditions.\n",
+        "      expect(a).assertContain(b);\n",
+        "      expect(a).assertEqual(a);\n",
+        "    });\n",
+        "  });\n",
+        "}"
+      ],
+      "is_constructor": false,
+      "annotations": [],
+      "modifiers": [
+        "export",
+        "default"
+      ],
+      "return_types": [
+        [
+          "unknown",
+          "void"
+        ]
+      ],
+      "signature": "localUnitTest()",
+      "parameters": [],
+      "calls": [
+        [
+          "library",
+          "",
+          "describe()"
+        ]
+      ],
+      "kind": "function",
+      "type_parameters": [],
+      "parameter_details": []
+    }
+  },
+  "variables": {},
+  "type_aliases": {}
+}

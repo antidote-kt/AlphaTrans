@@ -1,0 +1,84 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/SqlData.ts",
+  "imports": {
+    "1-1:@kit.ArkData": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { relationalStore } from \"@kit.ArkData\"\n"
+      ],
+      "module": "@kit.ArkData",
+      "side_effect_only": false
+    }
+  },
+  "classes": {
+    "SqlData": {
+      "start": 3,
+      "end": 6,
+      "is_abstract": false,
+      "is_interface": true,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {},
+      "fields": {
+        "sql": {
+          "start": 4,
+          "end": 4,
+          "body": [
+            "  sql: string\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "string",
+              "string"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "values": {
+          "start": 5,
+          "end": 5,
+          "body": [
+            "  values: relationalStore.ValueType[]\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "relationalStore.ValueType[]",
+              "relationalStore.ValueType[]"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "interface",
+      "type_parameters": [],
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "SqlData",
+      "kind": "interface",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

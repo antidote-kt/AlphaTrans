@@ -1,0 +1,241 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/BuildProfile.ets",
+    "imports": {},
+    "classes": {
+        "BuildProfile": {
+            "start": 12,
+            "end": 17,
+            "is_abstract": false,
+            "is_interface": false,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [],
+            "extends": [],
+            "methods": {},
+            "fields": {
+                "HAR_VERSION": {
+                    "start": 13,
+                    "end": 13,
+                    "body": [
+                        "\tstatic readonly HAR_VERSION = HAR_VERSION;\n"
+                    ],
+                    "modifiers": [
+                        "static",
+                        "readonly"
+                    ],
+                    "types": [
+                        [
+                            "unknown",
+                            "unknown"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": "HAR_VERSION",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    HAR_VERSION: Any = None\n"
+                    ],
+                    "translation": [
+                        "    HAR_VERSION: Any = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 9.139712810516357,
+                    "generation_timestamp": "2026-08-11T23:30:35.022235",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "BUILD_MODE_NAME": {
+                    "start": 14,
+                    "end": 14,
+                    "body": [
+                        "\tstatic readonly BUILD_MODE_NAME = BUILD_MODE_NAME;\n"
+                    ],
+                    "modifiers": [
+                        "static",
+                        "readonly"
+                    ],
+                    "types": [
+                        [
+                            "unknown",
+                            "unknown"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": "BUILD_MODE_NAME",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    BUILD_MODE_NAME: Any = None\n"
+                    ],
+                    "translation": [
+                        "    BUILD_MODE_NAME: Any = \"BUILD_MODE_NAME\""
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 20.092499494552612,
+                    "generation_timestamp": "2026-08-11T23:30:55.117512",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "DEBUG": {
+                    "start": 15,
+                    "end": 15,
+                    "body": [
+                        "\tstatic readonly DEBUG = DEBUG;\n"
+                    ],
+                    "modifiers": [
+                        "static",
+                        "readonly"
+                    ],
+                    "types": [
+                        [
+                            "unknown",
+                            "unknown"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": "DEBUG",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    DEBUG: Any = None\n"
+                    ],
+                    "translation": [
+                        "    DEBUG: Any = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 9.42222285270691,
+                    "generation_timestamp": "2026-08-11T23:31:04.543324",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "TARGET_NAME": {
+                    "start": 16,
+                    "end": 16,
+                    "body": [
+                        "\tstatic readonly TARGET_NAME = TARGET_NAME;\n"
+                    ],
+                    "modifiers": [
+                        "static",
+                        "readonly"
+                    ],
+                    "types": [
+                        [
+                            "unknown",
+                            "unknown"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": "TARGET_NAME",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    TARGET_NAME: Any = None\n"
+                    ],
+                    "translation": [
+                        "    TARGET_NAME: Any = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 12.653231143951416,
+                    "generation_timestamp": "2026-08-11T23:31:17.200233",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "static_initializers": {},
+            "kind": "class",
+            "type_parameters": [],
+            "annotations": [],
+            "modifiers": [
+                "export",
+                "default"
+            ],
+            "python_class_declaration": "class BuildProfile:\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "BuildProfile",
+            "kind": "class",
+            "default": true
+        }
+    ],
+    "functions": {},
+    "variables": {
+        "HAR_VERSION": {
+            "start": 4,
+            "end": 4,
+            "body": [
+                "export const HAR_VERSION = '3.1.2';\n"
+            ],
+            "kind": "const",
+            "type": "unknown",
+            "initializer": "'3.1.2'",
+            "modifiers": [
+                "export"
+            ]
+        },
+        "BUILD_MODE_NAME": {
+            "start": 5,
+            "end": 5,
+            "body": [
+                "export const BUILD_MODE_NAME = 'debug';\n"
+            ],
+            "kind": "const",
+            "type": "unknown",
+            "initializer": "'debug'",
+            "modifiers": [
+                "export"
+            ]
+        },
+        "DEBUG": {
+            "start": 6,
+            "end": 6,
+            "body": [
+                "export const DEBUG = true;\n"
+            ],
+            "kind": "const",
+            "type": "unknown",
+            "initializer": "true",
+            "modifiers": [
+                "export"
+            ]
+        },
+        "TARGET_NAME": {
+            "start": 7,
+            "end": 7,
+            "body": [
+                "export const TARGET_NAME = 'default';\n"
+            ],
+            "kind": "const",
+            "type": "unknown",
+            "initializer": "'default'",
+            "modifiers": [
+                "export"
+            ]
+        }
+    },
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

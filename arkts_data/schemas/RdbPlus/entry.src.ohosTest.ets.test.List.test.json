@@ -1,0 +1,59 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/ohosTest/ets/test/List.test.ets",
+  "imports": {
+    "1-1:./Ability.test": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import abilityTest from './Ability.test';\n"
+      ],
+      "module": "./Ability.test",
+      "side_effect_only": false
+    }
+  },
+  "classes": {},
+  "exports": [
+    {
+      "name": "testsuite",
+      "kind": "function",
+      "default": true
+    }
+  ],
+  "functions": {
+    "3-5:testsuite": {
+      "start": 3,
+      "end": 5,
+      "body": [
+        "export default function testsuite() {\n",
+        "  abilityTest();\n",
+        "}"
+      ],
+      "is_constructor": false,
+      "annotations": [],
+      "modifiers": [
+        "export",
+        "default"
+      ],
+      "return_types": [
+        [
+          "unknown",
+          "void"
+        ]
+      ],
+      "signature": "testsuite()",
+      "parameters": [],
+      "calls": [
+        [
+          "entry.src.ohosTest.ets.test.Ability.test",
+          "<module>",
+          "4-35:abilityTest"
+        ]
+      ],
+      "kind": "function",
+      "type_parameters": [],
+      "parameter_details": []
+    }
+  },
+  "variables": {},
+  "type_aliases": {}
+}

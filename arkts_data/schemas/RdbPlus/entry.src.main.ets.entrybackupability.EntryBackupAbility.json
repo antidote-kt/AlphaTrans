@@ -1,0 +1,162 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/entrybackupability/EntryBackupAbility.ets",
+  "imports": {
+    "1-1:@kit.PerformanceAnalysisKit": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { hilog } from '@kit.PerformanceAnalysisKit';\n"
+      ],
+      "module": "@kit.PerformanceAnalysisKit",
+      "side_effect_only": false
+    },
+    "2-2:@kit.CoreFileKit": {
+      "start": 2,
+      "end": 2,
+      "body": [
+        "import { BackupExtensionAbility, BundleVersion } from '@kit.CoreFileKit';\n"
+      ],
+      "module": "@kit.CoreFileKit",
+      "side_effect_only": false
+    }
+  },
+  "classes": {
+    "EntryBackupAbility": {
+      "start": 6,
+      "end": 16,
+      "is_abstract": false,
+      "is_interface": false,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [
+        "BackupExtensionAbility"
+      ],
+      "methods": {
+        "7-10:onBackup": {
+          "start": 7,
+          "end": 10,
+          "body": [
+            "  async onBackup() {\n",
+            "    hilog.info(DOMAIN, 'testTag', 'onBackup ok');\n",
+            "    await Promise.resolve();\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "unknown",
+              "Promise"
+            ]
+          ],
+          "signature": "onBackup()",
+          "parameters": [],
+          "calls": [
+            [
+              "library",
+              "",
+              "info()"
+            ],
+            [
+              "library",
+              "PromiseConstructor",
+              "resolve()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": []
+        },
+        "12-15:onRestore": {
+          "start": 12,
+          "end": 15,
+          "body": [
+            "  async onRestore(bundleVersion: BundleVersion) {\n",
+            "    hilog.info(DOMAIN, 'testTag', 'onRestore ok %{public}s', JSON.stringify(bundleVersion));\n",
+            "    await Promise.resolve();\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "async"
+          ],
+          "return_types": [
+            [
+              "unknown",
+              "Promise"
+            ]
+          ],
+          "signature": "onRestore(BundleVersion)",
+          "parameters": [
+            "bundleVersion"
+          ],
+          "calls": [
+            [
+              "library",
+              "",
+              "info()"
+            ],
+            [
+              "library",
+              "PromiseConstructor",
+              "resolve()"
+            ],
+            [
+              "library",
+              "JSON",
+              "stringify(any, Function, string\\u007cnumber)"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "bundleVersion",
+              "type": "BundleVersion",
+              "resolved_type": "BundleVersion",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        }
+      },
+      "fields": {},
+      "static_initializers": {},
+      "kind": "class",
+      "type_parameters": [],
+      "annotations": [],
+      "modifiers": [
+        "export",
+        "default"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "EntryBackupAbility",
+      "kind": "class",
+      "default": true
+    }
+  ],
+  "functions": {},
+  "variables": {
+    "DOMAIN": {
+      "start": 4,
+      "end": 4,
+      "body": [
+        "const DOMAIN = 0x0000;\n"
+      ],
+      "kind": "const",
+      "type": "unknown",
+      "initializer": "0x0000",
+      "modifiers": []
+    }
+  },
+  "type_aliases": {}
+}

@@ -1,0 +1,211 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MapperMultiple.ets",
+  "imports": {
+    "1-1:@kit.ArkData": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { relationalStore } from '@kit.ArkData'\n"
+      ],
+      "module": "@kit.ArkData",
+      "side_effect_only": false
+    },
+    "2-2:rdbplus": {
+      "start": 2,
+      "end": 2,
+      "body": [
+        "import { BaseMapper } from 'rdbplus'\n"
+      ],
+      "module": "rdbplus",
+      "side_effect_only": false
+    },
+    "3-3:./Employee": {
+      "start": 3,
+      "end": 3,
+      "body": [
+        "import { Employee } from './Employee'\n"
+      ],
+      "module": "./Employee",
+      "side_effect_only": false
+    }
+  },
+  "classes": {
+    "MapperMultiple": {
+      "start": 8,
+      "end": 39,
+      "is_abstract": false,
+      "is_interface": false,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {
+        "13-24:getInstance1DB": {
+          "start": 13,
+          "end": 24,
+          "body": [
+            "  static getInstance1DB() {\n",
+            "    if (!MapperMultiple.mapper1) {\n",
+            "      MapperMultiple.mapper1 = BaseMapper.build<Employee>({\n",
+            "        class: Employee,\n",
+            "        config: {\n",
+            "          name: 'RdbTest1.db', // 数据库文件名\n",
+            "          securityLevel: relationalStore.SecurityLevel.S3, // 数据库安全级别\n",
+            "        }\n",
+            "      })\n",
+            "    }\n",
+            "    return MapperMultiple.mapper1\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "static"
+          ],
+          "return_types": [
+            [
+              "unknown",
+              "BaseMapper"
+            ]
+          ],
+          "signature": "getInstance1DB()",
+          "parameters": [],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "15-40:build"
+            ],
+            [
+              "library",
+              "%AC0$MapperMultiple-getInstance1DB",
+              "constructor()"
+            ],
+            [
+              "library",
+              "%AC1$MapperMultiple-getInstance1DB",
+              "constructor()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": []
+        },
+        "27-38:getInstance2DB": {
+          "start": 27,
+          "end": 38,
+          "body": [
+            "  static getInstance2DB() {\n",
+            "    if (!MapperMultiple.mapper2) {\n",
+            "      MapperMultiple.mapper2 = BaseMapper.build<Employee>({\n",
+            "        class: Employee,\n",
+            "        config: {\n",
+            "          name: 'RdbTest2.db', // 数据库文件名\n",
+            "          securityLevel: relationalStore.SecurityLevel.S3, // 数据库安全级别\n",
+            "        }\n",
+            "      })\n",
+            "    }\n",
+            "    return MapperMultiple.mapper2\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [
+            "static"
+          ],
+          "return_types": [
+            [
+              "unknown",
+              "BaseMapper"
+            ]
+          ],
+          "signature": "getInstance2DB()",
+          "parameters": [],
+          "calls": [
+            [
+              "rdbplus.src.main.ets.BaseMapper",
+              "BaseMapper",
+              "15-40:build"
+            ],
+            [
+              "library",
+              "%AC2$MapperMultiple-getInstance2DB",
+              "constructor()"
+            ],
+            [
+              "library",
+              "%AC3$MapperMultiple-getInstance2DB",
+              "constructor()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": []
+        }
+      },
+      "fields": {
+        "mapper1": {
+          "start": 9,
+          "end": 9,
+          "body": [
+            "  private static mapper1: BaseMapper<Employee>\n"
+          ],
+          "modifiers": [
+            "private",
+            "static"
+          ],
+          "types": [
+            [
+              "BaseMapper<Employee>",
+              "BaseMapper<Employee>"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "mapper2": {
+          "start": 10,
+          "end": 10,
+          "body": [
+            "  private static mapper2: BaseMapper<Employee>\n"
+          ],
+          "modifiers": [
+            "private",
+            "static"
+          ],
+          "types": [
+            [
+              "BaseMapper<Employee>",
+              "BaseMapper<Employee>"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "class",
+      "type_parameters": [],
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "MapperMultiple",
+      "kind": "class",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

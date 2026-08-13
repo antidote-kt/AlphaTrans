@@ -1,0 +1,65 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/decorator/Table.ts",
+  "imports": {
+    "1-1:../model/TableParams": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { TableParams } from \"../model/TableParams\";\n"
+      ],
+      "module": "../model/TableParams",
+      "side_effect_only": false
+    }
+  },
+  "classes": {},
+  "exports": [
+    {
+      "name": "Table",
+      "kind": "function",
+      "default": false
+    }
+  ],
+  "functions": {
+    "6-10:Table": {
+      "start": 6,
+      "end": 10,
+      "body": [
+        "export function Table(options: TableParams) {\n",
+        "  return function (target: ESObject) {\n",
+        "    target.__tableMeta__ = options;\n",
+        "  };\n",
+        "}"
+      ],
+      "is_constructor": false,
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ],
+      "return_types": [
+        [
+          "unknown",
+          "Function"
+        ]
+      ],
+      "signature": "Table(TableParams)",
+      "parameters": [
+        "options"
+      ],
+      "calls": [],
+      "kind": "function",
+      "type_parameters": [],
+      "parameter_details": [
+        {
+          "name": "options",
+          "type": "TableParams",
+          "resolved_type": "TableParams",
+          "optional": false,
+          "rest": false,
+          "default": null
+        }
+      ]
+    }
+  },
+  "variables": {},
+  "type_aliases": {}
+}

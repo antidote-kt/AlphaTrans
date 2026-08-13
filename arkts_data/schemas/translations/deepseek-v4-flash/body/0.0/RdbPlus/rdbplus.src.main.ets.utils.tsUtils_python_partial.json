@@ -1,0 +1,97 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/utils/tsUtils.ts",
+    "imports": {},
+    "classes": {},
+    "exports": [
+        {
+            "name": "copyInstance",
+            "kind": "function",
+            "default": false
+        }
+    ],
+    "functions": {
+        "4-6:copyInstance": {
+            "start": 4,
+            "end": 6,
+            "body": [
+                "export function copyInstance<T>(target, sources): T {\n",
+                "  return Object.assign(target, sources);\n",
+                "}"
+            ],
+            "is_constructor": false,
+            "annotations": [],
+            "modifiers": [
+                "export"
+            ],
+            "return_types": [
+                [
+                    "T",
+                    "T"
+                ]
+            ],
+            "signature": "copyInstance(unknown, unknown)",
+            "parameters": [
+                "target",
+                "sources"
+            ],
+            "calls": [
+                [
+                    "library",
+                    "ObjectConstructor",
+                    "assign(T, U)"
+                ]
+            ],
+            "kind": "function",
+            "type_parameters": [
+                "T"
+            ],
+            "parameter_details": [
+                {
+                    "name": "target",
+                    "type": "unknown",
+                    "resolved_type": "unknown",
+                    "optional": false,
+                    "rest": false,
+                    "default": null
+                },
+                {
+                    "name": "sources",
+                    "type": "unknown",
+                    "resolved_type": "unknown",
+                    "optional": false,
+                    "rest": false,
+                    "default": null
+                }
+            ],
+            "partial_translation": [
+                "def copyInstance(target: Any, sources: Any) -> T:\n",
+                "    pass\n"
+            ],
+            "translation": [
+                "def copyInstance(target: Any, sources: Any) -> T:",
+                "    if hasattr(target, 'update') and hasattr(sources, 'items'):",
+                "        target.update(sources)",
+                "    else:",
+                "        for key, value in vars(sources).items():",
+                "            setattr(target, key, value)",
+                "    return target"
+            ],
+            "translation_status": "attempted",
+            "syntactic_validation": "parseable",
+            "elapsed_time": 9.94444727897644,
+            "generation_timestamp": "2026-08-11T23:59:44.306485",
+            "model_name": "deepseek-v4-flash",
+            "include_implementation": true,
+            "composition_validation": "passed",
+            "validation_feedback": ""
+        }
+    },
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

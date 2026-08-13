@@ -1,0 +1,185 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/TableFieldParams.ts",
+    "imports": {
+        "1-1:./FieldType": {
+            "start": 1,
+            "end": 1,
+            "body": [
+                "import { FieldType } from \"./FieldType\";\n"
+            ],
+            "module": "./FieldType",
+            "side_effect_only": false
+        }
+    },
+    "classes": {
+        "TableFieldParams": {
+            "start": 3,
+            "end": 23,
+            "is_abstract": false,
+            "is_interface": true,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [],
+            "extends": [],
+            "methods": {},
+            "fields": {
+                "name": {
+                    "start": 7,
+                    "end": 7,
+                    "body": [
+                        "  name?: string;\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "string",
+                            "string"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": true,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    name: str = None\n"
+                    ],
+                    "translation": [
+                        "    name: str = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 4.6614861488342285,
+                    "generation_timestamp": "2026-08-11T23:35:33.939532",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "type": {
+                    "start": 12,
+                    "end": 12,
+                    "body": [
+                        "  type: FieldType;\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "FieldType",
+                            "FieldType"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    type: FieldType = None\n"
+                    ],
+                    "translation": [
+                        "    type: FieldType = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 4.957770109176636,
+                    "generation_timestamp": "2026-08-11T23:35:38.900790",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "isPrimaryKey": {
+                    "start": 17,
+                    "end": 17,
+                    "body": [
+                        "  isPrimaryKey?: boolean;\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "boolean",
+                            "boolean"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": true,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    isPrimaryKey: bool = None\n"
+                    ],
+                    "translation": [
+                        "    isPrimaryKey: bool = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 5.403828144073486,
+                    "generation_timestamp": "2026-08-11T23:35:44.307861",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "propertyKey": {
+                    "start": 22,
+                    "end": 22,
+                    "body": [
+                        "  propertyKey?: string\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "string",
+                            "string"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": true,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    propertyKey: str = None\n"
+                    ],
+                    "translation": [
+                        "    propertyKey: str = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 5.709234237670898,
+                    "generation_timestamp": "2026-08-11T23:35:50.020881",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "static_initializers": {},
+            "kind": "interface",
+            "type_parameters": [],
+            "annotations": [],
+            "modifiers": [
+                "export"
+            ],
+            "python_class_declaration": "class TableFieldParams(ABC):\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "TableFieldParams",
+            "kind": "interface",
+            "default": false
+        }
+    ],
+    "functions": {},
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

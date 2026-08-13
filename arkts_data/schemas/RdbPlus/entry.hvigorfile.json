@@ -1,0 +1,29 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/hvigorfile.ts",
+  "imports": {
+    "1-1:@ohos/hvigor-ohos-plugin": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { hapTasks } from '@ohos/hvigor-ohos-plugin';\n"
+      ],
+      "module": "@ohos/hvigor-ohos-plugin",
+      "side_effect_only": false
+    }
+  },
+  "classes": {},
+  "exports": [
+    {
+      "body": "export default {\n  system: hapTasks, /* Built-in plugin of Hvigor. It cannot be modified. */\n  plugins: []       /* Custom plugin to extend the functionality of Hvigor. */\n}",
+      "start": 54,
+      "end": 227,
+      "startLine": 3,
+      "startColumn": 1,
+      "endLine": 6,
+      "endColumn": 2
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

@@ -1,0 +1,119 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/SqlData.ts",
+    "imports": {
+        "1-1:@kit.ArkData": {
+            "start": 1,
+            "end": 1,
+            "body": [
+                "import { relationalStore } from \"@kit.ArkData\"\n"
+            ],
+            "module": "@kit.ArkData",
+            "side_effect_only": false
+        }
+    },
+    "classes": {
+        "SqlData": {
+            "start": 3,
+            "end": 6,
+            "is_abstract": false,
+            "is_interface": true,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [],
+            "extends": [],
+            "methods": {},
+            "fields": {
+                "sql": {
+                    "start": 4,
+                    "end": 4,
+                    "body": [
+                        "  sql: string\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "string",
+                            "string"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    sql: str = None\n"
+                    ],
+                    "translation": [
+                        "    sql: str = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 5.970614194869995,
+                    "generation_timestamp": "2026-08-11T23:35:24.212251",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "values": {
+                    "start": 5,
+                    "end": 5,
+                    "body": [
+                        "  values: relationalStore.ValueType[]\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "relationalStore.ValueType[]",
+                            "relationalStore.ValueType[]"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    values: list[ValueType] = None\n"
+                    ],
+                    "translation": [
+                        "    values: list[ValueType] = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 5.059932231903076,
+                    "generation_timestamp": "2026-08-11T23:35:29.275029",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "static_initializers": {},
+            "kind": "interface",
+            "type_parameters": [],
+            "annotations": [],
+            "modifiers": [
+                "export"
+            ],
+            "python_class_declaration": "class SqlData(ABC):\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "SqlData",
+            "kind": "interface",
+            "default": false
+        }
+    ],
+    "functions": {},
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

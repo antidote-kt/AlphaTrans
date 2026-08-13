@@ -1,0 +1,76 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/TableParams.ts",
+    "imports": {},
+    "classes": {
+        "TableParams": {
+            "start": 1,
+            "end": 6,
+            "is_abstract": false,
+            "is_interface": true,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [],
+            "extends": [],
+            "methods": {},
+            "fields": {
+                "tableName": {
+                    "start": 5,
+                    "end": 5,
+                    "body": [
+                        "  tableName: string;\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "string",
+                            "string"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    tableName: str = None\n"
+                    ],
+                    "translation": [
+                        "    tableName: str = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 9.255770444869995,
+                    "generation_timestamp": "2026-08-11T23:35:59.279944",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "static_initializers": {},
+            "kind": "interface",
+            "type_parameters": [],
+            "annotations": [],
+            "modifiers": [
+                "export"
+            ],
+            "python_class_declaration": "class TableParams(ABC):\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "TableParams",
+            "kind": "interface",
+            "default": false
+        }
+    ],
+    "functions": {},
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

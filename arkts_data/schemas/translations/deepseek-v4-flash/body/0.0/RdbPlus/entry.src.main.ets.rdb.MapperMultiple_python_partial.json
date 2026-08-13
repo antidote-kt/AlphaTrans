@@ -1,0 +1,299 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MapperMultiple.ets",
+    "imports": {
+        "1-1:@kit.ArkData": {
+            "start": 1,
+            "end": 1,
+            "body": [
+                "import { relationalStore } from '@kit.ArkData'\n"
+            ],
+            "module": "@kit.ArkData",
+            "side_effect_only": false
+        },
+        "2-2:rdbplus": {
+            "start": 2,
+            "end": 2,
+            "body": [
+                "import { BaseMapper } from 'rdbplus'\n"
+            ],
+            "module": "rdbplus",
+            "side_effect_only": false
+        },
+        "3-3:./Employee": {
+            "start": 3,
+            "end": 3,
+            "body": [
+                "import { Employee } from './Employee'\n"
+            ],
+            "module": "./Employee",
+            "side_effect_only": false
+        }
+    },
+    "classes": {
+        "MapperMultiple": {
+            "start": 8,
+            "end": 39,
+            "is_abstract": false,
+            "is_interface": false,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [],
+            "extends": [],
+            "methods": {
+                "13-24:getInstance1DB": {
+                    "start": 13,
+                    "end": 24,
+                    "body": [
+                        "  static getInstance1DB() {\n",
+                        "    if (!MapperMultiple.mapper1) {\n",
+                        "      MapperMultiple.mapper1 = BaseMapper.build<Employee>({\n",
+                        "        class: Employee,\n",
+                        "        config: {\n",
+                        "          name: 'RdbTest1.db', // 数据库文件名\n",
+                        "          securityLevel: relationalStore.SecurityLevel.S3, // 数据库安全级别\n",
+                        "        }\n",
+                        "      })\n",
+                        "    }\n",
+                        "    return MapperMultiple.mapper1\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [
+                        "static"
+                    ],
+                    "return_types": [
+                        [
+                            "unknown",
+                            "BaseMapper"
+                        ]
+                    ],
+                    "signature": "getInstance1DB()",
+                    "parameters": [],
+                    "calls": [
+                        [
+                            "rdbplus.src.main.ets.BaseMapper",
+                            "BaseMapper",
+                            "15-40:build"
+                        ],
+                        [
+                            "library",
+                            "%AC0$MapperMultiple-getInstance1DB",
+                            "constructor()"
+                        ],
+                        [
+                            "library",
+                            "%AC1$MapperMultiple-getInstance1DB",
+                            "constructor()"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    @staticmethod\n",
+                        "    def getInstance1DB() -> Any:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    @staticmethod",
+                        "    def getInstance1DB() -> Any:",
+                        "        if MapperMultiple.mapper1 is None:",
+                        "            MapperMultiple.mapper1 = BaseMapper.build({",
+                        "                'class': Employee,",
+                        "                'config': {",
+                        "                    'name': 'RdbTest1.db',",
+                        "                    'securityLevel': 'S3'",
+                        "                }",
+                        "            })",
+                        "        return MapperMultiple.mapper1"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 19.206538677215576,
+                    "generation_timestamp": "2026-08-11T23:44:41.962544",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "27-38:getInstance2DB": {
+                    "start": 27,
+                    "end": 38,
+                    "body": [
+                        "  static getInstance2DB() {\n",
+                        "    if (!MapperMultiple.mapper2) {\n",
+                        "      MapperMultiple.mapper2 = BaseMapper.build<Employee>({\n",
+                        "        class: Employee,\n",
+                        "        config: {\n",
+                        "          name: 'RdbTest2.db', // 数据库文件名\n",
+                        "          securityLevel: relationalStore.SecurityLevel.S3, // 数据库安全级别\n",
+                        "        }\n",
+                        "      })\n",
+                        "    }\n",
+                        "    return MapperMultiple.mapper2\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [
+                        "static"
+                    ],
+                    "return_types": [
+                        [
+                            "unknown",
+                            "BaseMapper"
+                        ]
+                    ],
+                    "signature": "getInstance2DB()",
+                    "parameters": [],
+                    "calls": [
+                        [
+                            "rdbplus.src.main.ets.BaseMapper",
+                            "BaseMapper",
+                            "15-40:build"
+                        ],
+                        [
+                            "library",
+                            "%AC2$MapperMultiple-getInstance2DB",
+                            "constructor()"
+                        ],
+                        [
+                            "library",
+                            "%AC3$MapperMultiple-getInstance2DB",
+                            "constructor()"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    @staticmethod\n",
+                        "    def getInstance2DB() -> Any:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def getInstance2DB() -> Any:",
+                        "",
+                        "        if MapperMultiple.mapper2 is None:",
+                        "            # Build parameters: use a simple object to hold 'class' attribute",
+                        "            param = type('BuildParams', (), {})()",
+                        "            setattr(param, 'class', Employee)",
+                        "            param.config = {",
+                        "                'name': 'RdbTest2.db',",
+                        "                'securityLevel': relationalStore.SecurityLevel.S3",
+                        "            }",
+                        "            MapperMultiple.mapper2 = BaseMapper.build(param)",
+                        "        return MapperMultiple.mapper2"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 10.384195327758789,
+                    "generation_timestamp": "2026-08-12T00:22:54.404305",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "fields": {
+                "mapper1": {
+                    "start": 9,
+                    "end": 9,
+                    "body": [
+                        "  private static mapper1: BaseMapper<Employee>\n"
+                    ],
+                    "modifiers": [
+                        "private",
+                        "static"
+                    ],
+                    "types": [
+                        [
+                            "BaseMapper<Employee>",
+                            "BaseMapper<Employee>"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    mapper1: BaseMapper[Employee] = None\n"
+                    ],
+                    "translation": [
+                        "    mapper1: BaseMapper[Employee] = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 5.15485143661499,
+                    "generation_timestamp": "2026-08-11T23:30:19.695061",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "mapper2": {
+                    "start": 10,
+                    "end": 10,
+                    "body": [
+                        "  private static mapper2: BaseMapper<Employee>\n"
+                    ],
+                    "modifiers": [
+                        "private",
+                        "static"
+                    ],
+                    "types": [
+                        [
+                            "BaseMapper<Employee>",
+                            "BaseMapper<Employee>"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    mapper2: BaseMapper[Employee] = None\n"
+                    ],
+                    "translation": [
+                        "    mapper2: BaseMapper[Employee] = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 6.179959297180176,
+                    "generation_timestamp": "2026-08-11T23:30:25.878840",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "static_initializers": {},
+            "kind": "class",
+            "type_parameters": [],
+            "annotations": [],
+            "modifiers": [
+                "export"
+            ],
+            "python_class_declaration": "class MapperMultiple:\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "MapperMultiple",
+            "kind": "class",
+            "default": false
+        }
+    ],
+    "functions": {},
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

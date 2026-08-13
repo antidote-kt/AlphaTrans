@@ -1,0 +1,124 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/ohosTest/ets/test/Ability.test.ets",
+    "imports": {
+        "1-1:@kit.PerformanceAnalysisKit": {
+            "start": 1,
+            "end": 1,
+            "body": [
+                "import { hilog } from '@kit.PerformanceAnalysisKit';\n"
+            ],
+            "module": "@kit.PerformanceAnalysisKit",
+            "side_effect_only": false
+        },
+        "2-2:@ohos/hypium": {
+            "start": 2,
+            "end": 2,
+            "body": [
+                "import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';\n"
+            ],
+            "module": "@ohos/hypium",
+            "side_effect_only": false
+        }
+    },
+    "classes": {},
+    "exports": [
+        {
+            "name": "abilityTest",
+            "kind": "function",
+            "default": true
+        }
+    ],
+    "functions": {
+        "4-35:abilityTest": {
+            "start": 4,
+            "end": 35,
+            "body": [
+                "export default function abilityTest() {\n",
+                "  describe('ActsAbilityTest', () => {\n",
+                "    // Defines a test suite. Two parameters are supported: test suite name and test suite function.\n",
+                "    beforeAll(() => {\n",
+                "      // Presets an action, which is performed only once before all test cases of the test suite start.\n",
+                "      // This API supports only one parameter: preset action function.\n",
+                "    })\n",
+                "    beforeEach(() => {\n",
+                "      // Presets an action, which is performed before each unit test case starts.\n",
+                "      // The number of execution times is the same as the number of test cases defined by **it**.\n",
+                "      // This API supports only one parameter: preset action function.\n",
+                "    })\n",
+                "    afterEach(() => {\n",
+                "      // Presets a clear action, which is performed after each unit test case ends.\n",
+                "      // The number of execution times is the same as the number of test cases defined by **it**.\n",
+                "      // This API supports only one parameter: clear action function.\n",
+                "    })\n",
+                "    afterAll(() => {\n",
+                "      // Presets a clear action, which is performed after all test cases of the test suite end.\n",
+                "      // This API supports only one parameter: clear action function.\n",
+                "    })\n",
+                "    it('assertContain', 0, () => {\n",
+                "      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.\n",
+                "      hilog.info(0x0000, 'testTag', '%{public}s', 'it begin');\n",
+                "      let a = 'abc';\n",
+                "      let b = 'b';\n",
+                "      // Defines a variety of assertion methods, which are used to declare expected boolean conditions.\n",
+                "      expect(a).assertContain(b);\n",
+                "      expect(a).assertEqual(a);\n",
+                "    })\n",
+                "  })\n",
+                "}"
+            ],
+            "is_constructor": false,
+            "annotations": [],
+            "modifiers": [
+                "export",
+                "default"
+            ],
+            "return_types": [
+                [
+                    "unknown",
+                    "void"
+                ]
+            ],
+            "signature": "abilityTest()",
+            "parameters": [],
+            "calls": [
+                [
+                    "library",
+                    "",
+                    "describe()"
+                ]
+            ],
+            "kind": "function",
+            "type_parameters": [],
+            "parameter_details": [],
+            "partial_translation": [
+                "def abilityTest() -> Any:\n",
+                "    pass\n"
+            ],
+            "translation": [
+                "def abilityTest() -> Any:",
+                "    # beforeAll no-op",
+                "    # beforeEach no-op",
+                "    a = 'abc'",
+                "    b = 'b'",
+                "    assert b in a, \"assertContain failed\"",
+                "    assert a == a, \"assertEqual failed\""
+            ],
+            "translation_status": "attempted",
+            "syntactic_validation": "parseable",
+            "elapsed_time": 19.09358811378479,
+            "generation_timestamp": "2026-08-12T00:07:26.131926",
+            "model_name": "deepseek-v4-flash",
+            "include_implementation": true,
+            "composition_validation": "passed",
+            "validation_feedback": ""
+        }
+    },
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

@@ -1,0 +1,1143 @@
+[
+    {
+        "schema_name": "entry.src.main.ets.pages.Index",
+        "class_name": "Index",
+        "fragment_name": "mapper",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.EmpMapper",
+        "class_name": "EmpMapper",
+        "fragment_name": "mapper",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.Employee",
+        "class_name": "Employee",
+        "fragment_name": "id",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.Employee",
+        "class_name": "Employee",
+        "fragment_name": "name",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.Employee",
+        "class_name": "Employee",
+        "fragment_name": "myAge",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.Employee",
+        "class_name": "Employee",
+        "fragment_name": "other",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.MapperMultiple",
+        "class_name": "MapperMultiple",
+        "fragment_name": "mapper1",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.MapperMultiple",
+        "class_name": "MapperMultiple",
+        "fragment_name": "mapper2",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.BuildProfile",
+        "class_name": "BuildProfile",
+        "fragment_name": "HAR_VERSION",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.BuildProfile",
+        "class_name": "BuildProfile",
+        "fragment_name": "BUILD_MODE_NAME",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.BuildProfile",
+        "class_name": "BuildProfile",
+        "fragment_name": "DEBUG",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.BuildProfile",
+        "class_name": "BuildProfile",
+        "fragment_name": "TARGET_NAME",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.example.EmpMapper",
+        "class_name": "EmpMapper",
+        "fragment_name": "mapper",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.example.Employee",
+        "class_name": "Employee",
+        "fragment_name": "id",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.example.Employee",
+        "class_name": "Employee",
+        "fragment_name": "name",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.example.Employee",
+        "class_name": "Employee",
+        "fragment_name": "age",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "config",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "sqlUtils",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "getRow",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "id",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "store",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "context",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "logger",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "columns",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "tableName",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "idName",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "propertyKeys",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "fields",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "fieldsTemp",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "valueTemp",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "selectSql",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "groupSql",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "havingSql",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "orderList",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "whereList",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "valueList",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "updateList",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "updateValueList",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.BuildParams",
+        "class_name": "BuildParams",
+        "fragment_name": "class",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.BuildParams",
+        "class_name": "BuildParams",
+        "fragment_name": "config",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.Page",
+        "class_name": "Page",
+        "fragment_name": "total",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.Page",
+        "class_name": "Page",
+        "fragment_name": "current",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.Page",
+        "class_name": "Page",
+        "fragment_name": "size",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.Page",
+        "class_name": "Page",
+        "fragment_name": "record",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.SqlData",
+        "class_name": "SqlData",
+        "fragment_name": "sql",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.SqlData",
+        "class_name": "SqlData",
+        "fragment_name": "values",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.TableFieldParams",
+        "class_name": "TableFieldParams",
+        "fragment_name": "name",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.TableFieldParams",
+        "class_name": "TableFieldParams",
+        "fragment_name": "type",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.TableFieldParams",
+        "class_name": "TableFieldParams",
+        "fragment_name": "isPrimaryKey",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.TableFieldParams",
+        "class_name": "TableFieldParams",
+        "fragment_name": "propertyKey",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.TableParams",
+        "class_name": "TableParams",
+        "fragment_name": "tableName",
+        "fragment_type": "field",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.entryability.EntryAbility",
+        "class_name": "EntryAbility",
+        "fragment_name": "10-14:onWindowStageCreate",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.log.Logger",
+        "class_name": "Logger",
+        "fragment_name": "12-12:error",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "41-48:init",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.entryability.EntryAbility",
+        "class_name": "EntryAbility",
+        "fragment_name": "6-8:onCreate",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.entrybackupability.EntryBackupAbility",
+        "class_name": "EntryBackupAbility",
+        "fragment_name": "12-15:onRestore",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.entrybackupability.EntryBackupAbility",
+        "class_name": "EntryBackupAbility",
+        "fragment_name": "7-10:onBackup",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.pages.Index",
+        "class_name": "Index",
+        "fragment_name": "15-412:build",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.pages.Index",
+        "class_name": "Index",
+        "fragment_name": "8-8:constructor",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "42-47:constructor",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.DecoratorUtils",
+        "class_name": "<module>",
+        "fragment_name": "15-17:getColumnMeta",
+        "fragment_type": "function",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.DecoratorUtils",
+        "class_name": "<module>",
+        "fragment_name": "8-10:getEntityMeta",
+        "fragment_type": "function",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "22-36:constructor",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "15-40:build",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.EmpMapper",
+        "class_name": "EmpMapper",
+        "fragment_name": "9-20:getInstance",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "58-70:create",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "52-54:getConnection",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.log.Logger",
+        "class_name": "Logger",
+        "fragment_name": "8-8:info",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "125-128:close",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "14-16:version",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "18-20:version",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "75-83:execDML",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.EmpMapper",
+        "class_name": "EmpMapper",
+        "fragment_name": "27-57:createTable",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.MapperMultiple",
+        "class_name": "MapperMultiple",
+        "fragment_name": "13-24:getInstance1DB",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.MapperMultiple",
+        "class_name": "MapperMultiple",
+        "fragment_name": "27-38:getInstance2DB",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.MessageDialog",
+        "class_name": "<module>",
+        "fragment_name": "15-20:showToast",
+        "fragment_type": "function",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.MessageDialog",
+        "class_name": "<module>",
+        "fragment_name": "22-31:showDialog",
+        "fragment_type": "function",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.main.ets.rdb.MessageDialog",
+        "class_name": "<module>",
+        "fragment_name": "35-45:alertDialog",
+        "fragment_type": "function",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.example.EmpMapper",
+        "class_name": "EmpMapper",
+        "fragment_name": "9-20:getInstance",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.example.EmpMapper",
+        "class_name": "EmpMapper",
+        "fragment_name": "27-57:createTable",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "88-96:execDQL",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "124-146:getObjectBySql",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.MyWrapper",
+        "class_name": "MyWrapper",
+        "fragment_name": "26-28:getSelect",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.MyWrapper",
+        "class_name": "MyWrapper",
+        "fragment_name": "33-36:getWhere",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.MyWrapper",
+        "class_name": "MyWrapper",
+        "fragment_name": "41-43:getValue",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.MyWrapper",
+        "class_name": "MyWrapper",
+        "fragment_name": "48-54:getOrder",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.MyWrapper",
+        "class_name": "MyWrapper",
+        "fragment_name": "59-69:getGroup",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.MyWrapper",
+        "class_name": "MyWrapper",
+        "fragment_name": "9-21:build",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "38-41:list",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "16-17:constructor",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "153-178:getList",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "43-46:getOne",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "185-209:getOne",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "48-51:count",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "61-80:count",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "53-59:page",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.model.Page",
+        "class_name": "Page",
+        "fragment_name": "7-12:constructor",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "218-243:getPage",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "61-67:getById",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "250-268:getById",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "69-85:insert",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "276-289:insert",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "87-107:insertBatch",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "296-309:insertBatch",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.MyWrapper",
+        "class_name": "MyWrapper",
+        "fragment_name": "74-76:getUpdate",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.MyWrapper",
+        "class_name": "MyWrapper",
+        "fragment_name": "81-83:getUpdateValue",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "139-142:update",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "316-330:update",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "109-129:updateById",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "337-350:updateById",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "144-147:delete",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "357-371:delete",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.SqlUtils",
+        "class_name": "SqlUtils",
+        "fragment_name": "131-137:deleteById",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "378-391:deleteById",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.BaseMapper",
+        "class_name": "BaseMapper",
+        "fragment_name": "87-116:getObject",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "101-104:beginTransaction",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "109-112:commit",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "117-120:rollBack",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "133-136:backup",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "141-144:restore",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "22-24:getStore",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "29-36:deleteRdbStore",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Connection",
+        "class_name": "Connection",
+        "fragment_name": "50-53:constructor",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "112-118:lte",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "126-132:gt",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "140-146:gte",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "155-163:between",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "172-180:notBetween",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "188-194:like",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "202-208:notLike",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "215-220:isNull",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "227-232:isNotNull",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "239-244:orderByAsc",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "251-256:orderByDesc",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "26-32:set",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "263-272:groupBy",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "279-284:having",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "291-299:or",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "306-314:and",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "321-324:select",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "331-334:selectSQL",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "40-46:eq",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "54-60:notEq",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "68-75:in",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "83-90:notIn",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.core.Wrapper",
+        "class_name": "Wrapper",
+        "fragment_name": "98-104:lt",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.decorator.TableField",
+        "class_name": "<module>",
+        "fragment_name": "6-19:TableField",
+        "fragment_type": "function",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.decorator.Table",
+        "class_name": "<module>",
+        "fragment_name": "6-10:Table",
+        "fragment_type": "function",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.log.DbLogger",
+        "class_name": "DbLogger",
+        "fragment_name": "11-13:info",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.log.DbLogger",
+        "class_name": "DbLogger",
+        "fragment_name": "15-17:warn",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.log.DbLogger",
+        "class_name": "DbLogger",
+        "fragment_name": "19-21:error",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.log.DbLogger",
+        "class_name": "DbLogger",
+        "fragment_name": "7-9:debug",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.log.Logger",
+        "class_name": "Logger",
+        "fragment_name": "10-10:warn",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.log.Logger",
+        "class_name": "Logger",
+        "fragment_name": "6-6:debug",
+        "fragment_type": "method",
+        "is_test": false
+    },
+    {
+        "schema_name": "rdbplus.src.main.ets.utils.tsUtils",
+        "class_name": "<module>",
+        "fragment_name": "4-6:copyInstance",
+        "fragment_type": "function",
+        "is_test": false
+    },
+    {
+        "schema_name": "entry.src.ohosTest.ets.test.Ability.test",
+        "class_name": "<module>",
+        "fragment_name": "4-35:abilityTest",
+        "fragment_type": "function",
+        "is_test": true
+    },
+    {
+        "schema_name": "entry.src.ohosTest.ets.test.List.test",
+        "class_name": "<module>",
+        "fragment_name": "3-5:testsuite",
+        "fragment_type": "function",
+        "is_test": true
+    },
+    {
+        "schema_name": "entry.src.test.LocalUnit.test",
+        "class_name": "<module>",
+        "fragment_name": "3-33:localUnitTest",
+        "fragment_type": "function",
+        "is_test": true
+    },
+    {
+        "schema_name": "entry.src.test.List.test",
+        "class_name": "<module>",
+        "fragment_name": "3-5:testsuite",
+        "fragment_type": "function",
+        "is_test": true
+    },
+    {
+        "schema_name": "rdbplus.src.ohosTest.ets.test.Ability.test",
+        "class_name": "<module>",
+        "fragment_name": "4-35:abilityTest",
+        "fragment_type": "function",
+        "is_test": true
+    },
+    {
+        "schema_name": "rdbplus.src.ohosTest.ets.test.List.test",
+        "class_name": "<module>",
+        "fragment_name": "3-5:testsuite",
+        "fragment_type": "function",
+        "is_test": true
+    },
+    {
+        "schema_name": "rdbplus.src.test.LocalUnit.test",
+        "class_name": "<module>",
+        "fragment_name": "3-33:localUnitTest",
+        "fragment_type": "function",
+        "is_test": true
+    },
+    {
+        "schema_name": "rdbplus.src.test.List.test",
+        "class_name": "<module>",
+        "fragment_name": "3-5:testsuite",
+        "fragment_type": "function",
+        "is_test": true
+    }
+]

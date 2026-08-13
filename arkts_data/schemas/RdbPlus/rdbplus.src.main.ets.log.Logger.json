@@ -1,0 +1,168 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/Logger.ets",
+  "imports": {},
+  "classes": {
+    "Logger": {
+      "start": 4,
+      "end": 13,
+      "is_abstract": false,
+      "is_interface": true,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {
+        "6-6:debug": {
+          "start": 6,
+          "end": 6,
+          "body": [
+            "  debug(...args: string[]): void\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "void",
+              "void"
+            ]
+          ],
+          "signature": "debug(string[])",
+          "parameters": [
+            "args"
+          ],
+          "calls": [],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "args",
+              "type": "string[]",
+              "resolved_type": "string[]",
+              "optional": false,
+              "rest": true,
+              "default": null
+            }
+          ]
+        },
+        "8-8:info": {
+          "start": 8,
+          "end": 8,
+          "body": [
+            "  info(...args: string[]): void\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "void",
+              "void"
+            ]
+          ],
+          "signature": "info(string[])",
+          "parameters": [
+            "args"
+          ],
+          "calls": [],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "args",
+              "type": "string[]",
+              "resolved_type": "string[]",
+              "optional": false,
+              "rest": true,
+              "default": null
+            }
+          ]
+        },
+        "10-10:warn": {
+          "start": 10,
+          "end": 10,
+          "body": [
+            "  warn(...args: string[]): void\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "void",
+              "void"
+            ]
+          ],
+          "signature": "warn(string[])",
+          "parameters": [
+            "args"
+          ],
+          "calls": [],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "args",
+              "type": "string[]",
+              "resolved_type": "string[]",
+              "optional": false,
+              "rest": true,
+              "default": null
+            }
+          ]
+        },
+        "12-12:error": {
+          "start": 12,
+          "end": 12,
+          "body": [
+            "  error(...args: string[]): void\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "void",
+              "void"
+            ]
+          ],
+          "signature": "error(string[])",
+          "parameters": [
+            "args"
+          ],
+          "calls": [],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "args",
+              "type": "string[]",
+              "resolved_type": "string[]",
+              "optional": false,
+              "rest": true,
+              "default": null
+            }
+          ]
+        }
+      },
+      "fields": {},
+      "static_initializers": {},
+      "kind": "interface",
+      "type_parameters": [],
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "Logger",
+      "kind": "interface",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

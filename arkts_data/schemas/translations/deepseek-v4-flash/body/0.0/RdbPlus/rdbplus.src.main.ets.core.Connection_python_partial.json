@@ -1,0 +1,1214 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets",
+    "imports": {
+        "1-1:@ohos.data.relationalStore": {
+            "start": 1,
+            "end": 1,
+            "body": [
+                "import relationalStore from '@ohos.data.relationalStore'\n"
+            ],
+            "module": "@ohos.data.relationalStore",
+            "side_effect_only": false
+        },
+        "2-2:@kit.ArkTS": {
+            "start": 2,
+            "end": 2,
+            "body": [
+                "import { util } from '@kit.ArkTS'\n"
+            ],
+            "module": "@kit.ArkTS",
+            "side_effect_only": false
+        },
+        "3-3:../log/Logger": {
+            "start": 3,
+            "end": 3,
+            "body": [
+                "import { Logger } from '../log/Logger'\n"
+            ],
+            "module": "../log/Logger",
+            "side_effect_only": false
+        }
+    },
+    "classes": {
+        "Connection": {
+            "start": 8,
+            "end": 145,
+            "is_abstract": false,
+            "is_interface": false,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [],
+            "extends": [],
+            "methods": {
+                "14-16:version": {
+                    "start": 14,
+                    "end": 16,
+                    "body": [
+                        "  set version(v: number) {\n",
+                        "    this.store.version = v\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "unknown",
+                            "void"
+                        ]
+                    ],
+                    "signature": "version(number)",
+                    "parameters": [
+                        "v"
+                    ],
+                    "calls": [],
+                    "kind": "setter",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "v",
+                            "type": "number",
+                            "resolved_type": "number",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    @version.setter\n",
+                        "    def version(self, v: float) -> Any:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def version(self, v: float) -> Any:",
+                        "",
+                        "        self.store.version = v"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 13.056543111801147,
+                    "generation_timestamp": "2026-08-12T00:22:22.628266",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "18-20:version": {
+                    "start": 18,
+                    "end": 20,
+                    "body": [
+                        "  get version() {\n",
+                        "    return this.store.version\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "unknown",
+                            "void"
+                        ]
+                    ],
+                    "signature": "version()",
+                    "parameters": [],
+                    "calls": [],
+                    "kind": "getter",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    @property\n",
+                        "    def version(self) -> Any:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    @property",
+                        "    def version(self) -> Any:",
+                        "        return self.store.version"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 6.934228181838989,
+                    "generation_timestamp": "2026-08-12T00:22:29.570543",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "22-24:getStore": {
+                    "start": 22,
+                    "end": 24,
+                    "body": [
+                        "  getStore() {\n",
+                        "    return this.store\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "unknown",
+                            "void"
+                        ]
+                    ],
+                    "signature": "getStore()",
+                    "parameters": [],
+                    "calls": [],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    def getStore(self) -> Any:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def getStore(self) -> Any:",
+                        "            return self.store"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 4.786507844924927,
+                    "generation_timestamp": "2026-08-11T23:53:17.287049",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "29-36:deleteRdbStore": {
+                    "start": 29,
+                    "end": 36,
+                    "body": [
+                        "  static async deleteRdbStore(dbName: string): Promise<void> {\n",
+                        "    if (Connection.context === undefined) {\n",
+                        "      Connection.logger?.error('Connection未初始化，context获取失败')\n",
+                        "      return\n",
+                        "    }\n",
+                        "    relationalStore.deleteRdbStore(Connection.context, dbName)\n",
+                        "    Connection.logger?.info('deleteRdbStore success')\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [
+                        "static",
+                        "async"
+                    ],
+                    "return_types": [
+                        [
+                            "Promise<void>",
+                            "Promise"
+                        ]
+                    ],
+                    "signature": "deleteRdbStore(string)",
+                    "parameters": [
+                        "dbName"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "",
+                            "deleteRdbStore()"
+                        ],
+                        [
+                            "rdbplus.src.main.ets.log.Logger",
+                            "Logger",
+                            "12-12:error"
+                        ],
+                        [
+                            "rdbplus.src.main.ets.log.Logger",
+                            "Logger",
+                            "8-8:info"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "dbName",
+                            "type": "string",
+                            "resolved_type": "string",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    @staticmethod\n",
+                        "    async def deleteRdbStore(dbName: str) -> Awaitable[None]:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    @staticmethod",
+                        "    async def deleteRdbStore(dbName: str) -> Awaitable[None]:",
+                        "        if Connection.context is None:",
+                        "            if Connection.logger is not None:",
+                        "                Connection.logger.error('Connection未初始化，context获取失败')",
+                        "            return",
+                        "        relationalStore.deleteRdbStore(Connection.context, dbName)",
+                        "        if Connection.logger is not None:",
+                        "            Connection.logger.info('deleteRdbStore success')"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 18.00612449645996,
+                    "generation_timestamp": "2026-08-12T00:23:32.130503",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "41-48:init": {
+                    "start": 41,
+                    "end": 48,
+                    "body": [
+                        "  static init(context?: Context, logger?: Logger): void {\n",
+                        "    if (context === undefined) {\n",
+                        "      Connection.logger?.error('Connection初始化失败，参数异常')\n",
+                        "      return\n",
+                        "    }\n",
+                        "    Connection.context = context\n",
+                        "    Connection.logger = logger\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [
+                        "static"
+                    ],
+                    "return_types": [
+                        [
+                            "void",
+                            "void"
+                        ]
+                    ],
+                    "signature": "init(Context, Logger)",
+                    "parameters": [
+                        "context",
+                        "logger"
+                    ],
+                    "calls": [
+                        [
+                            "rdbplus.src.main.ets.log.Logger",
+                            "Logger",
+                            "12-12:error"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "context",
+                            "type": "Context",
+                            "resolved_type": "Context",
+                            "optional": true,
+                            "rest": false,
+                            "default": null
+                        },
+                        {
+                            "name": "logger",
+                            "type": "Logger",
+                            "resolved_type": "Logger",
+                            "optional": true,
+                            "rest": false,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    @staticmethod\n",
+                        "    def init(context: Context = None, logger: Logger = None) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def init(context: Context = None, logger: Logger = None) -> None:",
+                        "",
+                        "        if context is None:",
+                        "            if Connection.logger is not None:",
+                        "                Connection.logger.error('Connection初始化失败，参数异常')",
+                        "            return",
+                        "        Connection.context = context",
+                        "        Connection.logger = logger"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 13.788671016693115,
+                    "generation_timestamp": "2026-08-12T00:20:49.491443",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "50-53:constructor": {
+                    "start": 50,
+                    "end": 53,
+                    "body": [
+                        "  constructor(id: string, store: relationalStore.RdbStore) {\n",
+                        "    this.id = id\n",
+                        "    this.store = store\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": true,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "Connection"
+                        ]
+                    ],
+                    "signature": "constructor(string, relationalStore.RdbStore)",
+                    "parameters": [
+                        "id",
+                        "store"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "Connection",
+                            "%instInit()"
+                        ]
+                    ],
+                    "kind": "constructor",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "resolved_type": "string",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        },
+                        {
+                            "name": "store",
+                            "type": "relationalStore.RdbStore",
+                            "resolved_type": "relationalStore.RdbStore",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    def __init__(self, id: str, store: relationalStore.RdbStore) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def __init__(self, id: str, store: relationalStore.RdbStore) -> None:",
+                        "            self.id = id",
+                        "            self.store = store"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 7.761110782623291,
+                    "generation_timestamp": "2026-08-11T23:54:06.657349",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "58-70:create": {
+                    "start": 58,
+                    "end": 70,
+                    "body": [
+                        "  static async create(config: relationalStore.StoreConfig): Promise<Connection> {\n",
+                        "    return new Promise((resolve, reject) => {\n",
+                        "      relationalStore.getRdbStore(Connection.context, config)\n",
+                        "        .then(store => {\n",
+                        "          const db = new Connection(util.generateRandomUUID(), store)\n",
+                        "          Connection.logger?.info(`connection create ${db.id}`)\n",
+                        "          resolve(db)\n",
+                        "        })\n",
+                        "        .catch(() => {\n",
+                        "          reject()\n",
+                        "        })\n",
+                        "    })\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [
+                        "static",
+                        "async"
+                    ],
+                    "return_types": [
+                        [
+                            "Promise<Connection>",
+                            "Promise"
+                        ]
+                    ],
+                    "signature": "create(relationalStore.StoreConfig)",
+                    "parameters": [
+                        "config"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "Promise",
+                            "constructor()"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "config",
+                            "type": "relationalStore.StoreConfig",
+                            "resolved_type": "relationalStore.StoreConfig",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    @staticmethod\n",
+                        "    async def create(config: TypedDict('StoreConfig', {'name': str, 'securityLevel': Any})) -> Awaitable[Connection]:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    @staticmethod",
+                        "    async def create(config: TypedDict('StoreConfig', {'name': str, 'securityLevel': Any})) -> Awaitable[Connection]:",
+                        "        store = await relationalStore.getRdbStore(Connection.context, config)",
+                        "        db = Connection(str(uuid.uuid4()), store)",
+                        "        if Connection.logger:",
+                        "            Connection.logger.info(f\"connection create {db.id}\")",
+                        "        return db"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 21.5405011177063,
+                    "generation_timestamp": "2026-08-11T23:42:33.294940",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "75-83:execDML": {
+                    "start": 75,
+                    "end": 83,
+                    "body": [
+                        "  async execDML(sql: string, params: Array<relationalStore.ValueType> = []): Promise<relationalStore.ValueType> {\n",
+                        "    try {\n",
+                        "      Connection.logger?.info('execDML:', sql, JSON.stringify(params))\n",
+                        "      return this.store.execute(sql, params)\n",
+                        "    } catch (e) {\n",
+                        "      Connection.logger?.error('execDML', e.message, e.code, JSON.stringify(e))\n",
+                        "      throw new Error('execDML 执行失败')\n",
+                        "    }\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [
+                        "async"
+                    ],
+                    "return_types": [
+                        [
+                            "Promise<relationalStore.ValueType>",
+                            "Promise"
+                        ]
+                    ],
+                    "signature": "execDML(string, Array<relationalStore.ValueType>)",
+                    "parameters": [
+                        "sql",
+                        "params"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "ErrorConstructor",
+                            "construct-signature(string)"
+                        ],
+                        [
+                            "rdbplus.src.main.ets.log.Logger",
+                            "Logger",
+                            "12-12:error"
+                        ],
+                        [
+                            "library",
+                            "",
+                            "execute()"
+                        ],
+                        [
+                            "rdbplus.src.main.ets.log.Logger",
+                            "Logger",
+                            "8-8:info"
+                        ],
+                        [
+                            "library",
+                            "JSON",
+                            "stringify(any, Function, string\\u007cnumber)"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "sql",
+                            "type": "string",
+                            "resolved_type": "string",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        },
+                        {
+                            "name": "params",
+                            "type": "Array<relationalStore.ValueType>",
+                            "resolved_type": "relationalStore.ValueType[]",
+                            "optional": true,
+                            "rest": false,
+                            "default": "[]"
+                        }
+                    ],
+                    "partial_translation": [
+                        "    async def execDML(self, sql: str, params: list[relationalStore.ValueType] = None) -> Awaitable[Union[int, float, str, bool, None, bytes]]:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    async def execDML(self, sql: str, params: list[relationalStore.ValueType] = None) -> Awaitable[Union[int, float, str, bool, None, bytes]]:",
+                        "            if params is None:",
+                        "                params = []",
+                        "            try:",
+                        "                if self.logger:",
+                        "                    self.logger.info('execDML:', sql, json.dumps(params))",
+                        "                return await self.store.execute(sql, params)",
+                        "            except Exception as e:",
+                        "                if self.logger:",
+                        "                    self.logger.error('execDML', str(e), '', json.dumps(e.__dict__ if hasattr(e, '__dict__') else str(e)))",
+                        "                raise Exception('execDML 执行失败')"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 16.720711946487427,
+                    "generation_timestamp": "2026-08-11T23:43:52.171763",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "88-96:execDQL": {
+                    "start": 88,
+                    "end": 96,
+                    "body": [
+                        "  async execDQL(sql: string, params: Array<relationalStore.ValueType> = []): Promise<relationalStore.ResultSet> {\n",
+                        "    try {\n",
+                        "      Connection.logger?.info('execDQL:', sql, JSON.stringify(params))\n",
+                        "      return this.store.querySql(sql, params)\n",
+                        "    } catch (e) {\n",
+                        "      Connection.logger?.error('execDQL', e.message, e.code, JSON.stringify(e))\n",
+                        "      throw new Error('execDQL 执行失败')\n",
+                        "    }\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [
+                        "async"
+                    ],
+                    "return_types": [
+                        [
+                            "Promise<relationalStore.ResultSet>",
+                            "Promise"
+                        ]
+                    ],
+                    "signature": "execDQL(string, Array<relationalStore.ValueType>)",
+                    "parameters": [
+                        "sql",
+                        "params"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "ErrorConstructor",
+                            "construct-signature(string)"
+                        ],
+                        [
+                            "rdbplus.src.main.ets.log.Logger",
+                            "Logger",
+                            "12-12:error"
+                        ],
+                        [
+                            "rdbplus.src.main.ets.log.Logger",
+                            "Logger",
+                            "8-8:info"
+                        ],
+                        [
+                            "library",
+                            "",
+                            "querySql()"
+                        ],
+                        [
+                            "library",
+                            "JSON",
+                            "stringify(any, Function, string\\u007cnumber)"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "sql",
+                            "type": "string",
+                            "resolved_type": "string",
+                            "optional": false,
+                            "rest": false,
+                            "default": null
+                        },
+                        {
+                            "name": "params",
+                            "type": "Array<relationalStore.ValueType>",
+                            "resolved_type": "relationalStore.ValueType[]",
+                            "optional": true,
+                            "rest": false,
+                            "default": "[]"
+                        }
+                    ],
+                    "partial_translation": [
+                        "    async def execDQL(self, sql: str, params: list[relationalStore.ValueType] = None) -> Awaitable['relationalStore.ResultSet']:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    async def execDQL(self, sql: str, params: list[relationalStore.ValueType] = None) -> Awaitable['relationalStore.ResultSet']:",
+                        "            if params is None:",
+                        "                params = []",
+                        "            try:",
+                        "                if self.logger:",
+                        "                    self.logger.info('execDQL:', sql, json.dumps(params))",
+                        "                return await self.store.querySql(sql, params)",
+                        "            except Exception as e:",
+                        "                if self.logger:",
+                        "                    self.logger.error('execDQL', str(e), str(getattr(e, 'code', '')), json.dumps(str(e)))",
+                        "                raise Exception('execDQL 执行失败')"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 20.45251965522766,
+                    "generation_timestamp": "2026-08-11T23:46:47.567663",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "101-104:beginTransaction": {
+                    "start": 101,
+                    "end": 104,
+                    "body": [
+                        "  beginTransaction(): void {\n",
+                        "    Connection.logger?.info('transaction begin ', this.id)\n",
+                        "    this.store.beginTransaction()\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "void"
+                        ]
+                    ],
+                    "signature": "beginTransaction()",
+                    "parameters": [],
+                    "calls": [
+                        [
+                            "library",
+                            "",
+                            "beginTransaction()"
+                        ],
+                        [
+                            "rdbplus.src.main.ets.log.Logger",
+                            "Logger",
+                            "8-8:info"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    def beginTransaction(self) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def beginTransaction(self) -> None:",
+                        "            if self.logger is not None:",
+                        "                self.logger.info('transaction begin ', self.id)",
+                        "            self.store.beginTransaction()"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 7.825897455215454,
+                    "generation_timestamp": "2026-08-11T23:52:39.278286",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "109-112:commit": {
+                    "start": 109,
+                    "end": 112,
+                    "body": [
+                        "  commit(): void {\n",
+                        "    Connection.logger?.info('transaction commit ', this.id)\n",
+                        "    this.store.commit()\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "void"
+                        ]
+                    ],
+                    "signature": "commit()",
+                    "parameters": [],
+                    "calls": [
+                        [
+                            "library",
+                            "",
+                            "commit()"
+                        ],
+                        [
+                            "rdbplus.src.main.ets.log.Logger",
+                            "Logger",
+                            "8-8:info"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    def commit(self) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def commit(self) -> None:",
+                        "            if self.logger is not None:",
+                        "                self.logger.info('transaction commit ', self.id)",
+                        "            self.store.commit()"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 9.775591135025024,
+                    "generation_timestamp": "2026-08-11T23:52:49.061401",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "117-120:rollBack": {
+                    "start": 117,
+                    "end": 120,
+                    "body": [
+                        "  rollBack(): void {\n",
+                        "    Connection.logger?.info('transaction rollBack ', this.id)\n",
+                        "    this.store.rollBack()\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "void"
+                        ]
+                    ],
+                    "signature": "rollBack()",
+                    "parameters": [],
+                    "calls": [
+                        [
+                            "rdbplus.src.main.ets.log.Logger",
+                            "Logger",
+                            "8-8:info"
+                        ],
+                        [
+                            "library",
+                            "",
+                            "rollBack()"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    def rollBack(self) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def rollBack(self) -> None:",
+                        "            if self.logger is not None:",
+                        "                self.logger.info('transaction rollBack ', self.id)",
+                        "            self.store.rollBack()"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 7.6064536571502686,
+                    "generation_timestamp": "2026-08-11T23:52:56.675735",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "125-128:close": {
+                    "start": 125,
+                    "end": 128,
+                    "body": [
+                        "  async close(): Promise<void> {\n",
+                        "    Connection.logger?.info('connection close ', this.id)\n",
+                        "    this.store.close()\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [
+                        "async"
+                    ],
+                    "return_types": [
+                        [
+                            "Promise<void>",
+                            "Promise"
+                        ]
+                    ],
+                    "signature": "close()",
+                    "parameters": [],
+                    "calls": [
+                        [
+                            "library",
+                            "",
+                            "close()"
+                        ],
+                        [
+                            "rdbplus.src.main.ets.log.Logger",
+                            "Logger",
+                            "8-8:info"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [],
+                    "partial_translation": [
+                        "    async def close(self) -> Awaitable[None]:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    async def close(self) -> Awaitable[None]:",
+                        "            if self.logger is not None:",
+                        "                self.logger.info('connection close ', self.id)",
+                        "            self.store.close()"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 6.800549030303955,
+                    "generation_timestamp": "2026-08-11T23:43:10.976291",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "133-136:backup": {
+                    "start": 133,
+                    "end": 136,
+                    "body": [
+                        "  async backup(fileName: string = 'Backup.db'): Promise<void> {\n",
+                        "    this.store.backup(fileName)\n",
+                        "    Connection.logger?.info('backup success')\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [
+                        "async"
+                    ],
+                    "return_types": [
+                        [
+                            "Promise<void>",
+                            "Promise"
+                        ]
+                    ],
+                    "signature": "backup(string)",
+                    "parameters": [
+                        "fileName"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "",
+                            "backup()"
+                        ],
+                        [
+                            "rdbplus.src.main.ets.log.Logger",
+                            "Logger",
+                            "8-8:info"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "fileName",
+                            "type": "string",
+                            "resolved_type": "string",
+                            "optional": true,
+                            "rest": false,
+                            "default": "'Backup.db'"
+                        }
+                    ],
+                    "partial_translation": [
+                        "    async def backup(self, fileName: str = 'Backup.db') -> Awaitable[None]:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    async def backup(self, fileName: str = 'Backup.db') -> Awaitable[None]:",
+                        "            self.store.backup(fileName)",
+                        "            if self.logger is not None:",
+                        "                self.logger.info('backup success')"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 8.800539016723633,
+                    "generation_timestamp": "2026-08-11T23:53:05.483750",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "141-144:restore": {
+                    "start": 141,
+                    "end": 144,
+                    "body": [
+                        "  async restore(fileName: string = 'Backup.db'): Promise<void> {\n",
+                        "    this.store.restore(fileName)\n",
+                        "    Connection.logger?.info('restore success')\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [
+                        "async"
+                    ],
+                    "return_types": [
+                        [
+                            "Promise<void>",
+                            "Promise"
+                        ]
+                    ],
+                    "signature": "restore(string)",
+                    "parameters": [
+                        "fileName"
+                    ],
+                    "calls": [
+                        [
+                            "rdbplus.src.main.ets.log.Logger",
+                            "Logger",
+                            "8-8:info"
+                        ],
+                        [
+                            "library",
+                            "",
+                            "restore()"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "fileName",
+                            "type": "string",
+                            "resolved_type": "string",
+                            "optional": true,
+                            "rest": false,
+                            "default": "'Backup.db'"
+                        }
+                    ],
+                    "partial_translation": [
+                        "    async def restore(self, fileName: str = 'Backup.db') -> Awaitable[None]:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    async def restore(self, fileName: str = 'Backup.db') -> Awaitable[None]:",
+                        "            self.store.restore(fileName)",
+                        "            if Connection.logger is not None:",
+                        "                Connection.logger.info('restore success')"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 7.001863241195679,
+                    "generation_timestamp": "2026-08-11T23:53:12.492755",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "fields": {
+                "id": {
+                    "start": 9,
+                    "end": 9,
+                    "body": [
+                        "  private id: string\n"
+                    ],
+                    "modifiers": [
+                        "private"
+                    ],
+                    "types": [
+                        [
+                            "string",
+                            "string"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    id: str = None\n"
+                    ],
+                    "translation": [
+                        "    id: str = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 6.038356065750122,
+                    "generation_timestamp": "2026-08-11T23:31:58.411148",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "store": {
+                    "start": 10,
+                    "end": 10,
+                    "body": [
+                        "  private store: relationalStore.RdbStore\n"
+                    ],
+                    "modifiers": [
+                        "private"
+                    ],
+                    "types": [
+                        [
+                            "relationalStore.RdbStore",
+                            "relationalStore.RdbStore"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    store: relationalStore.RdbStore = None\n"
+                    ],
+                    "translation": [
+                        "    store: relationalStore.RdbStore = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 6.796083211898804,
+                    "generation_timestamp": "2026-08-11T23:32:05.214189",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "context": {
+                    "start": 11,
+                    "end": 11,
+                    "body": [
+                        "  private static context?: Context = undefined\n"
+                    ],
+                    "modifiers": [
+                        "private",
+                        "static"
+                    ],
+                    "types": [
+                        [
+                            "Context",
+                            "Context"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": true,
+                    "definite": false,
+                    "initializer": "undefined",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    context: Context = None\n"
+                    ],
+                    "translation": [
+                        "    context: Context = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 7.2871668338775635,
+                    "generation_timestamp": "2026-08-11T23:32:12.508505",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "logger": {
+                    "start": 12,
+                    "end": 12,
+                    "body": [
+                        "  private static logger?: Logger = undefined\n"
+                    ],
+                    "modifiers": [
+                        "private",
+                        "static"
+                    ],
+                    "types": [
+                        [
+                            "Logger",
+                            "Logger"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": true,
+                    "definite": false,
+                    "initializer": "undefined",
+                    "annotations": [],
+                    "partial_translation": [
+                        "    logger: Logger = None\n"
+                    ],
+                    "translation": [
+                        "    logger: Logger = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 4.9185850620269775,
+                    "generation_timestamp": "2026-08-11T23:32:17.434341",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "static_initializers": {},
+            "kind": "class",
+            "type_parameters": [],
+            "annotations": [],
+            "modifiers": [
+                "export"
+            ],
+            "python_class_declaration": "class Connection:\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "Connection",
+            "kind": "class",
+            "default": false
+        }
+    ],
+    "functions": {},
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

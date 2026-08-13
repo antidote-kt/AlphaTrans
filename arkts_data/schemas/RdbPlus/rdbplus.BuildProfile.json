@@ -1,0 +1,178 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/BuildProfile.ets",
+  "imports": {},
+  "classes": {
+    "BuildProfile": {
+      "start": 12,
+      "end": 17,
+      "is_abstract": false,
+      "is_interface": false,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {},
+      "fields": {
+        "HAR_VERSION": {
+          "start": 13,
+          "end": 13,
+          "body": [
+            "\tstatic readonly HAR_VERSION = HAR_VERSION;\n"
+          ],
+          "modifiers": [
+            "static",
+            "readonly"
+          ],
+          "types": [
+            [
+              "unknown",
+              "unknown"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "HAR_VERSION",
+          "annotations": []
+        },
+        "BUILD_MODE_NAME": {
+          "start": 14,
+          "end": 14,
+          "body": [
+            "\tstatic readonly BUILD_MODE_NAME = BUILD_MODE_NAME;\n"
+          ],
+          "modifiers": [
+            "static",
+            "readonly"
+          ],
+          "types": [
+            [
+              "unknown",
+              "unknown"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "BUILD_MODE_NAME",
+          "annotations": []
+        },
+        "DEBUG": {
+          "start": 15,
+          "end": 15,
+          "body": [
+            "\tstatic readonly DEBUG = DEBUG;\n"
+          ],
+          "modifiers": [
+            "static",
+            "readonly"
+          ],
+          "types": [
+            [
+              "unknown",
+              "unknown"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "DEBUG",
+          "annotations": []
+        },
+        "TARGET_NAME": {
+          "start": 16,
+          "end": 16,
+          "body": [
+            "\tstatic readonly TARGET_NAME = TARGET_NAME;\n"
+          ],
+          "modifiers": [
+            "static",
+            "readonly"
+          ],
+          "types": [
+            [
+              "unknown",
+              "unknown"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "TARGET_NAME",
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "class",
+      "type_parameters": [],
+      "annotations": [],
+      "modifiers": [
+        "export",
+        "default"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "BuildProfile",
+      "kind": "class",
+      "default": true
+    }
+  ],
+  "functions": {},
+  "variables": {
+    "HAR_VERSION": {
+      "start": 4,
+      "end": 4,
+      "body": [
+        "export const HAR_VERSION = '3.1.2';\n"
+      ],
+      "kind": "const",
+      "type": "unknown",
+      "initializer": "'3.1.2'",
+      "modifiers": [
+        "export"
+      ]
+    },
+    "BUILD_MODE_NAME": {
+      "start": 5,
+      "end": 5,
+      "body": [
+        "export const BUILD_MODE_NAME = 'debug';\n"
+      ],
+      "kind": "const",
+      "type": "unknown",
+      "initializer": "'debug'",
+      "modifiers": [
+        "export"
+      ]
+    },
+    "DEBUG": {
+      "start": 6,
+      "end": 6,
+      "body": [
+        "export const DEBUG = true;\n"
+      ],
+      "kind": "const",
+      "type": "unknown",
+      "initializer": "true",
+      "modifiers": [
+        "export"
+      ]
+    },
+    "TARGET_NAME": {
+      "start": 7,
+      "end": 7,
+      "body": [
+        "export const TARGET_NAME = 'default';\n"
+      ],
+      "kind": "const",
+      "type": "unknown",
+      "initializer": "'default'",
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "type_aliases": {}
+}

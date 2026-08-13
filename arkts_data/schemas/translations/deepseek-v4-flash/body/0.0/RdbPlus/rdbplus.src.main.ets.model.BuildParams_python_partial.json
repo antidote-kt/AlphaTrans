@@ -1,0 +1,121 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/BuildParams.ts",
+    "imports": {
+        "1-1:@kit.ArkData": {
+            "start": 1,
+            "end": 1,
+            "body": [
+                "import { relationalStore } from \"@kit.ArkData\"\n"
+            ],
+            "module": "@kit.ArkData",
+            "side_effect_only": false
+        }
+    },
+    "classes": {
+        "BuildParams": {
+            "start": 3,
+            "end": 6,
+            "is_abstract": false,
+            "is_interface": true,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [],
+            "extends": [],
+            "methods": {},
+            "fields": {
+                "class": {
+                    "start": 4,
+                    "end": 4,
+                    "body": [
+                        "  class: new () => T,\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "new () => T",
+                            "new () => T"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    class_: Callable[[], T] = None\n"
+                    ],
+                    "translation": [
+                        "    class_: Callable[[], T] = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 7.184523820877075,
+                    "generation_timestamp": "2026-08-11T23:34:27.490659",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "config": {
+                    "start": 5,
+                    "end": 5,
+                    "body": [
+                        "  config: relationalStore.StoreConfig\n"
+                    ],
+                    "modifiers": [],
+                    "types": [
+                        [
+                            "relationalStore.StoreConfig",
+                            "relationalStore.StoreConfig"
+                        ]
+                    ],
+                    "kind": "field",
+                    "optional": false,
+                    "definite": false,
+                    "initializer": null,
+                    "annotations": [],
+                    "partial_translation": [
+                        "    config: TypedDict('StoreConfig', {'name': str, 'securityLevel': Any}) = None\n"
+                    ],
+                    "translation": [
+                        "    config: TypedDict('StoreConfig', {'name': str, 'securityLevel': Any}) = None"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 5.338892936706543,
+                    "generation_timestamp": "2026-08-11T23:34:32.832899",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "static_initializers": {},
+            "kind": "interface",
+            "type_parameters": [
+                "T"
+            ],
+            "annotations": [],
+            "modifiers": [
+                "export"
+            ],
+            "python_class_declaration": "class BuildParams(ABC):\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "BuildParams",
+            "kind": "interface",
+            "default": false
+        }
+    ],
+    "functions": {},
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

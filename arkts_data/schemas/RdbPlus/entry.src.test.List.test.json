@@ -1,0 +1,59 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/test/List.test.ets",
+  "imports": {
+    "1-1:./LocalUnit.test": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import localUnitTest from './LocalUnit.test';\n"
+      ],
+      "module": "./LocalUnit.test",
+      "side_effect_only": false
+    }
+  },
+  "classes": {},
+  "exports": [
+    {
+      "name": "testsuite",
+      "kind": "function",
+      "default": true
+    }
+  ],
+  "functions": {
+    "3-5:testsuite": {
+      "start": 3,
+      "end": 5,
+      "body": [
+        "export default function testsuite() {\n",
+        "  localUnitTest();\n",
+        "}"
+      ],
+      "is_constructor": false,
+      "annotations": [],
+      "modifiers": [
+        "export",
+        "default"
+      ],
+      "return_types": [
+        [
+          "unknown",
+          "void"
+        ]
+      ],
+      "signature": "testsuite()",
+      "parameters": [],
+      "calls": [
+        [
+          "entry.src.test.LocalUnit.test",
+          "<module>",
+          "3-33:localUnitTest"
+        ]
+      ],
+      "kind": "function",
+      "type_parameters": [],
+      "parameter_details": []
+    }
+  },
+  "variables": {},
+  "type_aliases": {}
+}

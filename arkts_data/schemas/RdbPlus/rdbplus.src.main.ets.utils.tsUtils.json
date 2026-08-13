@@ -1,0 +1,70 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/utils/tsUtils.ts",
+  "imports": {},
+  "classes": {},
+  "exports": [
+    {
+      "name": "copyInstance",
+      "kind": "function",
+      "default": false
+    }
+  ],
+  "functions": {
+    "4-6:copyInstance": {
+      "start": 4,
+      "end": 6,
+      "body": [
+        "export function copyInstance<T>(target, sources): T {\n",
+        "  return Object.assign(target, sources);\n",
+        "}"
+      ],
+      "is_constructor": false,
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ],
+      "return_types": [
+        [
+          "T",
+          "T"
+        ]
+      ],
+      "signature": "copyInstance(unknown, unknown)",
+      "parameters": [
+        "target",
+        "sources"
+      ],
+      "calls": [
+        [
+          "library",
+          "ObjectConstructor",
+          "assign(T, U)"
+        ]
+      ],
+      "kind": "function",
+      "type_parameters": [
+        "T"
+      ],
+      "parameter_details": [
+        {
+          "name": "target",
+          "type": "unknown",
+          "resolved_type": "unknown",
+          "optional": false,
+          "rest": false,
+          "default": null
+        },
+        {
+          "name": "sources",
+          "type": "unknown",
+          "resolved_type": "unknown",
+          "optional": false,
+          "rest": false,
+          "default": null
+        }
+      ]
+    }
+  },
+  "variables": {},
+  "type_aliases": {}
+}

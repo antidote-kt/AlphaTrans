@@ -1,0 +1,86 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/BuildParams.ts",
+  "imports": {
+    "1-1:@kit.ArkData": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { relationalStore } from \"@kit.ArkData\"\n"
+      ],
+      "module": "@kit.ArkData",
+      "side_effect_only": false
+    }
+  },
+  "classes": {
+    "BuildParams": {
+      "start": 3,
+      "end": 6,
+      "is_abstract": false,
+      "is_interface": true,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {},
+      "fields": {
+        "class": {
+          "start": 4,
+          "end": 4,
+          "body": [
+            "  class: new () => T,\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "new () => T",
+              "new () => T"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "config": {
+          "start": 5,
+          "end": 5,
+          "body": [
+            "  config: relationalStore.StoreConfig\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "relationalStore.StoreConfig",
+              "relationalStore.StoreConfig"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "interface",
+      "type_parameters": [
+        "T"
+      ],
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "BuildParams",
+      "kind": "interface",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

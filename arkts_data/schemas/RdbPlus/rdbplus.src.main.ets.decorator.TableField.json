@@ -1,0 +1,74 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/decorator/TableField.ts",
+  "imports": {
+    "1-1:../model/TableFieldParams": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { TableFieldParams } from \"../model/TableFieldParams\";\n"
+      ],
+      "module": "../model/TableFieldParams",
+      "side_effect_only": false
+    }
+  },
+  "classes": {},
+  "exports": [
+    {
+      "name": "TableField",
+      "kind": "function",
+      "default": false
+    }
+  ],
+  "functions": {
+    "6-19:TableField": {
+      "start": 6,
+      "end": 19,
+      "body": [
+        "export function TableField(options: TableFieldParams) {\n",
+        "  return function (target: ESObject, propertyKey: string) {\n",
+        "    if (!target.constructor.__tableFieldMeta__) {\n",
+        "      target.constructor.__tableFieldMeta__ = [];\n",
+        "    }\n",
+        "    if (options.name === undefined) {\n",
+        "      options.name = propertyKey\n",
+        "    }\n",
+        "    target.constructor.__tableFieldMeta__.push({\n",
+        "      propertyKey,\n",
+        "      ...options\n",
+        "    });\n",
+        "  };\n",
+        "}"
+      ],
+      "is_constructor": false,
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ],
+      "return_types": [
+        [
+          "unknown",
+          "Function"
+        ]
+      ],
+      "signature": "TableField(TableFieldParams)",
+      "parameters": [
+        "options"
+      ],
+      "calls": [],
+      "kind": "function",
+      "type_parameters": [],
+      "parameter_details": [
+        {
+          "name": "options",
+          "type": "TableFieldParams",
+          "resolved_type": "TableFieldParams",
+          "optional": false,
+          "rest": false,
+          "default": null
+        }
+      ]
+    }
+  },
+  "variables": {},
+  "type_aliases": {}
+}

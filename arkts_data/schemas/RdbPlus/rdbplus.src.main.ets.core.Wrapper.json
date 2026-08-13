@@ -1,0 +1,1724 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets",
+  "imports": {
+    "1-1:@kit.ArkData": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { relationalStore } from \"@kit.ArkData\"\n"
+      ],
+      "module": "@kit.ArkData",
+      "side_effect_only": false
+    }
+  },
+  "classes": {
+    "Wrapper": {
+      "start": 6,
+      "end": 335,
+      "is_abstract": false,
+      "is_interface": false,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {
+        "16-17:constructor": {
+          "start": 16,
+          "end": 17,
+          "body": [
+            "  constructor() {\n",
+            "  }\n"
+          ],
+          "is_constructor": true,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "void",
+              "Wrapper"
+            ]
+          ],
+          "signature": "constructor()",
+          "parameters": [],
+          "calls": [
+            [
+              "library",
+              "Wrapper",
+              "%instInit()"
+            ]
+          ],
+          "kind": "constructor",
+          "type_parameters": [],
+          "parameter_details": []
+        },
+        "26-32:set": {
+          "start": 26,
+          "end": 32,
+          "body": [
+            "  set(field: string, value: relationalStore.ValueType, condition: boolean = true) {\n",
+            "    if (condition) {\n",
+            "      this.updateList.push(`${field} = ?`)\n",
+            "      this.updateValueList.push(value)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "unknown",
+              "Wrapper"
+            ]
+          ],
+          "signature": "set(string, relationalStore.ValueType, boolean)",
+          "parameters": [
+            "field",
+            "value",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "value",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "40-46:eq": {
+          "start": 40,
+          "end": 46,
+          "body": [
+            "  eq(field: string, value: relationalStore.ValueType, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push(`and ${field} = ?`)\n",
+            "      this.valueList.push(value)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "eq(string, relationalStore.ValueType, boolean)",
+          "parameters": [
+            "field",
+            "value",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "value",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "54-60:notEq": {
+          "start": 54,
+          "end": 60,
+          "body": [
+            "  notEq(field: string, value: relationalStore.ValueType, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push(`and ${field} != ?`)\n",
+            "      this.valueList.push(value)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "notEq(string, relationalStore.ValueType, boolean)",
+          "parameters": [
+            "field",
+            "value",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "value",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "68-75:in": {
+          "start": 68,
+          "end": 75,
+          "body": [
+            "  in(field: string, value: relationalStore.ValueType[], condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      const str = new Array(value.length).fill('?').join(',')\n",
+            "      this.whereList.push(`and ${field} in (${str})`)\n",
+            "      this.valueList.push(...value)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "in(string, relationalStore.ValueType[], boolean)",
+          "parameters": [
+            "field",
+            "value",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "fill(T, number, number)"
+            ],
+            [
+              "library",
+              "",
+              "join()"
+            ],
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "",
+              "toString()"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "value",
+              "type": "relationalStore.ValueType[]",
+              "resolved_type": "relationalStore.ValueType[]",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "83-90:notIn": {
+          "start": 83,
+          "end": 90,
+          "body": [
+            "  notIn(field: string, value: relationalStore.ValueType[], condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      const str = new Array(value.length).fill('?').join(',')\n",
+            "      this.whereList.push(`and ${field} not in (${str})`)\n",
+            "      this.valueList.push(...value)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "notIn(string, relationalStore.ValueType[], boolean)",
+          "parameters": [
+            "field",
+            "value",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "fill(T, number, number)"
+            ],
+            [
+              "library",
+              "",
+              "join()"
+            ],
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "",
+              "toString()"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "value",
+              "type": "relationalStore.ValueType[]",
+              "resolved_type": "relationalStore.ValueType[]",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "98-104:lt": {
+          "start": 98,
+          "end": 104,
+          "body": [
+            "  lt(field: string, value: relationalStore.ValueType, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push(`and ${field} < ?`)\n",
+            "      this.valueList.push(value)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "lt(string, relationalStore.ValueType, boolean)",
+          "parameters": [
+            "field",
+            "value",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "value",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "112-118:lte": {
+          "start": 112,
+          "end": 118,
+          "body": [
+            "  lte(field: string, value: relationalStore.ValueType, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push(`and ${field} <= ?`)\n",
+            "      this.valueList.push(value)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "lte(string, relationalStore.ValueType, boolean)",
+          "parameters": [
+            "field",
+            "value",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "value",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "126-132:gt": {
+          "start": 126,
+          "end": 132,
+          "body": [
+            "  gt(field: string, value: relationalStore.ValueType, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push(`and ${field} > ?`)\n",
+            "      this.valueList.push(value)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "gt(string, relationalStore.ValueType, boolean)",
+          "parameters": [
+            "field",
+            "value",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "value",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "140-146:gte": {
+          "start": 140,
+          "end": 146,
+          "body": [
+            "  gte(field: string, value: relationalStore.ValueType, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push(`and ${field} >= ?`)\n",
+            "      this.valueList.push(value)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "gte(string, relationalStore.ValueType, boolean)",
+          "parameters": [
+            "field",
+            "value",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "value",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "155-163:between": {
+          "start": 155,
+          "end": 163,
+          "body": [
+            "  between(field: string, start: relationalStore.ValueType, end: relationalStore.ValueType,\n",
+            "    condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push(`and ${field} between ? and ?`)\n",
+            "      this.valueList.push(start)\n",
+            "      this.valueList.push(end)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "between(string, relationalStore.ValueType, relationalStore.ValueType, boolean)",
+          "parameters": [
+            "field",
+            "start",
+            "end",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "start",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "end",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "172-180:notBetween": {
+          "start": 172,
+          "end": 180,
+          "body": [
+            "  notBetween(field: string, start: relationalStore.ValueType, end: relationalStore.ValueType,\n",
+            "    condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push(`and ${field} not between ? and ?`)\n",
+            "      this.valueList.push(start)\n",
+            "      this.valueList.push(end)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "notBetween(string, relationalStore.ValueType, relationalStore.ValueType, boolean)",
+          "parameters": [
+            "field",
+            "start",
+            "end",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "start",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "end",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "188-194:like": {
+          "start": 188,
+          "end": 194,
+          "body": [
+            "  like(field: string, value: relationalStore.ValueType, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push(`and ${field} like ?`)\n",
+            "      this.valueList.push(value)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "like(string, relationalStore.ValueType, boolean)",
+          "parameters": [
+            "field",
+            "value",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "value",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "202-208:notLike": {
+          "start": 202,
+          "end": 208,
+          "body": [
+            "  notLike(field: string, value: relationalStore.ValueType, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push(`and ${field} not like ?`)\n",
+            "      this.valueList.push(value)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "notLike(string, relationalStore.ValueType, boolean)",
+          "parameters": [
+            "field",
+            "value",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "value",
+              "type": "relationalStore.ValueType",
+              "resolved_type": "relationalStore.ValueType",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "215-220:isNull": {
+          "start": 215,
+          "end": 220,
+          "body": [
+            "  isNull(field: string, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push(`and ${field} is null`)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "isNull(string, boolean)",
+          "parameters": [
+            "field",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "227-232:isNotNull": {
+          "start": 227,
+          "end": 232,
+          "body": [
+            "  isNotNull(field: string, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push(`and ${field} is not null`)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "isNotNull(string, boolean)",
+          "parameters": [
+            "field",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "239-244:orderByAsc": {
+          "start": 239,
+          "end": 244,
+          "body": [
+            "  orderByAsc(field: string, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.orderList.push(`${field} asc`)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "orderByAsc(string, boolean)",
+          "parameters": [
+            "field",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "251-256:orderByDesc": {
+          "start": 251,
+          "end": 256,
+          "body": [
+            "  orderByDesc(field: string, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.orderList.push(`${field} desc`)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "orderByDesc(string, boolean)",
+          "parameters": [
+            "field",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "263-272:groupBy": {
+          "start": 263,
+          "end": 272,
+          "body": [
+            "  groupBy(fields: string | string[], condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      if (Array.isArray(fields)) {\n",
+            "        this.groupSql = `group by ${fields.join(',')}`\n",
+            "      } else {\n",
+            "        this.groupSql = `group by ${fields}`\n",
+            "      }\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "groupBy(string | string[], boolean)",
+          "parameters": [
+            "fields",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "ArrayConstructor",
+              "isArray(any)"
+            ],
+            [
+              "library",
+              "Array",
+              "join(string)"
+            ],
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "fields",
+              "type": "string | string[]",
+              "resolved_type": "string|unknown[]",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "279-284:having": {
+          "start": 279,
+          "end": 284,
+          "body": [
+            "  having(sql: string, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.havingSql = `having ${sql}`\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "having(string, boolean)",
+          "parameters": [
+            "sql",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "String",
+              "toString()"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "sql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "291-299:or": {
+          "start": 291,
+          "end": 299,
+          "body": [
+            "  or(wrapper: Wrapper, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push('or (1=1 ')\n",
+            "      this.whereList.push(...wrapper.whereList)\n",
+            "      this.whereList.push(')')\n",
+            "      this.valueList.push(...wrapper.valueList)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "or(Wrapper, boolean)",
+          "parameters": [
+            "wrapper",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "wrapper",
+              "type": "Wrapper",
+              "resolved_type": "Wrapper",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "306-314:and": {
+          "start": 306,
+          "end": 314,
+          "body": [
+            "  and(wrapper: Wrapper, condition: boolean = true): Wrapper {\n",
+            "    if (condition) {\n",
+            "      this.whereList.push('and (1=1 ')\n",
+            "      this.whereList.push(...wrapper.whereList)\n",
+            "      this.whereList.push(')')\n",
+            "      this.valueList.push(...wrapper.valueList)\n",
+            "    }\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "and(Wrapper, boolean)",
+          "parameters": [
+            "wrapper",
+            "condition"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "push(T[])"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "wrapper",
+              "type": "Wrapper",
+              "resolved_type": "Wrapper",
+              "optional": false,
+              "rest": false,
+              "default": null
+            },
+            {
+              "name": "condition",
+              "type": "boolean",
+              "resolved_type": "boolean",
+              "optional": true,
+              "rest": false,
+              "default": "true"
+            }
+          ]
+        },
+        "321-324:select": {
+          "start": 321,
+          "end": 324,
+          "body": [
+            "  select(...field: string[]): Wrapper {\n",
+            "    this.selectSql = field.join(',')\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "select(string[])",
+          "parameters": [
+            "field"
+          ],
+          "calls": [
+            [
+              "library",
+              "Array",
+              "join(string)"
+            ]
+          ],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "field",
+              "type": "string[]",
+              "resolved_type": "string[]",
+              "optional": false,
+              "rest": true,
+              "default": null
+            }
+          ]
+        },
+        "331-334:selectSQL": {
+          "start": 331,
+          "end": 334,
+          "body": [
+            "  selectSQL(sql: string): Wrapper {\n",
+            "    this.selectSql = sql\n",
+            "    return this\n",
+            "  }\n"
+          ],
+          "is_constructor": false,
+          "annotations": [],
+          "modifiers": [],
+          "return_types": [
+            [
+              "Wrapper",
+              "Wrapper"
+            ]
+          ],
+          "signature": "selectSQL(string)",
+          "parameters": [
+            "sql"
+          ],
+          "calls": [],
+          "kind": "method",
+          "type_parameters": [],
+          "parameter_details": [
+            {
+              "name": "sql",
+              "type": "string",
+              "resolved_type": "string",
+              "optional": false,
+              "rest": false,
+              "default": null
+            }
+          ]
+        }
+      },
+      "fields": {
+        "selectSql": {
+          "start": 7,
+          "end": 7,
+          "body": [
+            "  protected selectSql: string = '*'\n"
+          ],
+          "modifiers": [
+            "protected"
+          ],
+          "types": [
+            [
+              "string",
+              "string"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "'*'",
+          "annotations": []
+        },
+        "groupSql": {
+          "start": 8,
+          "end": 8,
+          "body": [
+            "  protected groupSql: string = ''\n"
+          ],
+          "modifiers": [
+            "protected"
+          ],
+          "types": [
+            [
+              "string",
+              "string"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "''",
+          "annotations": []
+        },
+        "havingSql": {
+          "start": 9,
+          "end": 9,
+          "body": [
+            "  protected havingSql: string = ''\n"
+          ],
+          "modifiers": [
+            "protected"
+          ],
+          "types": [
+            [
+              "string",
+              "string"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "''",
+          "annotations": []
+        },
+        "orderList": {
+          "start": 10,
+          "end": 10,
+          "body": [
+            "  protected orderList: string[] = []\n"
+          ],
+          "modifiers": [
+            "protected"
+          ],
+          "types": [
+            [
+              "string[]",
+              "string[]"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "[]",
+          "annotations": []
+        },
+        "whereList": {
+          "start": 11,
+          "end": 11,
+          "body": [
+            "  protected whereList: string[] = []\n"
+          ],
+          "modifiers": [
+            "protected"
+          ],
+          "types": [
+            [
+              "string[]",
+              "string[]"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "[]",
+          "annotations": []
+        },
+        "valueList": {
+          "start": 12,
+          "end": 12,
+          "body": [
+            "  protected valueList: relationalStore.ValueType[] = []\n"
+          ],
+          "modifiers": [
+            "protected"
+          ],
+          "types": [
+            [
+              "relationalStore.ValueType[]",
+              "relationalStore.ValueType[]"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "[]",
+          "annotations": []
+        },
+        "updateList": {
+          "start": 13,
+          "end": 13,
+          "body": [
+            "  protected updateList: string[] = []\n"
+          ],
+          "modifiers": [
+            "protected"
+          ],
+          "types": [
+            [
+              "string[]",
+              "string[]"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "[]",
+          "annotations": []
+        },
+        "updateValueList": {
+          "start": 14,
+          "end": 14,
+          "body": [
+            "  protected updateValueList: relationalStore.ValueType[] = []\n"
+          ],
+          "modifiers": [
+            "protected"
+          ],
+          "types": [
+            [
+              "relationalStore.ValueType[]",
+              "relationalStore.ValueType[]"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": "[]",
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "class",
+      "type_parameters": [],
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "Wrapper",
+      "kind": "class",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

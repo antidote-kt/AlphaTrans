@@ -1,0 +1,307 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/DbLogger.ets",
+    "imports": {
+        "1-1:./Logger": {
+            "start": 1,
+            "end": 1,
+            "body": [
+                "import { Logger } from './Logger';\n"
+            ],
+            "module": "./Logger",
+            "side_effect_only": false
+        }
+    },
+    "classes": {
+        "DbLogger": {
+            "start": 6,
+            "end": 22,
+            "is_abstract": false,
+            "is_interface": false,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [
+                "Logger"
+            ],
+            "extends": [],
+            "methods": {
+                "7-9:debug": {
+                    "start": 7,
+                    "end": 9,
+                    "body": [
+                        "  debug(...args: string[]): void {\n",
+                        "    console.debug('rdb ' + args.join(' '));\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "void"
+                        ]
+                    ],
+                    "signature": "debug(string[])",
+                    "parameters": [
+                        "args"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "",
+                            "debug()"
+                        ],
+                        [
+                            "library",
+                            "Array",
+                            "join(string)"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "args",
+                            "type": "string[]",
+                            "resolved_type": "string[]",
+                            "optional": false,
+                            "rest": true,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    def debug(self, *args: str) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def debug(self, *args: str) -> None:",
+                        "            import logging",
+                        "            logging.debug('rdb ' + ' '.join(args))"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 12.393595457077026,
+                    "generation_timestamp": "2026-08-11T23:58:52.542909",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "11-13:info": {
+                    "start": 11,
+                    "end": 13,
+                    "body": [
+                        "  info(...args: string[]): void {\n",
+                        "    console.info('rdb ' + args.join(' '));\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "void"
+                        ]
+                    ],
+                    "signature": "info(string[])",
+                    "parameters": [
+                        "args"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "",
+                            "info()"
+                        ],
+                        [
+                            "library",
+                            "Array",
+                            "join(string)"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "args",
+                            "type": "string[]",
+                            "resolved_type": "string[]",
+                            "optional": false,
+                            "rest": true,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    def info(self, *args: str) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def info(self, *args: str) -> None:",
+                        "            print('rdb ' + ' '.join(args))"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 7.816200494766235,
+                    "generation_timestamp": "2026-08-11T23:58:09.475599",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "15-17:warn": {
+                    "start": 15,
+                    "end": 17,
+                    "body": [
+                        "  warn(...args: string[]): void {\n",
+                        "    console.warn('rdb ' + args.join(' '));\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "void"
+                        ]
+                    ],
+                    "signature": "warn(string[])",
+                    "parameters": [
+                        "args"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "Array",
+                            "join(string)"
+                        ],
+                        [
+                            "library",
+                            "",
+                            "warn()"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "args",
+                            "type": "string[]",
+                            "resolved_type": "string[]",
+                            "optional": false,
+                            "rest": true,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    def warn(self, *args: str) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def warn(self, *args: str) -> None:",
+                        "            import sys",
+                        "            print('rdb ' + ' '.join(args), file=sys.stderr)"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 12.976269483566284,
+                    "generation_timestamp": "2026-08-11T23:58:22.455432",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "19-21:error": {
+                    "start": 19,
+                    "end": 21,
+                    "body": [
+                        "  error(...args: string[]): void {\n",
+                        "    console.error('rdb ' + args.join(' '));\n",
+                        "  }\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "void"
+                        ]
+                    ],
+                    "signature": "error(string[])",
+                    "parameters": [
+                        "args"
+                    ],
+                    "calls": [
+                        [
+                            "library",
+                            "",
+                            "error()"
+                        ],
+                        [
+                            "library",
+                            "Array",
+                            "join(string)"
+                        ]
+                    ],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "args",
+                            "type": "string[]",
+                            "resolved_type": "string[]",
+                            "optional": false,
+                            "rest": true,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    def error(self, *args: str) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def error(self, *args: str) -> None:",
+                        "            import sys",
+                        "            print('rdb ' + ' '.join(args), file=sys.stderr)"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 17.686869621276855,
+                    "generation_timestamp": "2026-08-11T23:58:40.145948",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "fields": {},
+            "static_initializers": {},
+            "kind": "class",
+            "type_parameters": [],
+            "annotations": [],
+            "modifiers": [
+                "export"
+            ],
+            "python_class_declaration": "class DbLogger(Logger):\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "DbLogger",
+            "kind": "class",
+            "default": false
+        }
+    ],
+    "functions": {},
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *",
+        "from rdbplus.src.main.ets.log.Logger import Logger"
+    ]
+}

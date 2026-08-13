@@ -1,0 +1,112 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/FieldType.ts",
+  "imports": {},
+  "classes": {
+    "FieldType": {
+      "start": 1,
+      "end": 6,
+      "is_abstract": false,
+      "is_interface": false,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {},
+      "fields": {
+        "NUMBER": {
+          "start": 2,
+          "end": 2,
+          "body": [
+            "  NUMBER = 'NUMBER',\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "unknown",
+              "unknown"
+            ]
+          ],
+          "kind": "enum_member",
+          "optional": false,
+          "definite": false,
+          "initializer": "'NUMBER'",
+          "annotations": []
+        },
+        "TEXT": {
+          "start": 3,
+          "end": 3,
+          "body": [
+            "  TEXT = 'TEXT',\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "unknown",
+              "unknown"
+            ]
+          ],
+          "kind": "enum_member",
+          "optional": false,
+          "definite": false,
+          "initializer": "'TEXT'",
+          "annotations": []
+        },
+        "BLOB": {
+          "start": 4,
+          "end": 4,
+          "body": [
+            "  BLOB = 'BLOB',\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "unknown",
+              "unknown"
+            ]
+          ],
+          "kind": "enum_member",
+          "optional": false,
+          "definite": false,
+          "initializer": "'BLOB'",
+          "annotations": []
+        },
+        "BOOLEAN": {
+          "start": 5,
+          "end": 5,
+          "body": [
+            "  BOOLEAN = 'BOOLEAN'\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "unknown",
+              "unknown"
+            ]
+          ],
+          "kind": "enum_member",
+          "optional": false,
+          "definite": false,
+          "initializer": "'BOOLEAN'",
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "enum",
+      "type_parameters": [],
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "FieldType",
+      "kind": "enum",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

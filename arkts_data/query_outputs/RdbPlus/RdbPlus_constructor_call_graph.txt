@@ -1,0 +1,38 @@
+| new %AC0$%dflt-showToast(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets:15:1:20:2 | 0 | C |
+| new %AC0$BaseMapper-getObject(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets:87:3:116:4 | 0 | C |
+| new %AC0$EmpMapper-getInstance(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/EmpMapper.ets:9:3:20:4 | 0 | C |
+| new %AC0$EmpMapper-getInstance(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/example/EmpMapper.ets:9:3:20:4 | 0 | C |
+| new %AC0$MapperMultiple-getInstance1DB(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MapperMultiple.ets:13:3:24:4 | 0 | C |
+| new %AC0$SqlUtils-getById(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts:61:3:67:4 | 0 | C |
+| new %AC1$%dflt-showDialog(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets:22:1:31:2 | 0 | C |
+| new %AC1$BaseMapper-getObjectBySql(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets:124:3:146:4 | 0 | C |
+| new %AC1$EmpMapper-getInstance(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/EmpMapper.ets:9:3:20:4 | 0 | C |
+| new %AC1$EmpMapper-getInstance(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/example/EmpMapper.ets:9:3:20:4 | 0 | C |
+| new %AC1$Index-build(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/pages/Index.ets:15:3:412:4 | 0 | C |
+| new %AC1$MapperMultiple-getInstance1DB(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MapperMultiple.ets:13:3:24:4 | 0 | C |
+| new %AC1$SqlUtils-insert(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts:69:3:85:4 | 0 | C |
+| new %AC2$%dflt-alertDialog(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets:35:1:45:2 | 0 | C |
+| new %AC2$MapperMultiple-getInstance2DB(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MapperMultiple.ets:27:3:38:4 | 0 | C |
+| new %AC2$SqlUtils-insertBatch(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts:87:3:107:4 | 0 | C |
+| new %AC3$%dflt-alertDialog(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets:35:1:45:2 | 0 | C |
+| new %AC3$MapperMultiple-getInstance2DB(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MapperMultiple.ets:27:3:38:4 | 0 | C |
+| new %AC3$SqlUtils-updateById(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts:109:3:129:4 | 0 | C |
+| new %AC4$%dflt-alertDialog(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/rdb/MessageDialog.ets:35:1:45:2 | 0 | C |
+| new %AC4$SqlUtils-deleteById(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts:131:3:137:4 | 0 | C |
+| new BaseMapper(...) | %instInit() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets:42:3:47:4 | 0 | C |
+| new BaseMapper(...) | constructor(relationalStore.StoreConfig, SqlUtils, Function) | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets:15:3:40:4 | 3 | C |
+| new Connection(...) | %instInit() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets:50:3:53:4 | 0 | C |
+| new DbLogger(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/entryability/EntryAbility.ets:6:3:8:4 | 0 | C |
+| new Index(...) | %instInit() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/entry/src/main/ets/pages/Index.ets:8:50:8:50 | 0 | C |
+| new MyWrapper(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/MyWrapper.ets:9:3:21:4 | 0 | C |
+| new Page(...) | %instInit() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/Page.ets:7:3:12:4 | 0 | C |
+| new Page(...) | constructor(number, number, number, T[]) | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets:218:3:243:4 | 4 | C |
+| new Promise(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Connection.ets:58:3:70:4 | 0 | C |
+| new SqlUtils(...) | %instInit() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/SqlUtils.ts:22:3:36:4 | 0 | C |
+| new SqlUtils(...) | constructor(string, TableFieldParams[]) | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets:15:3:40:4 | 2 | C |
+| new Wrapper(...) | %instInit() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/core/Wrapper.ets:16:3:17:4 | 0 | C |
+| new Wrapper(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets:153:3:178:4 | 0 | C |
+| new Wrapper(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets:185:3:209:4 | 0 | C |
+| new Wrapper(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets:218:3:243:4 | 0 | C |
+| new Wrapper(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets:61:3:80:4 | 0 | C |
+| new Wrapper(...) | constructor() | file:///mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/BaseMapper.ets:87:3:116:4 | 0 | C |

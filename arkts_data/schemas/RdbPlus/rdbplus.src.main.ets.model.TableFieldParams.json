@@ -1,0 +1,122 @@
+{
+  "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/model/TableFieldParams.ts",
+  "imports": {
+    "1-1:./FieldType": {
+      "start": 1,
+      "end": 1,
+      "body": [
+        "import { FieldType } from \"./FieldType\";\n"
+      ],
+      "module": "./FieldType",
+      "side_effect_only": false
+    }
+  },
+  "classes": {
+    "TableFieldParams": {
+      "start": 3,
+      "end": 23,
+      "is_abstract": false,
+      "is_interface": true,
+      "nested_inside": [],
+      "nests": [],
+      "implements": [],
+      "extends": [],
+      "methods": {},
+      "fields": {
+        "name": {
+          "start": 7,
+          "end": 7,
+          "body": [
+            "  name?: string;\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "string",
+              "string"
+            ]
+          ],
+          "kind": "field",
+          "optional": true,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "type": {
+          "start": 12,
+          "end": 12,
+          "body": [
+            "  type: FieldType;\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "FieldType",
+              "FieldType"
+            ]
+          ],
+          "kind": "field",
+          "optional": false,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "isPrimaryKey": {
+          "start": 17,
+          "end": 17,
+          "body": [
+            "  isPrimaryKey?: boolean;\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "boolean",
+              "boolean"
+            ]
+          ],
+          "kind": "field",
+          "optional": true,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        },
+        "propertyKey": {
+          "start": 22,
+          "end": 22,
+          "body": [
+            "  propertyKey?: string\n"
+          ],
+          "modifiers": [],
+          "types": [
+            [
+              "string",
+              "string"
+            ]
+          ],
+          "kind": "field",
+          "optional": true,
+          "definite": false,
+          "initializer": null,
+          "annotations": []
+        }
+      },
+      "static_initializers": {},
+      "kind": "interface",
+      "type_parameters": [],
+      "annotations": [],
+      "modifiers": [
+        "export"
+      ]
+    }
+  },
+  "exports": [
+    {
+      "name": "TableFieldParams",
+      "kind": "interface",
+      "default": false
+    }
+  ],
+  "functions": {},
+  "variables": {},
+  "type_aliases": {}
+}

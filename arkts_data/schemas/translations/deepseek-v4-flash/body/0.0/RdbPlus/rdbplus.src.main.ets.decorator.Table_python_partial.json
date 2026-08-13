@@ -1,0 +1,90 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/decorator/Table.ts",
+    "imports": {
+        "1-1:../model/TableParams": {
+            "start": 1,
+            "end": 1,
+            "body": [
+                "import { TableParams } from \"../model/TableParams\";\n"
+            ],
+            "module": "../model/TableParams",
+            "side_effect_only": false
+        }
+    },
+    "classes": {},
+    "exports": [
+        {
+            "name": "Table",
+            "kind": "function",
+            "default": false
+        }
+    ],
+    "functions": {
+        "6-10:Table": {
+            "start": 6,
+            "end": 10,
+            "body": [
+                "export function Table(options: TableParams) {\n",
+                "  return function (target: ESObject) {\n",
+                "    target.__tableMeta__ = options;\n",
+                "  };\n",
+                "}"
+            ],
+            "is_constructor": false,
+            "annotations": [],
+            "modifiers": [
+                "export"
+            ],
+            "return_types": [
+                [
+                    "unknown",
+                    "Function"
+                ]
+            ],
+            "signature": "Table(TableParams)",
+            "parameters": [
+                "options"
+            ],
+            "calls": [],
+            "kind": "function",
+            "type_parameters": [],
+            "parameter_details": [
+                {
+                    "name": "options",
+                    "type": "TableParams",
+                    "resolved_type": "TableParams",
+                    "optional": false,
+                    "rest": false,
+                    "default": null
+                }
+            ],
+            "partial_translation": [
+                "def Table(options: TableParams) -> Any:\n",
+                "    pass\n"
+            ],
+            "translation": [
+                "def Table(options: TableParams) -> Any:",
+                "    def decorator(target: Any) -> Any:",
+                "        target.__tableMeta__ = options",
+                "        return target",
+                "    return decorator"
+            ],
+            "translation_status": "attempted",
+            "syntactic_validation": "parseable",
+            "elapsed_time": 8.756763458251953,
+            "generation_timestamp": "2026-08-11T23:58:01.657025",
+            "model_name": "deepseek-v4-flash",
+            "include_implementation": true,
+            "composition_validation": "passed",
+            "validation_feedback": ""
+        }
+    },
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}

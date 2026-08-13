@@ -1,0 +1,247 @@
+{
+    "path": "/mnt/zengjy69/AlphaTrans/arkts_projects/automated_reduced_projects/RdbPlus/rdbplus/src/main/ets/log/Logger.ets",
+    "imports": {},
+    "classes": {
+        "Logger": {
+            "start": 4,
+            "end": 13,
+            "is_abstract": false,
+            "is_interface": true,
+            "nested_inside": [],
+            "nests": [],
+            "implements": [],
+            "extends": [],
+            "methods": {
+                "6-6:debug": {
+                    "start": 6,
+                    "end": 6,
+                    "body": [
+                        "  debug(...args: string[]): void\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "void"
+                        ]
+                    ],
+                    "signature": "debug(string[])",
+                    "parameters": [
+                        "args"
+                    ],
+                    "calls": [],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "args",
+                            "type": "string[]",
+                            "resolved_type": "string[]",
+                            "optional": false,
+                            "rest": true,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    @abstractmethod\n",
+                        "    def debug(self, *args: str) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def debug(self, *args: str) -> None:",
+                        "",
+                        "        pass"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 6.967493772506714,
+                    "generation_timestamp": "2026-08-12T00:23:47.282852",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "8-8:info": {
+                    "start": 8,
+                    "end": 8,
+                    "body": [
+                        "  info(...args: string[]): void\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "void"
+                        ]
+                    ],
+                    "signature": "info(string[])",
+                    "parameters": [
+                        "args"
+                    ],
+                    "calls": [],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "args",
+                            "type": "string[]",
+                            "resolved_type": "string[]",
+                            "optional": false,
+                            "rest": true,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    @abstractmethod\n",
+                        "    def info(self, *args: str) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def info(self, *args: str) -> None:",
+                        "",
+                        "        pass"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 7.2725067138671875,
+                    "generation_timestamp": "2026-08-12T00:22:09.566260",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "10-10:warn": {
+                    "start": 10,
+                    "end": 10,
+                    "body": [
+                        "  warn(...args: string[]): void\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "void"
+                        ]
+                    ],
+                    "signature": "warn(string[])",
+                    "parameters": [
+                        "args"
+                    ],
+                    "calls": [],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "args",
+                            "type": "string[]",
+                            "resolved_type": "string[]",
+                            "optional": false,
+                            "rest": true,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    @abstractmethod\n",
+                        "    def warn(self, *args: str) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def warn(self, *args: str) -> None:",
+                        "",
+                        "        pass"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 8.129783153533936,
+                    "generation_timestamp": "2026-08-12T00:23:40.311702",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                },
+                "12-12:error": {
+                    "start": 12,
+                    "end": 12,
+                    "body": [
+                        "  error(...args: string[]): void\n"
+                    ],
+                    "is_constructor": false,
+                    "annotations": [],
+                    "modifiers": [],
+                    "return_types": [
+                        [
+                            "void",
+                            "void"
+                        ]
+                    ],
+                    "signature": "error(string[])",
+                    "parameters": [
+                        "args"
+                    ],
+                    "calls": [],
+                    "kind": "method",
+                    "type_parameters": [],
+                    "parameter_details": [
+                        {
+                            "name": "args",
+                            "type": "string[]",
+                            "resolved_type": "string[]",
+                            "optional": false,
+                            "rest": true,
+                            "default": null
+                        }
+                    ],
+                    "partial_translation": [
+                        "    @abstractmethod\n",
+                        "    def error(self, *args: str) -> None:\n",
+                        "        pass\n"
+                    ],
+                    "translation": [
+                        "    def error(self, *args: str) -> None:",
+                        "",
+                        "        pass"
+                    ],
+                    "translation_status": "attempted",
+                    "syntactic_validation": "parseable",
+                    "elapsed_time": 6.599365949630737,
+                    "generation_timestamp": "2026-08-12T00:20:35.699155",
+                    "model_name": "deepseek-v4-flash",
+                    "include_implementation": true,
+                    "composition_validation": "passed",
+                    "validation_feedback": ""
+                }
+            },
+            "fields": {},
+            "static_initializers": {},
+            "kind": "interface",
+            "type_parameters": [],
+            "annotations": [],
+            "modifiers": [
+                "export"
+            ],
+            "python_class_declaration": "class Logger(ABC):\n"
+        }
+    },
+    "exports": [
+        {
+            "name": "Logger",
+            "kind": "interface",
+            "default": false
+        }
+    ],
+    "functions": {},
+    "variables": {},
+    "type_aliases": {},
+    "python_imports": [
+        "from __future__ import annotations",
+        "from abc import ABC, abstractmethod",
+        "from enum import Enum, auto",
+        "from typing import *"
+    ]
+}
